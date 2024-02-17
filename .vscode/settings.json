@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Assets-test.sln"
+    "dotnet.defaultSolution": "CodeClashers.sln"
 }
