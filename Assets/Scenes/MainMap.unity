@@ -321,7 +321,7 @@ GameObject:
   - component: {fileID: 703323432}
   - component: {fileID: 703323434}
   m_Layer: 0
-  m_Name: boomafmetshading!!!!!!1
+  m_Name: Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -388,7 +388,7 @@ Transform:
   m_GameObject: {fileID: 703323431}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.8, y: -1.8, z: 0}
+  m_LocalPosition: {x: 1.89, y: -1.86, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
