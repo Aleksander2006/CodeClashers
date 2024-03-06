@@ -8150,7 +8150,7 @@ Transform:
   m_GameObject: {fileID: 1009182353}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.4299998, y: 7.1200004, z: -0.15999985}
+  m_LocalPosition: {x: -1.4299998, y: 7.14, z: -0.15999985}
   m_LocalScale: {x: 0.6781212, y: 0.6781212, z: 0.6781212}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8192,12 +8192,12 @@ EdgeCollider2D:
   m_EdgeRadius: 0
   m_Points:
   - {x: -2.4600775, y: 1.754865}
-  - {x: -2.3624582, y: -3.307851}
-  - {x: -2.012751, y: -3.308494}
+  - {x: -2.3624582, y: -2.1745138}
+  - {x: -2.0900242, y: -2.1751566}
   - {x: -2.0108714, y: -0.9932976}
   - {x: -0.44099864, y: -1.0185806}
-  - {x: -0.4520255, y: -3.2639525}
-  - {x: 2.379027, y: -3.2657306}
+  - {x: -0.47778347, y: -2.1563725}
+  - {x: 2.3275113, y: -2.158151}
   - {x: 2.4560177, y: 1.6872146}
   - {x: 1.2522036, y: 2.9176352}
   - {x: -1.2704657, y: 2.9328945}
@@ -8239,7 +8239,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -1.2285832, y: -1.7365897}
-  m_Size: {x: 0.88852394, y: 1.2622317}
+  m_Size: {x: 0.88852394, y: 1.36}
   m_Direction: 0
 --- !u!114 &1009182359
 MonoBehaviour:
