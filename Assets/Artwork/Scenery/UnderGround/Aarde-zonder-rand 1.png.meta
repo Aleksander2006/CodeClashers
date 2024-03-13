@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Artwork/Scenery/Buidings/Home01.png.meta
-guid: ecd27e96f8c75465aa9d5ee5ff349453
-========
-guid: 8a6e027b56e744446bc27859cc931e3c
->>>>>>>> main:Assets/Artwork/Scenery/Buidings/HDTV.png.meta
+guid: 0d9d1231edbb8334e8cb179938e721d4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -52,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 160
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
