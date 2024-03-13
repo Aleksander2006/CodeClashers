@@ -1,0 +1,14 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/House-inside.unity
+    guid: 06373c1e6495fd345945062013aca6df
+  - enabled: 1
+    path: Assets/Scenes/MainMap.unity
+    guid: 21e8b55c4b15e714fb90a9802e396a50
+  m_configObjects: {}
