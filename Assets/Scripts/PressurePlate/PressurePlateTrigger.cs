@@ -29,12 +29,13 @@ public class PressurePlateTrigger : MonoBehaviour{
         if (collider.GetComponent<MovementScript>() != null)
         {
             lamp.OpenSignal();
+            
         }
     }
 
     private void OnTriggerStay2D(Collider2D collider)
     {
         if (collider.GetComponent<MovementScript>() != null)
-            timer = 0.75f;
+            timer = 0.1f;
     }
 }
