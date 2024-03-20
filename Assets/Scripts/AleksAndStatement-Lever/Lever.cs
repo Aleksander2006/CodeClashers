@@ -8,9 +8,6 @@ using UnityEngine.UIElements;
 
 public class Lever : MonoBehaviour
 {
-        //private GameObject Lampje1;
-        //private GameObject Lever2;
-        //private GameObject Lever4;
             public Transform Lever1;
             
             public Transform Lever2;
@@ -66,6 +63,7 @@ public class Lever : MonoBehaviour
                             
                                 
                         }
+                        
                         //Wanneer die uit aan staat en uit moet
                         else {
                             Debug.Log("Hij staat Uit");
@@ -75,24 +73,22 @@ public class Lever : MonoBehaviour
                             Vector3 newPosition2 = new Vector3(Lever2.position.x, Lever2.position.y, zValue);
                             Lever2.position = newPosition2;
                             lever.SetActive(false);             
-                        }
-                
+                        }        
+
                 }
         }
 
             isLeverOn = !isLeverOn;
 
-                    
+    if(lever == true){
 
-            if(!isLeverOn){
+                Vector3 newPosition1 = new Vector3(Lampje1.position.x, Lampje1.position.y, zValue);
+                Lampje1.position = newPosition1;
 
-                    Vector3 newPosition1 = new Vector3(Lampje1.position.x, Lampje1.position.y, zValue);
-                    Lampje1.position = newPosition1;
+                Vector3 newPosition2 = new Vector3(Lampje2.position.x, Lampje2.position.y, zValue2);
+                Lampje2.position = newPosition2;
 
-                    Vector3 newPosition2 = new Vector3(Lampje2.position.x, Lampje2.position.y, zValue2);
-                    Lampje2.position = newPosition2;
-
-                }    
-            
+    }
+                         
         }   
     }
