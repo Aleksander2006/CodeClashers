@@ -13,7 +13,7 @@ public class InteractionTV : MonoBehaviour
 
     private void Start()
     {
-        notification.SetActive(false);
+        notification.SetActive(true);
         closeButton.onClick.AddListener(ClosePopup);
     }
 
