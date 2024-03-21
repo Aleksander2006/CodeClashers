@@ -706,8 +706,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1068987845}
   - component: {fileID: 1068987844}
-  - component: {fileID: 1068987846}
   - component: {fileID: 1068987847}
+  - component: {fileID: 1068987848}
   m_Layer: 0
   m_Name: Lever3
   m_TagString: Untagged
@@ -783,24 +783,6 @@ Transform:
   - {fileID: 1801688914}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1068987846
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1068987843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f2b4ac7787fd20489610cf44e78ae4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Lever1: {fileID: 1068987845}
-  Lever2: {fileID: 1801688914}
-  Lampje1: {fileID: 258407539}
-  Lampje2: {fileID: 1539324256}
-  zValue: 1
-  zValue2: -1
 --- !u!61 &1068987847
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -846,6 +828,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.9969132, y: 2.438614}
   m_EdgeRadius: 0
+--- !u!114 &1068987848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068987843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cba491514b61273499efab8a65db29eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lever3: {fileID: 1068987845}
+  Lever4: {fileID: 1801688914}
+  Lampje1: {fileID: 258407539}
+  Lampje2: {fileID: 1539324256}
+  zValue: 1
+  zValue2: -1
 --- !u!1 &1230386474
 GameObject:
   m_ObjectHideFlags: 0
@@ -1399,7 +1399,7 @@ Transform:
   m_GameObject: {fileID: 1539324254}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.76, y: 2.98, z: -1}
+  m_LocalPosition: {x: -6.79, y: 3.58, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1433,8 +1433,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1801688914}
   - component: {fileID: 1801688915}
-  - component: {fileID: 1801688916}
   - component: {fileID: 1801688917}
+  - component: {fileID: 1801688918}
   m_Layer: 0
   m_Name: Lever4
   m_TagString: Untagged
@@ -1509,24 +1509,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1801688916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1801688913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f2b4ac7787fd20489610cf44e78ae4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Lever1: {fileID: 1068987845}
-  Lever2: {fileID: 1801688914}
-  Lampje1: {fileID: 258407539}
-  Lampje2: {fileID: 1539324256}
-  zValue: 1
-  zValue2: -1
 --- !u!61 &1801688917
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1572,6 +1554,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1.5}
   m_EdgeRadius: 0
+--- !u!114 &1801688918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801688913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cba491514b61273499efab8a65db29eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lever3: {fileID: 1068987845}
+  Lever4: {fileID: 1801688914}
+  Lampje1: {fileID: 258407539}
+  Lampje2: {fileID: 1539324256}
+  zValue: 1
+  zValue2: -1
 --- !u!1 &1920229641
 GameObject:
   m_ObjectHideFlags: 0
