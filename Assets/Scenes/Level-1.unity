@@ -543,8 +543,8 @@ Transform:
   m_GameObject: {fileID: 855961383}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.43, y: 0.0057055, z: -1}
-  m_LocalScale: {x: 0.5052903, y: 0.53331, z: 0.53331}
+  m_LocalPosition: {x: -7.43, y: 0.0068159, z: -1}
+  m_LocalScale: {x: 0.61963755, y: 0.6539981, z: 0.6539981}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -599,7 +599,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.0092020035}
+  m_Offset: {x: 0.5240743, y: -0.27693367}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -610,7 +610,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 2.4386144}
+  m_Size: {x: 2.5481482, y: 1.9767675}
   m_EdgeRadius: 0
 --- !u!1 &1047841589
 GameObject:
@@ -654,7 +654,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.21568629, g: 0.58431375, b: 0.43137258, a: 1}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -707,6 +707,7 @@ GameObject:
   - component: {fileID: 1068987844}
   - component: {fileID: 1068987847}
   - component: {fileID: 1068987848}
+  - component: {fileID: 1068987849}
   m_Layer: 0
   m_Name: Lever3
   m_TagString: Untagged
@@ -775,8 +776,8 @@ Transform:
   m_GameObject: {fileID: 1068987843}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.0484, y: -0.030663, z: -1}
-  m_LocalScale: {x: 0.5509207, y: 0.5509207, z: 0.5509207}
+  m_LocalPosition: {x: -4.0707, y: -0.026541, z: -1}
+  m_LocalScale: {x: 0.6405005, y: 0.6405005, z: 0.6405005}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -813,7 +814,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.2484566, y: -0.046010494}
+  m_Offset: {x: 0.5240743, y: -0.27693367}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -824,7 +825,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.9969132, y: 2.438614}
+  m_Size: {x: 2.5481482, y: 1.9767675}
   m_EdgeRadius: 0
 --- !u!114 &1068987848
 MonoBehaviour:
@@ -841,6 +842,51 @@ MonoBehaviour:
   Lever3: {fileID: 1068987845}
   Lampje1: {fileID: 258407539}
   Lampje2: {fileID: 1539324256}
+--- !u!61 &1068987849
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068987843}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.5, y: 1.5}
+    newSize: {x: 1.5, y: 1.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 1.5}
+  m_EdgeRadius: 0
 --- !u!1 &1230386474
 GameObject:
   m_ObjectHideFlags: 0
@@ -1513,7 +1559,6 @@ CanvasRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 427410772}
   - {fileID: 1230386480}
   - {fileID: 1432407728}
   - {fileID: 1325300322}
