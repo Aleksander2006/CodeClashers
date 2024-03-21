@@ -41,7 +41,6 @@ public class Lever : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.E)) { 
                 Debug.Log("Ingedrukt");
                 if(isLeverOn) {
-                    //Wanneer die uitstaat en aanmoet
                     Debug.Log("Lever 1 staat AAN");
                     
                     transform.localRotation = Quaternion.Euler(0, 180, 180);
@@ -54,21 +53,9 @@ public class Lever : MonoBehaviour
                 }
                 isLeverOn = !isLeverOn;
                 
-                if(!isLeverOn){
-                    Vector3 newPosition1 = new Vector3(Lampje1.position.x, Lampje1.position.y, zValue);
-                    Lampje1.position = newPosition1;
-                    
-                    Vector3 newPosition2 = new Vector3(Lampje2.position.x, Lampje2.position.y, zValue2);
-                    Lampje2.position = newPosition2;
-
-                } else {
-                    Vector3 newPosition1 = new Vector3(Lampje1.position.x, Lampje1.position.y, zValue2);
-                    Lampje1.position = newPosition1;
-                    
-                    Vector3 newPosition2 = new Vector3(Lampje2.position.x, Lampje2.position.y, zValue);
-                    Lampje2.position = newPosition2;       
+                     
                 }
             }
         }
     }   
-}
+
