@@ -22,14 +22,10 @@ public class Lever : MonoBehaviour
 
     private bool isLeverOn = false;
     private bool IsCharacterInside = false;
-
-    //Lampje uit-weg
-    //private GameObject lever;
     
 
     void Start(){
         Lever1.GetComponent<Transform>();
-        Lever2.GetComponent<Transform>();
     }
 
     void OnTriggerEnter2D(Collider2D other) {
@@ -56,17 +52,11 @@ public class Lever : MonoBehaviour
                     
                     transform.localRotation = Quaternion.Euler(0, 180, 180);
 
-                    //lever.SetActive(true);
                 } else {
                     Debug.Log("Lever 3-4 Hij staat Uit");
-                    //Vector3 newPosition1 = new Vector3(Lever1.position.x, Lever1.position.y, zValue2);
-                    //Lever1.position = newPosition1;
-//
-                    //Vector3 newPosition2 = new Vector3(Lever2.position.x, Lever2.position.y, zValue);
-                    //Lever2.position = newPosition2;
-//
+                   
                     transform.localRotation = Quaternion.Euler(0, 0, 0);
-                    //lever.SetActive(false);             
+                                
                 }
 
                 isLeverOn = !isLeverOn;
