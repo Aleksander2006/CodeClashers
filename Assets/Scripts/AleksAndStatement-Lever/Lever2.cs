@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lever2 : MonoBehaviour
-{
+public class Lever2 : MonoBehaviour {
     public Transform Lever3;
     public Transform Lampje1;
     public Transform Lampje2;
     public float zValue = 1f;
     public float zValue2 = -1f; 
-    private bool isLeverOn = false;
+    public bool isLeverOn2 = false;
     private bool IsCharacterInside = false;
     
     void Start(){
@@ -34,19 +33,19 @@ public class Lever2 : MonoBehaviour
         if (IsCharacterInside){
             if(Input.GetKeyDown(KeyCode.E)) { 
                 Debug.Log("Ingedrukt");
-                if(isLeverOn) {
+                if(isLeverOn2) {
                     //Wanneer die uitstaat en aanmoet
                     Debug.Log("Lever 3 Hij staat AAN");
 
-                    transform.localRotation = Quaternion.Euler(0, 180, 180);
+                    transform.localRotation = Quaternion.Euler(0, 0, 0);
                     
                 } else {
                     Debug.Log("Lever 3 Hij staat UIT");
 
-                    transform.localRotation = Quaternion.Euler(0, 0, 0);             
+                    transform.localRotation = Quaternion.Euler(0, 180, 180);             
                 }
-                isLeverOn = !isLeverOn;
-                if(!isLeverOn){
+                isLeverOn2 = !isLeverOn2;
+                if(!isLeverOn2){
                     Vector3 newPosition1 = new Vector3(Lampje1.position.x, Lampje1.position.y, zValue);
                     Lampje1.position = newPosition1;
                     
