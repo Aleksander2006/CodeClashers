@@ -203,7 +203,7 @@ Transform:
   m_GameObject: {fileID: 258407537}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.78, y: 3.6, z: -1}
+  m_LocalPosition: {x: -6.75, y: 3.48, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -221,8 +221,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f2b4ac7787fd20489610cf44e78ae4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Link: {fileID: 1068987843}
   Lever1: {fileID: 855961385}
+  Lever3: {fileID: 1068987845}
   Lampje1: {fileID: 258407539}
   Lampje2: {fileID: 1539324256}
   zValue: 1
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258407537}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cba491514b61273499efab8a65db29eb, type: 3}
   m_Name: 
@@ -581,8 +581,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f2b4ac7787fd20489610cf44e78ae4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Link: {fileID: 1068987843}
   Lever1: {fileID: 855961385}
+  Lever3: {fileID: 1068987845}
   Lampje1: {fileID: 258407539}
   Lampje2: {fileID: 1539324256}
   zValue: 1
@@ -773,6 +773,7 @@ GameObject:
   - component: {fileID: 1068987847}
   - component: {fileID: 1068987848}
   - component: {fileID: 1068987849}
+  - component: {fileID: 1068987850}
   m_Layer: 0
   m_Name: Lever3
   m_TagString: Untagged
@@ -899,7 +900,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1068987843}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cba491514b61273499efab8a65db29eb, type: 3}
   m_Name: 
@@ -955,6 +956,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1.5}
   m_EdgeRadius: 0
+--- !u!114 &1068987850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068987843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f2b4ac7787fd20489610cf44e78ae4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lever1: {fileID: 855961385}
+  Lever3: {fileID: 1068987845}
+  Lampje1: {fileID: 258407539}
+  Lampje2: {fileID: 1539324256}
+  zValue: 1
+  zValue2: -1
 --- !u!1 &1230386474
 GameObject:
   m_ObjectHideFlags: 0
@@ -1406,7 +1425,7 @@ Transform:
   m_GameObject: {fileID: 1539324254}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.775, y: 3.604, z: 2}
+  m_LocalPosition: {x: -6.75, y: 3.48, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1424,8 +1443,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f2b4ac7787fd20489610cf44e78ae4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Link: {fileID: 1068987843}
   Lever1: {fileID: 855961385}
+  Lever3: {fileID: 1068987845}
   Lampje1: {fileID: 258407539}
   Lampje2: {fileID: 1539324256}
   zValue: 1
@@ -1437,7 +1456,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1539324254}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cba491514b61273499efab8a65db29eb, type: 3}
   m_Name: 
