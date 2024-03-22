@@ -10,15 +10,18 @@ public class Lever : MonoBehaviour
 {
     public Transform Lever1;
     public Transform Lever3;
-    public Transform Lampje1;
-    public Transform Lampje2;
+
+    public GameObject lever1;
+    public GameObject lever3;
+
+    public GameObject Lampje1;
+    public GameObject Lampje2;
+
     public float zValue = 1f;
     public float zValue2 = -1f; 
     private bool isLeverOn = false;
     private bool isLeverOn2 = false;
     private bool IsCharacterInside = false;
-
-    //public ScriptReference script;
     
     void Start(){
         Lever1.GetComponent<Transform>();
@@ -40,65 +43,41 @@ public class Lever : MonoBehaviour
             
     void Update() {
         if (IsCharacterInside){
-            if(Input.GetKeyDown(KeyCode.E)) { 
+            if(Input.GetKeyDown(KeyCode.E)) { // gebruik de toets 'E' voor lever1
                 Debug.Log("Ingedrukt");
                 if(isLeverOn) {
                     Debug.Log("Lever 1 staat AAN");
-                    transform.localRotation = Quaternion.Euler(0, 180, 180);
-
+                    lever1.transform.localRotation = Quaternion.Euler(0, 180, 180);
                 } else {
                     Debug.Log("Lever 1 staat UIT");
-                    transform.localRotation = Quaternion.Euler(0, 0, 0);   
+                    lever1.transform.localRotation = Quaternion.Euler(0, 0, 0);   
                 }
-
                 isLeverOn = !isLeverOn;
-
-                if(isLeverOn2) {
-                    Debug.Log("Lever 3 staat AAN");
-                    transform.localRotation = Quaternion.Euler(0, 180, 180);
-                    
-
-                } else {
-                    Debug.Log("Lever 3 staat UIT");
-                    transform.localRotation = Quaternion.Euler(0, 0, 0);             
-                }
-                
-                isLeverOn2 = !isLeverOn2;
-                
-                //beide levers moeten aanstaan om het lampje te laten branden
-                if(!isLeverOn && !isLeverOn2){
-                    Vector3 newPosition1 = new Vector3(Lampje1.position.x, Lampje1.position.y, zValue);
-                    Lampje1.position = newPosition1;
-                    
-                    Vector3 newPosition2 = new Vector3(Lampje2.position.x, Lampje2.position.y, zValue2);
-                    Lampje2.position = newPosition2;
-                    } 
-
-                    else {
-                    Vector3 newPosition3 = new Vector3(Lampje1.position.x, Lampje1.position.y, zValue2);
-                    Lampje1.position = newPosition3;
-                    
-                    Vector3 newPosition4 = new Vector3(Lampje2.position.x, Lampje2.position.y, zValue);
-                    Lampje2.position = newPosition4;       
-                }
-
-                if(isLeverOn = false || !isLeverOn2){
-                    Vector3 newPosition1 = new Vector3(Lampje1.position.x, Lampje1.position.y, zValue2);
-                    Lampje1.position = newPosition1;
-                    
-                    Vector3 newPosition2 = new Vector3(Lampje2.position.x, Lampje2.position.y, zValue);
-                    Lampje2.position = newPosition2;
-                } 
-
-                //else {
-                //Vector3 newPosition3 = new Vector3(Lampje1.position.x, Lampje1.position.y, zValue2);
-                //Lampje1.position = newPosition3;
-                //
-                //Vector3 newPosition4 = new Vector3(Lampje2.position.x, Lampje2.position.y, zValue);
-                //Lampje2.position = newPosition4;       
-                //}  
             }
+
+            if(Input.GetKeyDown(KeyCode.F)) { // gebruik de toets 'F' voor lever3
+                if(isLeverOn2) {
+                    Debug.Log("Lever 2 staat AAN");
+                    lever3.transform.localRotation = Quaternion.Euler(0, 180, 180);
+                } else {
+                    Debug.Log("Lever 2 staat UIT");
+                    lever3.transform.localRotation = Quaternion.Euler(0, 0, 0);             
+                }
+                isLeverOn2 = !isLeverOn2;
+            }
+            
+            //beide levers moeten aanstaan om het lampje te laten branden
+            if(!isLeverOn && !isLeverOn2){
+                //Grijs lampje gaat weg,
+                Lampje1.SetActive(false);
+                Debug.Log("Lamp AAN");
+
+            } else { 
+                //Grijs lampje blijf
+                Lampje1.SetActive(true);
+                Debug.Log("Lamp UIT");      
+            }  
         }
     }
-}   
+}  
 

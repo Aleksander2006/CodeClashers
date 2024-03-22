@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 258407539}
   - component: {fileID: 258407538}
   - component: {fileID: 258407540}
-  - component: {fileID: 258407541}
   m_Layer: 0
   m_Name: Lampje1
   m_TagString: Untagged
@@ -203,7 +202,7 @@ Transform:
   m_GameObject: {fileID: 258407537}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.75, y: 3.48, z: -1}
+  m_LocalPosition: {x: -6.52, y: 3.47, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -223,30 +222,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Lever1: {fileID: 855961385}
   Lever3: {fileID: 1068987845}
-  Lampje1: {fileID: 258407539}
-  Lampje2: {fileID: 1539324256}
+  lever1: {fileID: 855961383}
+  lever3: {fileID: 1068987843}
+  Lampje1: {fileID: 258407537}
+  Lampje2: {fileID: 1539324254}
   zValue: 1
   zValue2: -1
---- !u!114 &258407541
-MonoBehaviour:
 --- !u!1 &419112743
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 258407537}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cba491514b61273499efab8a65db29eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Lever3: {fileID: 1068987845}
-  Lampje1: {fileID: 258407539}
-  Lampje2: {fileID: 1539324256}
-  zValue: 1
-  zValue2: -1
-  isLeverOn2: 1
   serializedVersion: 6
   m_Component:
   - component: {fileID: 419112744}
@@ -793,8 +780,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Lever1: {fileID: 855961385}
   Lever3: {fileID: 1068987845}
-  Lampje1: {fileID: 258407539}
-  Lampje2: {fileID: 1539324256}
+  lever1: {fileID: 855961383}
+  lever3: {fileID: 1068987843}
+  Lampje1: {fileID: 258407537}
+  Lampje2: {fileID: 1539324254}
   zValue: 1
   zValue2: -1
 --- !u!61 &855961387
@@ -1161,8 +1150,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Lever1: {fileID: 855961385}
   Lever3: {fileID: 1068987845}
-  Lampje1: {fileID: 258407539}
-  Lampje2: {fileID: 1539324256}
+  lever1: {fileID: 855961383}
+  lever3: {fileID: 1068987843}
+  Lampje1: {fileID: 258407537}
+  Lampje2: {fileID: 1539324254}
   zValue: 1
   zValue2: -1
 --- !u!1 &1230386474
@@ -1547,7 +1538,6 @@ GameObject:
   - component: {fileID: 1539324256}
   - component: {fileID: 1539324255}
   - component: {fileID: 1539324257}
-  - component: {fileID: 1539324258}
   m_Layer: 0
   m_Name: Lampje2
   m_TagString: Untagged
@@ -1616,7 +1606,7 @@ Transform:
   m_GameObject: {fileID: 1539324254}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.75, y: 3.48, z: -1}
+  m_LocalPosition: {x: -6.519, y: 3.473, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1636,28 +1626,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Lever1: {fileID: 855961385}
   Lever3: {fileID: 1068987845}
-  Lampje1: {fileID: 258407539}
-  Lampje2: {fileID: 1539324256}
+  lever1: {fileID: 855961383}
+  lever3: {fileID: 1068987843}
+  Lampje1: {fileID: 258407537}
+  Lampje2: {fileID: 1539324254}
   zValue: 1
   zValue2: -1
---- !u!114 &1539324258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1539324254}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cba491514b61273499efab8a65db29eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Lever3: {fileID: 1068987845}
-  Lampje1: {fileID: 258407539}
-  Lampje2: {fileID: 1539324256}
-  zValue: 1
-  zValue2: -1
-  isLeverOn2: 1
 --- !u!1 &1920229641
 GameObject:
   m_ObjectHideFlags: 0
@@ -2045,8 +2019,6 @@ SceneRoots:
   - {fileID: 258407539}
   - {fileID: 1539324256}
   - {fileID: 1920229643}
-  - {fileID: 427410772}
-  - {fileID: 1068987845}
   - {fileID: 427410772}
   - {fileID: 1965317733}
   - {fileID: 419112744}
