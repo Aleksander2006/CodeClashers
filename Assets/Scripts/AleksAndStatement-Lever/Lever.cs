@@ -18,7 +18,7 @@ public class Lever : MonoBehaviour
     private bool isLeverOn2 = false;
     private bool IsCharacterInside = false;
 
-    public ScriptReference script;
+    //public ScriptReference script;
     
     void Start(){
         Lever1.GetComponent<Transform>();
@@ -44,26 +44,22 @@ public class Lever : MonoBehaviour
                 Debug.Log("Ingedrukt");
                 if(isLeverOn) {
                     Debug.Log("Lever 1 staat AAN");
-                    
                     transform.localRotation = Quaternion.Euler(0, 180, 180);
 
                 } else {
                     Debug.Log("Lever 1 staat UIT");
-                   
-                    transform.localRotation = Quaternion.Euler(0, 0, 0);              
+                    transform.localRotation = Quaternion.Euler(0, 0, 0);   
                 }
 
                 isLeverOn = !isLeverOn;
 
-                Debug.Log("Ingedrukt");
                 if(isLeverOn2) {
                     Debug.Log("Lever 3 staat AAN");
-                    
                     transform.localRotation = Quaternion.Euler(0, 180, 180);
+                    
 
                 } else {
                     Debug.Log("Lever 3 staat UIT");
-                   
                     transform.localRotation = Quaternion.Euler(0, 0, 0);             
                 }
                 
@@ -84,14 +80,14 @@ public class Lever : MonoBehaviour
                     
                     Vector3 newPosition4 = new Vector3(Lampje2.position.x, Lampje2.position.y, zValue);
                     Lampje2.position = newPosition4;       
-                    }
+                }
 
                 if(isLeverOn = false || !isLeverOn2){
-                Vector3 newPosition1 = new Vector3(Lampje1.position.x, Lampje1.position.y, zValue2);
-                Lampje1.position = newPosition1;
-                
-                Vector3 newPosition2 = new Vector3(Lampje2.position.x, Lampje2.position.y, zValue);
-                Lampje2.position = newPosition2;
+                    Vector3 newPosition1 = new Vector3(Lampje1.position.x, Lampje1.position.y, zValue2);
+                    Lampje1.position = newPosition1;
+                    
+                    Vector3 newPosition2 = new Vector3(Lampje2.position.x, Lampje2.position.y, zValue);
+                    Lampje2.position = newPosition2;
                 } 
 
                 //else {
@@ -102,7 +98,7 @@ public class Lever : MonoBehaviour
                 //Lampje2.position = newPosition4;       
                 //}  
             }
-            }
         }
-    }   
+    }
+}   
 
