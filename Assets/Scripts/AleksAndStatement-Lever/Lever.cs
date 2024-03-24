@@ -19,8 +19,8 @@ public class Lever : MonoBehaviour
 
     public float zValue = 1f;
     public float zValue2 = -1f; 
-    private bool isLeverOn = false;
-    private bool isLeverOn2 = false;
+    private bool isLeverOn = true;
+    private bool isLeverOn2 = true;
     private bool IsCharacterInside = false;
     
     void Start(){
@@ -34,18 +34,18 @@ public class Lever : MonoBehaviour
         }
     }
 
-    void OnTriggerExit2D(Collider2D other) {
-        if(other.tag == "Character") {
-            Debug.Log("Outside");
-            IsCharacterInside = false;
-        }
-    }
+    //void OnTriggerExit2D(Collider2D other) {
+    //    if(other.tag == "Character") {
+    //        Debug.Log("Outside");
+    //        IsCharacterInside = false;
+    //    }
+    //}
             
     void Update() {
         if (IsCharacterInside){
             if(Input.GetKeyDown(KeyCode.E)) { // gebruik de toets 'E' voor lever1
                 Debug.Log("Ingedrukt");
-                if(isLeverOn) {
+                if(!isLeverOn) {
                     Debug.Log("Lever 1 staat AAN");
                     lever1.transform.localRotation = Quaternion.Euler(0, 180, 180);
                 } else {
@@ -56,7 +56,7 @@ public class Lever : MonoBehaviour
             }
 
             if(Input.GetKeyDown(KeyCode.F)) { // gebruik de toets 'F' voor lever3
-                if(isLeverOn2) {
+                if(!isLeverOn2) {
                     Debug.Log("Lever 2 staat AAN");
                     lever3.transform.localRotation = Quaternion.Euler(0, 180, 180);
                 } else {
