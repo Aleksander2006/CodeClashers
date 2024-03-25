@@ -1,31 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.IO.Compression;
-using Unity.VisualScripting;
-using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-public class Lever : MonoBehaviour
+public class Lever2 : MonoBehaviour
 {
-    public Transform Lever1;
-    
-    public Transform Lever2;
-
+    public Transform Lever3;
     public Transform Lampje1;
     public Transform Lampje2;
-
-    //Hendel weg- UIT
-    public float zValue = 1f;
-    //Hendel komt-AAN
-    public float zValue2 = -1f;
 
     private bool isLeverOn = false;
     private bool IsCharacterInside = false;
     
-
     void Start(){
-        Lever1.GetComponent<Transform>();
+        Lever3.GetComponent<Transform>();
     }
 
     void OnTriggerEnter2D(Collider2D other) {
@@ -49,14 +36,13 @@ public class Lever : MonoBehaviour
                 if(isLeverOn) {
                     //Wanneer die uitstaat en aanmoet
                     Debug.Log("Lever 3-4 Hij staat Aan");
-                    
-                    transform.localRotation = Quaternion.Euler(0, 180, 180);
 
+                    transform.localRotation = Quaternion.Euler(0, 180, 180);
+                    
                 } else {
                     Debug.Log("Lever 3-4 Hij staat Uit");
-                   
-                    transform.localRotation = Quaternion.Euler(0, 0, 0);
-                                
+
+                    transform.localRotation = Quaternion.Euler(0, 0, 0);             
                 }
 
                 isLeverOn = !isLeverOn;
