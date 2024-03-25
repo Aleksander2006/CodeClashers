@@ -220,14 +220,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f2b4ac7787fd20489610cf44e78ae4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorGameObject: {fileID: 1575638899}
   Lever1: {fileID: 855961385}
   Lever3: {fileID: 1068987845}
   lever1: {fileID: 855961383}
   lever3: {fileID: 1068987843}
   Lampje1: {fileID: 258407537}
   Lampje2: {fileID: 1539324254}
-  zValue: 1
-  zValue2: -1
 --- !u!1 &364845809
 GameObject:
   m_ObjectHideFlags: 0
@@ -862,14 +861,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f2b4ac7787fd20489610cf44e78ae4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorGameObject: {fileID: 1575638899}
   Lever1: {fileID: 855961385}
   Lever3: {fileID: 1068987845}
   lever1: {fileID: 855961383}
   lever3: {fileID: 1068987843}
   Lampje1: {fileID: 258407537}
   Lampje2: {fileID: 1539324254}
-  zValue: 1
-  zValue2: -1
 --- !u!61 &855961387
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1232,14 +1230,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f2b4ac7787fd20489610cf44e78ae4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorGameObject: {fileID: 1575638899}
   Lever1: {fileID: 855961385}
   Lever3: {fileID: 1068987845}
   lever1: {fileID: 855961383}
   lever3: {fileID: 1068987843}
   Lampje1: {fileID: 258407537}
   Lampje2: {fileID: 1539324254}
-  zValue: 1
-  zValue2: -1
 --- !u!1 &1230386474
 GameObject:
   m_ObjectHideFlags: 0
@@ -1741,14 +1738,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f2b4ac7787fd20489610cf44e78ae4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorGameObject: {fileID: 1575638899}
   Lever1: {fileID: 855961385}
   Lever3: {fileID: 1068987845}
   lever1: {fileID: 855961383}
   lever3: {fileID: 1068987843}
   Lampje1: {fileID: 258407537}
   Lampje2: {fileID: 1539324254}
-  zValue: 1
-  zValue2: -1
 --- !u!1 &1575638899
 GameObject:
   m_ObjectHideFlags: 0
