@@ -80,6 +80,9 @@ public class Lever : MonoBehaviour
                 Lampje1.SetActive(true);
                 Debug.Log("Lamp UIT");      
             }  
+        } else {
+            Debug.Log("Character is BUITEN");
+            IsCharacterInside = false;
         }
     }
 }  
