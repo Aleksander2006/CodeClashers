@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorTrigger : MonoBehaviour{
-
+public class DoorTrigger : MonoBehaviour {
     [SerializeField] private GameObject doorGameObject;
     private IDoor door;
     private float DoorTimer;
@@ -29,7 +28,6 @@ public class DoorTrigger : MonoBehaviour{
         if (collider.GetComponent<MovementScript>() != null)
         {
             door.OpenDoor();
-            
         }
     }
 

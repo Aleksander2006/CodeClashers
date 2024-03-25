@@ -3,7 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PressurePlateTrigger : MonoBehaviour{
-
+    [SerializeField] private GameObject doorGameObject;
+    private IDoor door;
+    private void Woke(){
+        door = doorGameObject.GetComponent<IDoor>();
+    }
+    
+    
     [SerializeField] private GameObject lampGameObject;
     private IPressurePlate lamp;
     private float timer;
@@ -29,7 +35,7 @@ public class PressurePlateTrigger : MonoBehaviour{
         if (collider.GetComponent<MovementScript>() != null)
         {
             lamp.OpenSignal();
-            
+            isLampOn1 = true;
         }
     }
 

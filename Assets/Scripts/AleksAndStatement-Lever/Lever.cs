@@ -8,6 +8,13 @@ using UnityEngine.UIElements;
 
 public class Lever : MonoBehaviour
 {
+    [SerializeField] private GameObject doorGameObject;
+    private IDoor door;
+    private void Woke(){
+        door = doorGameObject.GetComponent<IDoor>();
+    }
+    private bool isLampOn1 = false;
+    private bool isLampOn2 = false;
     public Transform Lever1;
     public Transform Lever3;
 
@@ -68,13 +75,28 @@ public class Lever : MonoBehaviour
                 //Grijs lampje gaat weg,
                 Lampje1.SetActive(false);
                 Debug.Log("Lamp AAN");
+                isLampOn1 = true;
 
             } else { 
                 //Grijs lampje blijf
                 Lampje1.SetActive(true);
-                Debug.Log("Lamp UIT");      
+                Debug.Log("Lamp UIT");
+                isLampOn1 = false;
             }  
         }
     }
-}  
 
+    public void SignalLamp1() {
+        isLampOn1 = !isLampOn1;
+        if (!isLampOn1) {
+            door.DoorSignal1();
+        } 
+    } 
+
+    public void SignalLamp2() {
+        isLampOn2 =!isLampOn2;
+        if (!isLampOn2) {
+            door.DoorSignal2();
+        }
+    }
+}

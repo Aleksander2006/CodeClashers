@@ -7,4 +7,7 @@ public interface IDoor
     void OpenDoor();
     void CloseDoor();
     void ToggleDoor();
+    void DoorSignal1();
+    void DoorSignal2();
+    
 }
