@@ -61,6 +61,32 @@ public class Lever : MonoBehaviour
 
                 isLeverOn = !isLeverOn;
             }
+
+            if(Input.GetKeyDown(KeyCode.F)) { // gebruik de toets 'F' voor lever3
+                if(!isLeverOn2) {
+                    Debug.Log("Lever 2 staat AAN");
+                    lever3.transform.localRotation = Quaternion.Euler(0, 180, 180);
+                } else {
+                    Debug.Log("Lever 2 staat UIT");
+                    lever3.transform.localRotation = Quaternion.Euler(0, 0, 0);             
+                }
+                isLeverOn2 = !isLeverOn2;
+            }
+            
+            //beide levers moeten aanstaan om het lampje te laten branden
+            if(!isLeverOn && !isLeverOn2){
+                //Grijs lampje gaat weg,
+                Lampje1.SetActive(false);
+                Debug.Log("Lamp AAN");
+
+            } else { 
+                //Grijs lampje blijf
+                Lampje1.SetActive(true);
+                Debug.Log("Lamp UIT");      
+            }  
+        } else {
+            Debug.Log("Character is BUITEN");
+            IsCharacterInside = false;
         }
     }   
 }
