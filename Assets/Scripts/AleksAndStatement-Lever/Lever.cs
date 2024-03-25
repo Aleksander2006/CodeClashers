@@ -32,8 +32,6 @@ public class Lever : MonoBehaviour
         if(other.tag == "Character") {
             Debug.Log("Inside");
             IsCharacterInside = true;
-        } else {
-            IsCharacterInside = false;
         }
     }
 
@@ -46,12 +44,14 @@ public class Lever : MonoBehaviour
             
     void Update() {
         if (IsCharacterInside){
-            Debug.Log("Character is binnnen");
-            if(Input.GetKeyDown(KeyCode.E)) { // gebruik de toets 'E' voor lever1
-                Debug.Log("Ingedrukt");
-                if(!isLeverOn) {
-                    Debug.Log("Lever 1 staat AAN");
-                    lever1.transform.localRotation = Quaternion.Euler(0, 180, 180);
+            if(Input.GetKeyDown(KeyCode.E)) { 
+                Debug.Log("INgedrukt");
+                if(isLeverOn) {
+                    //Wanneer die uitstaat en aanmoet
+                    Debug.Log("Lever 3-4 Hij staat Aan");
+                    
+                    transform.localRotation = Quaternion.Euler(0, 180, 180);
+
                 } else {
                     Debug.Log("Lever 3-4 Hij staat Uit");
                    
