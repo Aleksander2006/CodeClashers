@@ -20,7 +20,7 @@ public class Samen : MonoBehaviour
     void Update()
     {
         
-       if(Lucas && Aleks == true){
+        if(Lucas && Aleks == true){
         
         lampjeCheck.SetActive(false);
 
