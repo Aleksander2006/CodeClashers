@@ -16,9 +16,6 @@ public class Lever : MonoBehaviour
 
     public GameObject Lampje1;
     public GameObject Lampje2;
-
-    public float zValue = 1f;
-    public float zValue2 = -1f; 
     private bool isLeverOn = true;
     private bool isLeverOn2 = true;
     private bool IsCharacterInside = false;
