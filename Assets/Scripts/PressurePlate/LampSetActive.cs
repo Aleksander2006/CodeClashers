@@ -6,24 +6,21 @@ public class LampSetActive : MonoBehaviour, IPressurePlate {
 
     private bool isOpen = false;
 
-    public void OpenSignal(){
+    public void OpenSignal() {
         isOpen = true;
         gameObject.SetActive(false);
     }
 
-    public void CloseSignal(){
+    public void CloseSignal() {
         isOpen = false;
         gameObject.SetActive(true);
     }
 
-    public void ToggleSignal()
-    {
+    public void ToggleSignal() {
         isOpen = !isOpen;
-        if (isOpen)
-        {
+        if (isOpen){
             OpenSignal();
-        } else
-        {
+        } else{
             CloseSignal();
         }
     }

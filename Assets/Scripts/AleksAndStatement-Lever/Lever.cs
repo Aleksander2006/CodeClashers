@@ -7,11 +7,16 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 public class Lever : MonoBehaviour {  
+    
+    //Dit bestand linken met het interface "IDoor"
     [SerializeField] private GameObject doorGameObject;
     private IDoor door;
-    private void Awake(){
+
+    //IDoor in het gemaakte object zetten zodat het gelinkt is
+    private void Awake() {
         door = doorGameObject.GetComponent<IDoor>();
     }
+
     public Transform Lever1;
     public Transform Lever3;
     public GameObject lever1;
@@ -22,18 +27,21 @@ public class Lever : MonoBehaviour {
     private bool isLeverOn2 = true;
     private bool IsCharacterInside = false;
     
-    void Start(){
+    //Vallues van "Transform" pakken als de game start (startwaardes)
+    void Start() {
         Lever1.GetComponent<Transform>();
     }
     
+    //De trigger word getriggert door een collider met als tag "Character"
     void OnTriggerEnter2D(Collider2D other) {
-        if(other.tag == "Character") {
+        if(other.tag == "Character"){
             //Debug.Log("Inside");
             IsCharacterInside = true;
         }
     }
+
     void OnTriggerExit2D(Collider2D other) {
-        if(other.tag == "Character") {
+        if(other.tag == "Character"){
             //Debug.Log("Outside");
             IsCharacterInside = false;
         }
@@ -41,36 +49,36 @@ public class Lever : MonoBehaviour {
 
     void Update() {
         if (IsCharacterInside){
-            if(Input.GetKeyDown(KeyCode.E)) { // gebruik de toets 'E' voor lever1
-                //Debug.Log("Ingedrukt");
-                if(!isLeverOn) {
+            if(Input.GetKeyDown(KeyCode.E)){ // gebruik de toets 'E' voor lever1
+                if(!isLeverOn){
                     //Debug.Log("Lever 1 staat AAN");
                     lever1.transform.localRotation = Quaternion.Euler(0, 180, 180);
-                } else {
+                } else{
                     //Debug.Log("Lever 1 staat UIT");
                     lever1.transform.localRotation = Quaternion.Euler(0, 0, 0);   
                 }
                 isLeverOn = !isLeverOn;
             }
 
-            if(Input.GetKeyDown(KeyCode.F)) { // gebruik de toets 'F' voor lever3
-                if(!isLeverOn2) {
+            if(Input.GetKeyDown(KeyCode.F)){ // gebruik de toets 'F' voor lever3
+                if(!isLeverOn2){
                     //Debug.Log("Lever 2 staat AAN");
                     lever3.transform.localRotation = Quaternion.Euler(0, 180, 180);
-                } else {
+                } else{
                     //Debug.Log("Lever 2 staat UIT");
                     lever3.transform.localRotation = Quaternion.Euler(0, 0, 0);             
                 }
                 isLeverOn2 = !isLeverOn2;
             }
             
-            //beide levers moeten aanstaan om het lampje te laten branden
+            //check of beide levers om gehaald zijn, zo ja? lampje aan, zo nee? lampje uit
+            //Deze check geeft ook de status van de lever door aan de deur
             if(!isLeverOn && !isLeverOn2){
                 //Grijs lampje gaat weg,
                 door.DoorSignal1();
                 Lampje1.SetActive(false);
 
-            } else { 
+            } else{ 
                 //Grijs lampje blijf
                 Lampje1.SetActive(true);
                 //Debug.Log("Lamp UIT");

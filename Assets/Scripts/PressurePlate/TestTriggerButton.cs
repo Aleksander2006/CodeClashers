@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
-public class TestTriggerButton : MonoBehaviour{
+public class TestTriggerButton : MonoBehaviour {
 
     [SerializeField] private LampSetActive lamp;
 

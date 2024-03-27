@@ -8,43 +8,50 @@ public class DoorSetActive : MonoBehaviour, IDoor {
     private bool isDoorOpen = false;
     public bool isDoorOpen1 = false;
     public bool isDoorOpen2 = false;
-
     public bool isLampOn2 = false;
 
-    public void Update(){
+    public void Update() {
         DoorSignal3();
     }
-    public void OpenDoor(){
+
+    //Hide de closed door
+    public void OpenDoor() {
         isDoorOpen = true;
         gameObject.SetActive(false);
     }
 
-    public void CloseDoor(){
+    //Showd de closed door
+    public void CloseDoor() {
         isDoorOpen = false;
         gameObject.SetActive(true);
     }
 
-    public void DoorSignal1(){
+    //AND levers signaal voor de deur
+    public void DoorSignal1() {
         isDoorOpen1 = true;
         gameObject.SetActive(true);
     }
 
-    public void DoorSignal2(){
+    //PressurePlate signaal voor de deur
+    public void DoorSignal2() {
         isDoorOpen2 = true;
         gameObject.SetActive(true);
     }
 
-    public void DoorSignalClose1(){
+    //Reset de values van signalen van AND lampje
+    public void DoorSignalClose1() {
         isDoorOpen1 = false;
         isDoorOpen = false;
     }
 
-    public void DoorSignalClose2(){
+    //Reset de values van signalen van PressurePlate lampje
+    public void DoorSignalClose2() {
         isDoorOpen2 = false;
         isDoorOpen = false;
     }
 
-    public void DoorSignal3(){
+    //Checkt of de signalen van bijde lampjes aan zijn, opent dan de deur
+    public void DoorSignal3() {
         if(isDoorOpen1 && isDoorOpen2){
             if(!isDoorOpen){
                 OpenDoor();

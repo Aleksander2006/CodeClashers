@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Trigger : MonoBehaviour
-{
-  public Animator Crossfade;
-  public int sceneBuildIndex; 
+public class Trigger : MonoBehaviour {
 
-  private void OnTriggerEnter2D(Collider2D other) {
-      if(other.tag == "Character") {
-          StartCoroutine(FadeDelay());
-          Crossfade.SetTrigger("Go");
-      } 
-  }
+    public Animator Crossfade;
+    public int sceneBuildIndex; 
 
-  private IEnumerator FadeDelay() {
-      yield return new WaitForSeconds(1);
-      SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
-  }
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.tag == "Character"){
+            StartCoroutine(FadeDelay());
+            Crossfade.SetTrigger("Go");
+        } 
+    }
+
+    private IEnumerator FadeDelay() {
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
+    }
 }
