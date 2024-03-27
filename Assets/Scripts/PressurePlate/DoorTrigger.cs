@@ -27,8 +27,14 @@ public class DoorTrigger : MonoBehaviour {
     {
         if (collider.GetComponent<MovementScript>() != null)
         {
-            door.OpenDoor();
+            door.DoorSignal2();
+            
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collider) {
+        if (collider.GetComponent<MovementScript>() !=null)
+            door.DoorSignalClose2();
     }
 
     private void OnTriggerStay2D(Collider2D collider)

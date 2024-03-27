@@ -9,15 +9,13 @@ public class PressurePlateTrigger : MonoBehaviour{
         door = doorGameObject.GetComponent<IDoor>();
     }
     
-    
     [SerializeField] private GameObject lampGameObject;
     private IPressurePlate lamp;
     private float timer;
-
     private void Awake(){
         lamp = lampGameObject.GetComponent<IPressurePlate>();
     }
-
+    
     private void Update()
     {
         if (timer > 0)
@@ -26,6 +24,8 @@ public class PressurePlateTrigger : MonoBehaviour{
             if (timer <= 0f)
             {
                 lamp.CloseSignal();
+                door.DoorSignalClose2();
+                door.DoorSignal3();
             }
         }
     }
@@ -35,7 +35,6 @@ public class PressurePlateTrigger : MonoBehaviour{
         if (collider.GetComponent<MovementScript>() != null)
         {
             lamp.OpenSignal();
-            isLampOn1 = true;
         }
     }
 
