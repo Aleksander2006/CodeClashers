@@ -1775,6 +1775,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9392e22d9bcca4bb56a46317bc6c0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDoorOpen1: 0
+  isDoorOpen2: 0
+  isLampOn2: 0
 --- !u!212 &1575638901
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2182,6 +2185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60d7ae33f46487a4bb85abb54035ffa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorGameObject: {fileID: 1575638899}
   lampGameObject: {fileID: 549783304}
 --- !u!95 &1965317736
 Animator:
