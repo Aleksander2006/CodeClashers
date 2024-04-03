@@ -1,12 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.IO.Compression;
-using Unity.VisualScripting;
-using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-public class Lever : MonoBehaviour
+public class Backup : MonoBehaviour
 {
     public Transform Lever1;
     public Transform Lever3;
@@ -17,47 +13,36 @@ public class Lever : MonoBehaviour
     public GameObject Lampje1;
     public GameObject Lampje2;
 
+    public float zValue = 1f;
+    public float zValue2 = -1f; 
     private bool isLeverOn = true;
     private bool isLeverOn2 = true;
-    private bool IsCharacterInside1 = false;
-    private bool IsCharacterInside2 = false;
+    private bool IsCharacterInside = false;
     
     void Start(){
         Lever1.GetComponent<Transform>();
-        Lever3.GetComponent<Transform>();
-        
-        Lever1.GetComponent<BoxCollider2D>();
-        Lever3.GetComponent<BoxCollider2D>();
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if(other.gameObject == lever1 && other.tag == "Character") {
-
-        Debug.Log("Inside Lever 1");
-        IsCharacterInside1 = true;
-
-        } else if(other.gameObject == lever3 && other.tag == "Character") {
-
-            Debug.Log("Inside Lever 3");
-            IsCharacterInside2 = true;
-        } 
+    void OnTriggerEnter2D(Collider2D other) {
+        if(other.tag == "Character") {
+            Debug.Log("Inside");
+            IsCharacterInside = true;
+        } //else {
+           // IsCharacterInside = false;
+        //}
     }
 
-    private void OnTriggerExit2D(Collider2D other) {
-        if(other.gameObject == lever1 && other.tag == "Character") {
-
-            Debug.Log("Outside Lever 1");
-            IsCharacterInside1 = false;
-
-        } else if(other.gameObject == lever3 && other.tag == "Character") {
-
-            Debug.Log("Outside Lever 3");
-            IsCharacterInside2 = false;
-        } 
+    void OnTriggerExit2D(Collider2D other) {
+        if(other.tag == "Character") {
+            Debug.Log("Outside");
+            IsCharacterInside = false;
+        } //else {
+           // IsCharacterInside = false;
+        //}
     }
-          
-     void Update() {
-        if(!IsCharacterInside1){
+            
+    void Update() {
+        if (IsCharacterInside){
             Debug.Log("Character is binnnen");
             if(Input.GetKeyDown(KeyCode.E)) { // gebruik de toets 'E' voor lever1
                 Debug.Log("Ingedrukt");
@@ -70,10 +55,8 @@ public class Lever : MonoBehaviour
                 }
                 isLeverOn = !isLeverOn;
             }
-        }
-        
-        if (!IsCharacterInside2) {
-            if(Input.GetKeyDown(KeyCode.E)) { // gebruik de toets 'F' voor lever3
+
+            if(Input.GetKeyDown(KeyCode.F)) { // gebruik de toets 'F' voor lever3
                 if(!isLeverOn2) {
                     Debug.Log("Lever 2 staat AAN");
                     lever3.transform.localRotation = Quaternion.Euler(0, 180, 180);
@@ -83,7 +66,7 @@ public class Lever : MonoBehaviour
                 }
                 isLeverOn2 = !isLeverOn2;
             }
-        }
+            
             //beide levers moeten aanstaan om het lampje te laten branden
             if(!isLeverOn && !isLeverOn2){
                 //Grijs lampje gaat weg,
@@ -95,7 +78,7 @@ public class Lever : MonoBehaviour
                 Lampje1.SetActive(true);
                 Debug.Log("Lamp UIT");      
             }  
-         
+        }  
     }
 }  
 
