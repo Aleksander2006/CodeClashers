@@ -2,33 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LampAanUit : MonoBehaviour, ILever
+public class LampAanUit : MonoBehaviour 
 {
     public GameObject Lampje1;
-    
-    public Lever_1 lever1script;
-    public Lever_2 lever2script;
+    public Lever_1 lever1Script;
+    public Lever_2 lever2Script;
 
     void Start()
     {
-        //lever1script = GameObject.
+        lever1Script = GameObject.FindWithTag("Lever1").GetComponent<Lever_1>();
+        lever2Script = GameObject.FindWithTag("Lever3").GetComponent<Lever_2>();
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
       //beide levers moeten aanstaan om het lampje te laten branden
-        //if(!isLeverOn && !isLeverOn2){
-//
-        //    //Grijs lampje gaat weg,
-        //    Lampje1.SetActive(false);
-        //    Debug.Log("Lamp AAN");
-//
-        //} else {
-        //     
-        //    //Grijs lampje blijf
-        //    Lampje1.SetActive(true);
-        //    Debug.Log("Lamp UIT");      
-        //}  
+        if(lever1Script.isLeverOn == false && lever2Script.isLeverOn2 == false){
+
+            //Grijs lampje gaat weg,
+            Lampje1.SetActive(false);
+            Debug.Log("Lamp AAN");
+
+        } else {
+
+            //Grijs lampje blijf
+            Lampje1.SetActive(true);
+            Debug.Log("Lamp UIT");      
+        } 
     }
 }

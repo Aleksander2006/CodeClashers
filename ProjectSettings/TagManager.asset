@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Character
   - TV
+  - Lever3
+  - Lever1
   layers:
   - Default
   - TransparentFX

@@ -221,8 +221,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Lampje1: {fileID: 258407537}
-  lever1script: {fileID: 855961389}
-  lever2script: {fileID: 1068987851}
+  lever1Script: {fileID: 0}
+  lever2Script: {fileID: 0}
 --- !u!1 &419112743
 GameObject:
   m_ObjectHideFlags: 0
@@ -689,7 +689,7 @@ GameObject:
   - component: {fileID: 855961389}
   m_Layer: 0
   m_Name: Lever1
-  m_TagString: Untagged
+  m_TagString: Lever1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -964,7 +964,7 @@ GameObject:
   - component: {fileID: 1068987851}
   m_Layer: 0
   m_Name: Lever3
-  m_TagString: Untagged
+  m_TagString: Lever3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
