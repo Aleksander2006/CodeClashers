@@ -6,61 +6,84 @@ using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Lever : MonoBehaviour
-{
-    public Transform Lever1;
+public class Lever : MonoBehaviour {  
     
-    public Transform Lever2;
+    //Dit bestand linken met het interface "IDoor"
+    [SerializeField] private GameObject doorGameObject;
+    private IDoor door;
 
-    public Transform Lampje1;
-    public Transform Lampje2;
-
-    //Hendel weg- UIT
-    public float zValue = 1f;
-    //Hendel komt-AAN
-    public float zValue2 = -1f;
-
-    private bool isLeverOn = false;
-    private bool IsCharacterInside = false;
-    
-
-    void Start(){
-        Lever1.GetComponent<Transform>();
+    //IDoor in het gemaakte object zetten zodat het gelinkt is
+    private void Awake() {
+        door = doorGameObject.GetComponent<IDoor>();
     }
 
+    public Transform Lever1;
+    public Transform Lever3;
+    public GameObject lever1;
+    public GameObject lever3;
+    public GameObject Lampje1;
+    public GameObject Lampje2;
+    private bool isLeverOn = true;
+    private bool isLeverOn2 = true;
+    private bool IsCharacterInside = false;
+    
+    //Vallues van "Transform" pakken als de game start (startwaardes)
+    void Start() {
+        Lever1.GetComponent<Transform>();
+    }
+    
+    //De trigger word getriggert door een collider met als tag "Character"
     void OnTriggerEnter2D(Collider2D other) {
-        if(other.tag == "Character") {
-            Debug.Log("Inside");
+        if(other.tag == "Character"){
+            //Debug.Log("Inside");
             IsCharacterInside = true;
         }
     }
 
     void OnTriggerExit2D(Collider2D other) {
-        if(other.tag == "Character") {
-            Debug.Log("Outside");
+        if(other.tag == "Character"){
+            //Debug.Log("Outside");
             IsCharacterInside = false;
         }
     }
-            
+
     void Update() {
         if (IsCharacterInside){
-            if(Input.GetKeyDown(KeyCode.E)) { 
-                Debug.Log("INgedrukt");
-                if(isLeverOn) {
-                    //Wanneer die uitstaat en aanmoet
-                    Debug.Log("Lever 3-4 Hij staat Aan");
-                    
-                    transform.localRotation = Quaternion.Euler(0, 180, 180);
-
-                } else {
-                    Debug.Log("Lever 3-4 Hij staat Uit");
-                   
-                    transform.localRotation = Quaternion.Euler(0, 0, 0);
-                                
+            if(Input.GetKeyDown(KeyCode.E)){ // gebruik de toets 'E' voor lever1
+                if(!isLeverOn){
+                    //Debug.Log("Lever 1 staat AAN");
+                    lever1.transform.localRotation = Quaternion.Euler(0, 180, 180);
+                } else{
+                    //Debug.Log("Lever 1 staat UIT");
+                    lever1.transform.localRotation = Quaternion.Euler(0, 0, 0);   
                 }
-
                 isLeverOn = !isLeverOn;
             }
+
+            if(Input.GetKeyDown(KeyCode.F)){ // gebruik de toets 'F' voor lever3
+                if(!isLeverOn2){
+                    //Debug.Log("Lever 2 staat AAN");
+                    lever3.transform.localRotation = Quaternion.Euler(0, 180, 180);
+                } else{
+                    //Debug.Log("Lever 2 staat UIT");
+                    lever3.transform.localRotation = Quaternion.Euler(0, 0, 0);             
+                }
+                isLeverOn2 = !isLeverOn2;
+            }
+            
+            //check of beide levers om gehaald zijn, zo ja? lampje aan, zo nee? lampje uit
+            //Deze check geeft ook de status van de lever door aan de deur
+            if(!isLeverOn && !isLeverOn2){
+                //Grijs lampje gaat weg,
+                door.DoorSignal1();
+                Lampje1.SetActive(false);
+
+            } else{ 
+                //Grijs lampje blijf
+                Lampje1.SetActive(true);
+                //Debug.Log("Lamp UIT");
+                door.DoorSignalClose1();
+            }  
         }
     }   
 }

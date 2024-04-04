@@ -4,62 +4,50 @@ using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.UI;
 
-public class InteractionTV : MonoBehaviour
-{
+public class InteractionTV : MonoBehaviour {
+
     public GameObject notification;
     public Button closeButton;
-
     private bool inTriggerZone = false;
 
-    private void Start()
-    {
+    private void Start() {
         notification.SetActive(true);
         closeButton.onClick.AddListener(ClosePopup);
     }
 
-    private void Update()
-    {
+    private void Update() {
         // Controleer of de speler in de triggerzone is en de linker muisknop indrukt
-        if (inTriggerZone && Input.GetKeyDown(KeyCode.E))
-        {
-            if (notification.activeSelf)
-            {
+        if (inTriggerZone && Input.GetKeyDown(KeyCode.E)){
+            if (notification.activeSelf){
                 ClosePopup();
             }
-            else
-            {
+            else {
                 OpenPopup();
             }
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
+    private void OnTriggerEnter2D(Collider2D collision) {
         // Controleer of de speler de triggerzone betreedt
-        if (collision.CompareTag("Character"))
-        {
+        if (collision.CompareTag("Character")){
             inTriggerZone = true;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
+    private void OnTriggerExit2D(Collider2D collision) {
         // Controleer of de speler de triggerzone verlaat
-        if (collision.CompareTag("Character"))
-        {
+        if (collision.CompareTag("Character")){
             inTriggerZone = false;
             ClosePopup(); // Sluit de popup als de speler de triggerzone verlaat
         }
     }
 
-    private void OpenPopup()
-    {
+    private void OpenPopup() {
         notification.SetActive(true);
     }
-    private void ClosePopup()
-    {
-        if (notification != null) // Controleer of het GameObject geldig is voordat je het probeert te deactiveren
-        {
+    private void ClosePopup() {
+        // Controleer of het GameObject geldig is voordat je het probeert te deactiveren
+        if (notification != null){
             notification.SetActive(false);
         }
     }
