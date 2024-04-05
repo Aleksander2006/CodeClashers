@@ -21,9 +21,9 @@ public class LampAanUit : MonoBehaviour
 
     void Update()
     {
-          
-        Debug.Log("Lever 1 status: " + lever1Script.isLeverOn);
-        Debug.Log("Lever 2 status: " + lever2Script.isLeverOn2);
+        Debug.Log("Update method in LampAanUit script is running");  
+        //Debug.Log("Lever 1 status: " + lever1Script.isLeverOn);
+        //Debug.Log("Lever 2 status: " + lever2Script.isLeverOn2);
 
         //beide levers moeten aanstaan om het lampje te laten branden
         
@@ -33,6 +33,11 @@ public class LampAanUit : MonoBehaviour
             Lampje1.SetActive(false);
             Debug.Log("Lamp AAN");
 
-        }   
+        } else {
+            
+            //Grijs lampje gaat weg
+            Lampje1.SetActive(true);
+            Debug.Log("Lamp AAN");
+        }  
     }
 }

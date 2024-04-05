@@ -7,6 +7,7 @@ public class Lever_1 : MonoBehaviour
     public Transform Lever1;
     public GameObject lever1; 
     public bool isLeverOn = true;
+
     private bool IsCharacterInside = false;
     
     void Start(){
@@ -42,9 +43,6 @@ public class Lever_1 : MonoBehaviour
                     isLeverOn = true;   
                 }
                 isLeverOn = !isLeverOn;
-
-                // Update de status van het lampje direct
-                //GameObject.FindWithTag("Lever1").GetComponent<LampAanUit>().UpdateLampStatus();
             }  
         }  
     }
