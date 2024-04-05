@@ -31,6 +31,7 @@ public class Lever_2 : MonoBehaviour
         if (IsCharacterInside){
             //Debug.Log("Character is binnnen");
             if(Input.GetKeyDown(KeyCode.E)) { // gebruik de toets 'E' voor lever3
+                Debug.Log("E key pressed");
                 if(!isLeverOn2) {
                     Debug.Log("Lever 2 staat UIT");
                     lever3.transform.localRotation = Quaternion.Euler(0, 180, 180);
@@ -41,6 +42,8 @@ public class Lever_2 : MonoBehaviour
                     isLeverOn2 = true;             
                 }
                 isLeverOn2 = !isLeverOn2;
+                
+                //GameObject.FindWithTag("Lever").GetComponent<LampAanUit>().UpdateLampStatus();
             }  
         }  
     }

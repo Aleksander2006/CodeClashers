@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LampAanUit : MonoBehaviour 
+public class Lampje2 : MonoBehaviour
 {
     public GameObject Lampje1;
 
@@ -26,13 +26,11 @@ public class LampAanUit : MonoBehaviour
         Debug.Log("Lever 2 status: " + lever2Script.isLeverOn2);
 
         //beide levers moeten aanstaan om het lampje te laten branden
-        
-        if(lever1Script.isLeverOn == false && lever2Script.isLeverOn2 == false){
-
+        if (lever1Script.isLeverOn == true || lever2Script.isLeverOn2 == true)
+        {
             //Grijs lampje gaat weg
-            Lampje1.SetActive(false);
-            Debug.Log("Lamp AAN");
-
+            Lampje1.SetActive(true);
+            Debug.Log("Lamp UIT");  
         }   
     }
 }
