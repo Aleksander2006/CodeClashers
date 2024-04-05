@@ -221,8 +221,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Lampje1: {fileID: 258407537}
-  lever1Script: {fileID: 0}
-  lever2Script: {fileID: 0}
+  lever1Script: {fileID: 855961389}
+  lever2Script: {fileID: 1068987851}
 --- !u!1 &419112743
 GameObject:
   m_ObjectHideFlags: 0
