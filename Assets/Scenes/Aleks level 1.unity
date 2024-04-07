@@ -221,6 +221,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Lampje1: {fileID: 258407537}
+  Lever1: {fileID: 855961383}
+  Lever3: {fileID: 1068987843}
   lever1Script: {fileID: 855961389}
   lever2Script: {fileID: 1068987851}
 --- !u!1 &419112743
