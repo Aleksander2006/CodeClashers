@@ -217,16 +217,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 258407537}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f2b4ac7787fd20489610cf44e78ae4c, type: 3}
+  m_Script: {fileID: 11500000, guid: 479eb20fef544054d91d39781bbfec0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   doorGameObject: {fileID: 1575638899}
-  Lever1: {fileID: 855961385}
-  Lever3: {fileID: 1068987845}
-  lever1: {fileID: 855961383}
-  lever3: {fileID: 1068987843}
   Lampje1: {fileID: 258407537}
-  Lampje2: {fileID: 1539324254}
+  Lever1: {fileID: 855961383}
+  Lever3: {fileID: 1068987843}
+  lever1Script: {fileID: 855961386}
+  lever2Script: {fileID: 1068987850}
 --- !u!1 &364845809
 GameObject:
   m_ObjectHideFlags: 0
@@ -1101,16 +1100,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 855961383}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f2b4ac7787fd20489610cf44e78ae4c, type: 3}
+  m_Script: {fileID: 11500000, guid: 60304e12500dd554d8ec2134e3be1a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorGameObject: {fileID: 1575638899}
   Lever1: {fileID: 855961385}
-  Lever3: {fileID: 1068987845}
   lever1: {fileID: 855961383}
-  lever3: {fileID: 1068987843}
-  Lampje1: {fileID: 258407537}
-  Lampje2: {fileID: 1539324254}
+  isLeverOn: 1
 --- !u!61 &855961387
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1568,16 +1563,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1068987843}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f2b4ac7787fd20489610cf44e78ae4c, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c696af80d4b431439a46ac7e4f6ec6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorGameObject: {fileID: 1575638899}
-  Lever1: {fileID: 855961385}
   Lever3: {fileID: 1068987845}
-  lever1: {fileID: 855961383}
   lever3: {fileID: 1068987843}
-  Lampje1: {fileID: 258407537}
-  Lampje2: {fileID: 1539324254}
+  isLeverOn2: 1
 --- !u!114 &1068987851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2190,13 +2181,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f2b4ac7787fd20489610cf44e78ae4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorGameObject: {fileID: 1575638899}
-  Lever1: {fileID: 855961385}
-  Lever3: {fileID: 1068987845}
-  lever1: {fileID: 855961383}
-  lever3: {fileID: 1068987843}
-  Lampje1: {fileID: 258407537}
-  Lampje2: {fileID: 1539324254}
 --- !u!1 &1575638899
 GameObject:
   m_ObjectHideFlags: 0
@@ -2599,7 +2583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60d7ae33f46487a4bb85abb54035ffa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorGameObject: {fileID: 1575638899}
+  doorGameObject: {fileID: 0}
   lampGameObject: {fileID: 549783304}
 --- !u!95 &1965317736
 Animator:
