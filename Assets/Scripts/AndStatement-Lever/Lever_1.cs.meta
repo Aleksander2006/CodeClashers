@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 479eb20fef544054d91d39781bbfec0d
+<<<<<<<< HEAD:Assets/Scripts/AndStatement-Lever/Backup.cs.meta
+guid: ccc4554877f0273498e28b930c831bc9
+========
+guid: 60304e12500dd554d8ec2134e3be1a93
+>>>>>>>> Lucas:Assets/Lever_1.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
