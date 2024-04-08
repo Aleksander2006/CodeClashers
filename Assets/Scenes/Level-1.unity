@@ -217,14 +217,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 258407537}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 479eb20fef544054d91d39781bbfec0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 265661dd5ec35fc4fb2e87202053e85f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   doorGameObject: {fileID: 1575638899}
   Lampje1: {fileID: 258407537}
   Lever1: {fileID: 855961383}
   Lever3: {fileID: 1068987843}
-  lever1Script: {fileID: 855961386}
+  lever1Script: {fileID: 855961390}
   lever2Script: {fileID: 1068987850}
 --- !u!1 &364845809
 GameObject:
@@ -1016,9 +1016,10 @@ GameObject:
   - component: {fileID: 855961387}
   - component: {fileID: 855961388}
   - component: {fileID: 855961389}
+  - component: {fileID: 855961390}
   m_Layer: 0
   m_Name: Lever1
-  m_TagString: Lever1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1090,21 +1091,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 180}
---- !u!114 &855961386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 855961383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60304e12500dd554d8ec2134e3be1a93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Lever1: {fileID: 855961385}
-  lever1: {fileID: 855961383}
-  isLeverOn: 1
 --- !u!61 &855961387
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1208,6 +1194,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupGameObject: {fileID: 1422546705}
+--- !u!114 &855961390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855961383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccc4554877f0273498e28b930c831bc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lever1: {fileID: 855961385}
+  lever1: {fileID: 855961383}
+  isLeverOn: 1
 --- !u!1 &946981426
 GameObject:
   m_ObjectHideFlags: 0
@@ -1391,7 +1392,7 @@ GameObject:
   - component: {fileID: 1068987850}
   m_Layer: 0
   m_Name: Lever3
-  m_TagString: Lever3
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1495,7 +1496,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.52386427, y: 0.015343666}
+  m_Offset: {x: 0.5240743, y: -0.27693367}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1506,7 +1507,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.5485654, y: 2.348525}
+  m_Size: {x: 2.5481482, y: 1.9767675}
   m_EdgeRadius: 0
 --- !u!61 &1068987849
 BoxCollider2D:
@@ -1553,7 +1554,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1.5}
   m_EdgeRadius: 0
---- !u!114 &1068987851
+--- !u!114 &1068987850
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2093,6 +2094,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1539324256}
   - component: {fileID: 1539324255}
+  - component: {fileID: 1539324257}
   m_Layer: 0
   m_Name: Lampje2
   m_TagString: Untagged

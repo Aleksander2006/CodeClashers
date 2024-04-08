@@ -7,9 +7,8 @@ public class Lever_1 : MonoBehaviour
     public Transform Lever1;
     public GameObject lever1; 
     public bool isLeverOn = true;
-
     private bool IsCharacterInside = false;
-    
+
     void Start(){
         Lever1.GetComponent<Transform>();
     }
@@ -27,7 +26,7 @@ public class Lever_1 : MonoBehaviour
             IsCharacterInside = false;
         }
     }
-            
+
     void Update() {
         if (IsCharacterInside){
             //Debug.Log("Character is binnnen");
@@ -40,10 +39,13 @@ public class Lever_1 : MonoBehaviour
                 } else {
                     Debug.Log("Lever 1 staat AAN");
                     lever1.transform.localRotation = Quaternion.Euler(0, 0, 0);
-                    isLeverOn = true;   
+                    isLeverOn = true;
                 }
                 isLeverOn = !isLeverOn;
-            }  
-        }  
+
+                // Update de status van het lampje direct
+                //GameObject.FindWithTag("Lever1").GetComponent<LampAanUit>().UpdateLampStatus();
+            }
+        }
     }
 }
