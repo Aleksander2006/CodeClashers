@@ -11,9 +11,9 @@ public class LampAanUit : MonoBehaviour
     private void Awake() {
         door = doorGameObject.GetComponent<IDoor>();
     }
-    public GameObject Lampje1;
-    public GameObject Lever1;
-    public GameObject Lever3;
+    [SerializeField] private GameObject Lampje1;
+    [SerializeField] private GameObject Lever1;
+    [SerializeField] private GameObject Lever3;
 
     public Lever_1 lever1Script; //Script lever 1 waar ik de isLeverOn variabele uit wil halen
     public Lever_2 lever2Script; //Script lever 3 waar ik de isLeverOn2 variabele uit wil halen
