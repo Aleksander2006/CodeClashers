@@ -11,8 +11,6 @@ public class LampAanUit : MonoBehaviour
     private void Awake() {
         door = doorGameObject.GetComponent<IDoor>();
     }
-
-
     public GameObject Lampje1;
 
     public GameObject Lever1;
@@ -30,19 +28,19 @@ public class LampAanUit : MonoBehaviour
 
     void Update()
     {
-
         Debug.Log("Lever 1 status: " + lever1Script.isLeverOn);
         Debug.Log("Lever 2 status: " + lever2Script.isLeverOn2);
 
         //beide levers moeten aanstaan om het lampje te laten branden
-
         if(lever1Script.isLeverOn == false && lever2Script.isLeverOn2 == false){
 
             //Grijs lampje gaat weg
             Lampje1.SetActive(false);
             Debug.Log("Lamp AAN");
             door.DoorSignal1();
+
         } else {
+
             //Grijs lampje blijf
             Lampje1.SetActive(true);
             //Debug.Log("Lamp UIT");

@@ -4,32 +4,30 @@ using UnityEngine;
 
 public class Lever_2 : MonoBehaviour 
 {
-    public Transform Lever3;
     public GameObject lever3;
     public bool isLeverOn2 = true;
     private bool IsCharacterInside = false;
 
     void Start(){
-        Lever3.GetComponent<Transform>();
+        lever3.GetComponent<Transform>();
     }
 
     void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "Character") {
-            //Debug.Log("Inside");
+            Debug.Log("Inside");
             IsCharacterInside = true;
         }
     }
 
     void OnTriggerExit2D(Collider2D other) {
         if(other.tag == "Character") {
-            //Debug.Log("Outside");
+            Debug.Log("Outside");
             IsCharacterInside = false;
         }
     }
 
     void Update() {
         if (IsCharacterInside){
-            //Debug.Log("Character is binnnen");
             if(Input.GetKeyDown(KeyCode.E)) { // gebruik de toets 'E' voor lever3
                 Debug.Log("E key pressed");
                 if(!isLeverOn2) {
@@ -42,8 +40,6 @@ public class Lever_2 : MonoBehaviour
                     isLeverOn2 = true;
                 }
                 isLeverOn2 = !isLeverOn2;
-
-                //GameObject.FindWithTag("Lever").GetComponent<LampAanUit>().UpdateLampStatus();
             }
         }
     }

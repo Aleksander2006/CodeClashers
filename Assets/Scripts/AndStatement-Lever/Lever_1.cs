@@ -4,33 +4,31 @@ using UnityEngine;
 
 public class Lever_1 : MonoBehaviour
 {
-    public Transform Lever1;
     public GameObject lever1; 
     public bool isLeverOn = true;
     private bool IsCharacterInside = false;
 
     void Start(){
-        Lever1.GetComponent<Transform>();
+        lever1.GetComponent<Transform>();
     }
 
     void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "Character") {
-            //Debug.Log("Inside");
+            Debug.Log("Inside");
             IsCharacterInside = true;
         }
     }
 
     void OnTriggerExit2D(Collider2D other) {
         if(other.tag == "Character") {
-            //Debug.Log("Outside");
+            Debug.Log("Outside");
             IsCharacterInside = false;
         }
     }
 
     void Update() {
         if (IsCharacterInside){
-            //Debug.Log("Character is binnnen");
-            if(Input.GetKeyDown(KeyCode.E)) { // gebruik de toets 'E' voor lever1
+            if(Input.GetKeyDown(KeyCode.E)) { // Gebruik de toets 'E' voor lever1
                 Debug.Log("E key pressed");
                 if(!isLeverOn) {
                     Debug.Log("Lever 1 staat UIT");
@@ -42,9 +40,6 @@ public class Lever_1 : MonoBehaviour
                     isLeverOn = true;
                 }
                 isLeverOn = !isLeverOn;
-
-                // Update de status van het lampje direct
-                //GameObject.FindWithTag("Lever1").GetComponent<LampAanUit>().UpdateLampStatus();
             }
         }
     }
