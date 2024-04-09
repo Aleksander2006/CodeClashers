@@ -11,41 +11,39 @@ public class LampAanUit : MonoBehaviour
     private void Awake() {
         door = doorGameObject.GetComponent<IDoor>();
     }
-
-
     public GameObject Lampje1;
-
     public GameObject Lever1;
-
     public GameObject Lever3;
 
-    public Lever_1 lever1Script;
-    public Lever_2 lever2Script;
+    public Lever_1 lever1Script; //Script lever 1 waar ik de isLeverOn variabele uit wil halen
+    public Lever_2 lever2Script; //Script lever 3 waar ik de isLeverOn2 variabele uit wil halen
 
     void Start()
     {
-        lever1Script = Lever1.GetComponent<Lever_1>();
-        lever2Script = Lever3.GetComponent<Lever_2>();
+        lever1Script = Lever1.GetComponent<Lever_1>(); //Script lever 1 waar ik de isLeverOn variabele uit wil halen
+        lever2Script = Lever3.GetComponent<Lever_2>(); //Script lever 3 waar ik de isLeverOn2 variabele uit wil halen
     }
 
     void Update()
     {
-
         Debug.Log("Lever 1 status: " + lever1Script.isLeverOn);
         Debug.Log("Lever 2 status: " + lever2Script.isLeverOn2);
 
-        //beide levers moeten aanstaan om het lampje te laten branden
-
+        //Beide levers moeten aanstaan om het lampje te laten branden
         if(lever1Script.isLeverOn == false && lever2Script.isLeverOn2 == false){
 
             //Grijs lampje gaat weg
             Lampje1.SetActive(false);
+            
             Debug.Log("Lamp AAN");
             door.DoorSignal1();
+
         } else {
-            //Grijs lampje blijf
+
+            //Grijs lampje blijft
             Lampje1.SetActive(true);
-            //Debug.Log("Lamp UIT");
+
+            Debug.Log("Lamp UIT");
             door.DoorSignalClose1();
         }
     }
