@@ -1206,7 +1206,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccc4554877f0273498e28b930c831bc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Lever1: {fileID: 855961385}
   lever1: {fileID: 855961383}
   isLeverOn: 1
 --- !u!1 &946981426
@@ -1627,7 +1626,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c696af80d4b431439a46ac7e4f6ec6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Lever3: {fileID: 1068987845}
   lever3: {fileID: 1068987843}
   isLeverOn2: 1
 --- !u!114 &1068987851
@@ -2155,7 +2153,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1539324256}
   - component: {fileID: 1539324255}
-  - component: {fileID: 1539324257}
   m_Layer: 0
   m_Name: Lampje2
   m_TagString: Untagged
@@ -2230,18 +2227,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1539324257
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1539324254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f2b4ac7787fd20489610cf44e78ae4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1575638899
 GameObject:
   m_ObjectHideFlags: 0
