@@ -226,59 +226,6 @@ MonoBehaviour:
   Lever3: {fileID: 1068987843}
   lever1Script: {fileID: 855961390}
   lever2Script: {fileID: 1068987850}
---- !u!1 &329364684
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 329364686}
-  - component: {fileID: 329364685}
-  m_Layer: 0
-  m_Name: DeurAnimatie
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!95 &329364685
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 329364684}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f25d2e2c5014e47519409dd6534af718, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!4 &329364686
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 329364684}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.847868, y: 1.5460002, z: -0.02952785}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &419112743
 GameObject:
   m_ObjectHideFlags: 0
@@ -2220,6 +2167,7 @@ GameObject:
   - component: {fileID: 1575638901}
   - component: {fileID: 1575638900}
   - component: {fileID: 1575638903}
+  - component: {fileID: 1575638904}
   m_Layer: 0
   m_Name: TijdelijkeDoorClosed
   m_TagString: Untagged
@@ -2242,7 +2190,7 @@ MonoBehaviour:
   isDoorOpen1: 0
   isDoorOpen2: 0
   isLampOn2: 0
-  DoorOpen: {fileID: 329364685}
+  DoorOpen: {fileID: 1575638904}
 --- !u!212 &1575638901
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2355,6 +2303,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9242599, y: 6.2579274}
   m_EdgeRadius: 0
+--- !u!95 &1575638904
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575638899}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f25d2e2c5014e47519409dd6534af718, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1944142928
 GameObject:
   m_ObjectHideFlags: 0
@@ -2678,4 +2647,3 @@ SceneRoots:
   - {fileID: 1236250248}
   - {fileID: 711377602}
   - {fileID: 946981428}
-  - {fileID: 329364686}

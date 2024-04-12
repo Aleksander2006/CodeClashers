@@ -12,6 +12,10 @@ public class DoorSetActive : MonoBehaviour, IDoor
     public bool isLampOn2 = false;
     [SerializeField] private Animator DoorOpen;
 
+    public void Start() {
+        DoorOpen.SetBool("AnimPlayer", false);
+    }
+
     public void Update()
     {
         DoorSignal3();
@@ -21,14 +25,13 @@ public class DoorSetActive : MonoBehaviour, IDoor
     public void OpenDoor()
     {
         isDoorOpen = true;
-        DoorOpen.SetBool("AnimPlayer", true);
     }
 
     //Showd de closed door
     public void CloseDoor()
     {
         isDoorOpen = false;
-        gameObject.SetActive(true);
+        DoorOpen.SetBool("AnimPlayer", false);
     }
 
     //AND levers signaal voor de deur
@@ -67,6 +70,7 @@ public class DoorSetActive : MonoBehaviour, IDoor
             if (!isDoorOpen)
             {
                 OpenDoor();
+                DoorOpen.SetBool("AnimPlayer", true);
             }
         }
     }
