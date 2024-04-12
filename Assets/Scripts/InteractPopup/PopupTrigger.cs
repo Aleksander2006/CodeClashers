@@ -6,7 +6,7 @@ public class PopupTrigger : MonoBehaviour {
     [SerializeField] private GameObject popupGameObject;
     private IPopup popup;
 
-    //IDoor in het gemaakte object zetten zodat het gelinkt is
+    //Ipopup in het gemaakte object zetten zodat het gelinkt is
     private void Awake() {
         popup = popupGameObject.GetComponent<IPopup>();
     }
