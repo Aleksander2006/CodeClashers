@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Trigger : MonoBehaviour {
+public class TransitionTrigger : MonoBehaviour {
 
     public Animator Crossfade;
-    public int sceneBuildIndex; 
+    public int sceneBuildIndex;  
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "Character"){
