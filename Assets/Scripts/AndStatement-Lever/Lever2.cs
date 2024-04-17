@@ -28,7 +28,8 @@ public class lever2 : MonoBehaviour {
     void Update() {
         if (isCharacterInside == true) {
             if (Input.GetKeyDown(KeyCode.E)) {
-                lamp.toggleLamp();
+                lamp.leverOffSignal2();
+                lamp.toggleLever2();
             }
         }
     }

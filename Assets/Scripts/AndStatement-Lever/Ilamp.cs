@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public interface Ilamp {
-    void leverOnSignal();
-    void leverOffSignal();
-    void toggleLamp();
+    void leverOnSignal1();
+    void leverOnSignal2();
+    void leverOffSignal1();
+    void leverOffSignal2();
+    void toggleLever1();
+    void toggleLever2();
 }
