@@ -217,15 +217,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 258407537}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 265661dd5ec35fc4fb2e87202053e85f, type: 3}
+  m_Script: {fileID: 11500000, guid: f9420d0b2a9302348bbffda4618d304d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorGameObject: {fileID: 1575638899}
-  Lampje1: {fileID: 258407537}
-  Lever1: {fileID: 855961383}
-  Lever3: {fileID: 1068987843}
-  lever1Script: {fileID: 855961390}
-  lever2Script: {fileID: 1068987850}
 --- !u!1 &419112743
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,11 +1113,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 855961383}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccc4554877f0273498e28b930c831bc9, type: 3}
+  m_Script: {fileID: 11500000, guid: 35bddf641219bc148bdc9ff093ccce3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lever1: {fileID: 855961383}
-  isLeverOn: 1
+  lampOff: {fileID: 258407537}
 --- !u!1 &946981426
 GameObject:
   m_ObjectHideFlags: 0
@@ -1365,9 +1358,9 @@ GameObject:
   - component: {fileID: 1068987847}
   - component: {fileID: 1068987849}
   - component: {fileID: 1068987851}
-  - component: {fileID: 1068987850}
+  - component: {fileID: 1068987852}
   m_Layer: 0
-  m_Name: Lever3
+  m_Name: Lever2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1530,20 +1523,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.89888144, y: 1.0643845}
   m_EdgeRadius: 0
---- !u!114 &1068987850
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1068987843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c696af80d4b431439a46ac7e4f6ec6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lever3: {fileID: 1068987843}
-  isLeverOn2: 1
 --- !u!114 &1068987851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1557,6 +1536,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupGameObject: {fileID: 1407627904}
+--- !u!114 &1068987852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068987843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ed4074629d25a74e8537ab687f7643b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lampOff: {fileID: 258407537}
 --- !u!1 &1230386474
 GameObject:
   m_ObjectHideFlags: 0
