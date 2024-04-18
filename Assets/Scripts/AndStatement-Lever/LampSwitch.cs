@@ -43,20 +43,6 @@ public class LampSwitch : MonoBehaviour, Ilamp {
         gameObject.SetActive(true);
     }
 
-    public void toggleLever1() {
-        isLeverOn1 = !isLeverOn1;
-        if(!isLeverOn1) {
-            leverOnSignal1();  
-        }
-    }
-//in toggle moet nog de isleveron == false (leveroffsignal1&2) opgeroepen worden.
-    public void toggleLever2() {
-        isLeverOn2 = !isLeverOn2;
-        if(!isLeverOn2) {    
-            leverOnSignal2();
-        }
-    }
-//toggle moet opgesplitst worden in 1 en 2 om hem TRUE FALSE te maken als je hem nog een keer indrukt, en er moet in update een check zijn oplever on 1 en 2, die als enige de lamp aan kan zetten.
      public void Update() {
             if (isLeverOn1 == true && isLeverOn2 == true){
                 gameObject.SetActive(false);

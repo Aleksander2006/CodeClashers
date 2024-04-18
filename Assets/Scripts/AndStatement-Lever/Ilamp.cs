@@ -7,6 +7,4 @@ public interface Ilamp {
     void leverOnSignal2();
     void leverOffSignal1();
     void leverOffSignal2();
-    void toggleLever1();
-    void toggleLever2();
 }
