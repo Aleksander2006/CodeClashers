@@ -220,6 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9420d0b2a9302348bbffda4618d304d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorGameObject: {fileID: 1575638899}
 --- !u!1 &419112743
 GameObject:
   m_ObjectHideFlags: 0
@@ -2560,7 +2561,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60d7ae33f46487a4bb85abb54035ffa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorGameObject: {fileID: 0}
   lampGameObject: {fileID: 549783304}
 --- !u!95 &1965317736
 Animator:
