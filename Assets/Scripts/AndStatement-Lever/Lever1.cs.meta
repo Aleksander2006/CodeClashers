@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Scripts/AndStatement-Lever/LampAanUit.cs.meta
-guid: 265661dd5ec35fc4fb2e87202053e85f
-========
-guid: 479eb20fef544054d91d39781bbfec0d
->>>>>>>> Lucas:Assets/LampAanUit.cs.meta
+guid: 35bddf641219bc148bdc9ff093ccce3e
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
