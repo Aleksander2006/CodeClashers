@@ -7,8 +7,8 @@ public class lever2 : MonoBehaviour {
     [SerializeField] GameObject lampOff;    
     private Ilamp lamp;
 
+    private bool isKeyPressed = false;
 
-    
     private bool isCharacterInside = false;
 
     private void OnTriggerEnter2D(Collider2D collider) {
@@ -25,11 +25,18 @@ public class lever2 : MonoBehaviour {
     private void Awake() {
         lamp = lampOff.GetComponent<Ilamp>();
     }
+    
     void Update() {
         if (isCharacterInside == true) {
             if (Input.GetKeyDown(KeyCode.E)) {
-                lamp.leverOffSignal2();
-                lamp.toggleLever2();
+                isKeyPressed = !isKeyPressed;
+                if (isKeyPressed == true) {
+                    lamp.leverOnSignal2();
+                }
+
+                if (isKeyPressed == false) {
+                    lamp.leverOffSignal2();
+                } 
             }
         }
     }

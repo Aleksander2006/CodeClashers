@@ -7,7 +7,6 @@ public class LampSwitch : MonoBehaviour, Ilamp {
     private bool isLeverOn1 = false;
     private bool isLeverOn2 = false;
 
-
     public void leverOnSignal1() {
         if (isLeverOn1 == false) {
             isLeverOn1 = true;
@@ -28,14 +27,18 @@ public class LampSwitch : MonoBehaviour, Ilamp {
             isLeverOn1 = false;
             Debug.Log("Lever1 = FALSE");
         }
+        gameObject.SetActive(true);
     }
+
     public void leverOffSignal2() {
         
         if (isLeverOn2 == true) {
             isLeverOn2 = false;
             Debug.Log("Lever2 = FALSE");
         }
+        gameObject.SetActive(true);
     }
+
     public void toggleLever1() {
         isLeverOn1 = !isLeverOn1;
         if(!isLeverOn1) {
@@ -53,8 +56,11 @@ public class LampSwitch : MonoBehaviour, Ilamp {
      public void Update() {
             if (isLeverOn1 == true && isLeverOn2 == true){
                 gameObject.SetActive(false);
-            } else {
-                gameObject.SetActive(true);
+                Debug.Log("lamp AAN");
             }
-        }
+            if (isLeverOn1 == false || isLeverOn2 == false){
+                gameObject.SetActive(true);
+                Debug.Log("lamp UIT");
+            }
+        } 
     }
