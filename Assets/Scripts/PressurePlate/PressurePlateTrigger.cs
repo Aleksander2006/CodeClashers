@@ -3,16 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PressurePlateTrigger : MonoBehaviour {
-
-    //Dit bestand linken met het interface "IDoor"
-    [SerializeField] private GameObject doorGameObject;
-    private IDoor door;
-
-    //IDoor in het gemaakte object zetten zodat het gelinkt is
-    private void Woke() {
-        door = doorGameObject.GetComponent<IDoor>();
-    }
-    
     //Dit bestand linken met het interface "IPressureplate"
     [SerializeField] private GameObject lampGameObject;
     private IPressurePlate lamp;

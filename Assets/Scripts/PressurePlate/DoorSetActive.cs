@@ -39,6 +39,7 @@ public class DoorSetActive : MonoBehaviour, IDoor
     {
         isDoorOpen1 = true;
         gameObject.SetActive(true);
+        Debug.Log("door1 TRUE");
     }
 
     //PressurePlate signaal voor de deur
@@ -46,6 +47,7 @@ public class DoorSetActive : MonoBehaviour, IDoor
     {
         isDoorOpen2 = true;
         gameObject.SetActive(true);
+        Debug.Log("door2 TRUE");
     }
 
     //Reset de values van signalen van AND lampje
