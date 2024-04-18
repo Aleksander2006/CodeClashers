@@ -5,6 +5,7 @@ using UnityEngine;
 public class LampSwitch : MonoBehaviour, Ilamp {
 
     private bool isLeverOn1 = false;
+    
     private bool isLeverOn2 = false;
 
     public void leverOnSignal1() {

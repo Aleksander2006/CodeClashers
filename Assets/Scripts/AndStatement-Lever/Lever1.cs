@@ -4,7 +4,10 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class lever1 : MonoBehaviour {
-    [SerializeField] GameObject lampOff;    
+    [SerializeField] GameObject lampOff;
+
+    [SerializeField] GameObject lever1GameObject;
+
     private Ilamp lamp;
 
     private bool isKeyPressed = false;
@@ -31,6 +34,7 @@ public class lever1 : MonoBehaviour {
         if (isCharacterInside == true) {
             if (Input.GetKeyDown(KeyCode.E)) {
                 isKeyPressed = !isKeyPressed;
+                lever1GameObject.transform.Rotate(0, 180, 180);
                 if (isKeyPressed == true) {
                     lamp.leverOnSignal1();
                 }

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class lever2 : MonoBehaviour {
     [SerializeField] GameObject lampOff;    
+    [SerializeField] GameObject lever2GameObject;
     private Ilamp lamp;
 
     private bool isKeyPressed = false;
@@ -16,6 +17,7 @@ public class lever2 : MonoBehaviour {
                 isCharacterInside = true;
             }
     }
+
    private void OnTriggerExit2D(Collider2D collider) {
             if (collider.GetComponent<MovementScript>() != null) {
                 isCharacterInside = false;
@@ -25,11 +27,12 @@ public class lever2 : MonoBehaviour {
     private void Awake() {
         lamp = lampOff.GetComponent<Ilamp>();
     }
-    
+
     void Update() {
         if (isCharacterInside == true) {
             if (Input.GetKeyDown(KeyCode.E)) {
                 isKeyPressed = !isKeyPressed;
+                lever2GameObject.transform.Rotate(0, 180, 180);
                 if (isKeyPressed == true) {
                     lamp.leverOnSignal2();
                 }
