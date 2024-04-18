@@ -1117,6 +1117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lampOff: {fileID: 258407537}
+  lever1GameObject: {fileID: 855961383}
 --- !u!1 &946981426
 GameObject:
   m_ObjectHideFlags: 0
@@ -1549,6 +1550,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lampOff: {fileID: 258407537}
+  lever2GameObject: {fileID: 1068987843}
 --- !u!1 &1230386474
 GameObject:
   m_ObjectHideFlags: 0
