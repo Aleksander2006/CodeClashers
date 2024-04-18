@@ -7,10 +7,13 @@ public class lever2 : MonoBehaviour {
     [SerializeField] GameObject lampOff;    
     [SerializeField] GameObject lever2GameObject;
     private Ilamp lamp;
-
     private bool isKeyPressed = false;
 
     private bool isCharacterInside = false;
+
+    private void Awake() {
+            lamp = lampOff.GetComponent<Ilamp>();
+        }
 
     private void OnTriggerEnter2D(Collider2D collider) {
             if (collider.GetComponent<MovementScript>() != null) {
@@ -23,11 +26,7 @@ public class lever2 : MonoBehaviour {
                 isCharacterInside = false;
             }
     }
-
-    private void Awake() {
-        lamp = lampOff.GetComponent<Ilamp>();
-    }
-
+   
     void Update() {
         if (isCharacterInside == true) {
             if (Input.GetKeyDown(KeyCode.E)) {

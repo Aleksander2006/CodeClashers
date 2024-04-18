@@ -14,6 +14,10 @@ public class lever1 : MonoBehaviour {
     
     private bool isCharacterInside = false;
 
+    private void Awake() {
+            lamp = lampOff.GetComponent<Ilamp>();
+        }
+
     private void OnTriggerEnter2D(Collider2D collider) {
             if (collider.GetComponent<MovementScript>() != null) {
                 isCharacterInside = true;
@@ -24,10 +28,6 @@ public class lever1 : MonoBehaviour {
             if (collider.GetComponent<MovementScript>() != null) {
                 isCharacterInside = false;
             }
-    }
-
-    private void Awake() {
-        lamp = lampOff.GetComponent<Ilamp>();
     }
 
     void Update() {
@@ -46,3 +46,6 @@ public class lever1 : MonoBehaviour {
         }
     }
 }
+
+
+
