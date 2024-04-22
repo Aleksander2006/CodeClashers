@@ -1,54 +1,78 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Playables;
 using UnityEngine.UI;
 
-public class InteractionTV : MonoBehaviour {
-
-    public GameObject notification;
+public class InteractionTV : MonoBehaviour
+{
+    public GameObject[] notificationPanels;
     public Button closeButton;
     private bool inTriggerZone = false;
+    private int currentPanelIndex = 0;
 
-    private void Start() {
-        notification.SetActive(true);
+    private void Start()
+    {
+        ShowPopup(currentPanelIndex);
         closeButton.onClick.AddListener(ClosePopup);
     }
 
-    private void Update() {
-        // Controleer of de speler in de triggerzone is en de linker muisknop indrukt
-        if (inTriggerZone && Input.GetKeyDown(KeyCode.E)){
-            if (notification.activeSelf){
-                ClosePopup();
+    private void Update()
+    {
+        if (inTriggerZone && Input.GetKeyDown(KeyCode.E))
+        {
+            if (notificationPanels[currentPanelIndex].activeSelf)
+            {
+                if (currentPanelIndex < notificationPanels.Length - 1)
+                {
+                    currentPanelIndex++;
+                    ShowPopup(currentPanelIndex);
+                }
+                else
+                {
+                    ClosePopup();
+                }
             }
-            else {
-                OpenPopup();
+            else
+            {
+                ShowPopup(currentPanelIndex);
             }
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) {
-        // Controleer of de speler de triggerzone betreedt
-        if (collision.CompareTag("Character")){
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Character"))
+        {
             inTriggerZone = true;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision) {
-        // Controleer of de speler de triggerzone verlaat
-        if (collision.CompareTag("Character")){
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Character"))
+        {
             inTriggerZone = false;
-            ClosePopup(); // Sluit de popup als de speler de triggerzone verlaat
+            ClosePopup();
         }
     }
 
-    private void OpenPopup() {
-        notification.SetActive(true);
+    private void ShowPopup(int index)
+    {
+        foreach (GameObject panel in notificationPanels)
+        {
+            panel.SetActive(false);
+        }
+
+        notificationPanels[index].SetActive(true);
     }
-    private void ClosePopup() {
-        // Controleer of het GameObject geldig is voordat je het probeert te deactiveren
-        if (notification != null){
-            notification.SetActive(false);
+
+    private void ClosePopup()
+    {
+        currentPanelIndex = 0; // Reset currentPanelIndex naar nul
+        foreach (GameObject panel in notificationPanels)
+        {
+            panel.SetActive(false);
         }
     }
 }
+
