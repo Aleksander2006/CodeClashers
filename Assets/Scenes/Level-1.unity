@@ -1144,7 +1144,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 382697687}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a2288615d4bcc244ba3cd9770b460a6, type: 3}
+  m_Script: {fileID: 11500000, guid: 7dcc70c2737220f4284c1129e8f6c44c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &419112743
@@ -4505,11 +4505,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1244173200}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d25ea4e34f55bb741878703b8c37c380, type: 3}
+  m_Script: {fileID: 11500000, guid: fbe848c3e1412514bb58bd8bcf5ce0ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popups:
-  - {fileID: 382697687}
+  popupGameObject: {fileID: 382697687}
 --- !u!1 &1319579377
 GameObject:
   m_ObjectHideFlags: 0
