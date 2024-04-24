@@ -201,7 +201,7 @@ Transform:
   m_GameObject: {fileID: 3045782}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.15, y: 5.3, z: -1}
+  m_LocalPosition: {x: -4.15, y: 5.3, z: -0.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -561,6 +561,7 @@ GameObject:
   - component: {fileID: 258407539}
   - component: {fileID: 258407538}
   - component: {fileID: 258407540}
+  - component: {fileID: 258407541}
   m_Layer: 0
   m_Name: Lampje1
   m_TagString: Untagged
@@ -629,7 +630,7 @@ Transform:
   m_GameObject: {fileID: 258407537}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6, y: 5.3, z: -2}
+  m_LocalPosition: {x: -6, y: 5.3, z: -0.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -649,6 +650,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorGameObject: {fileID: 1575638899}
   ANDGateGameObject: {fileID: 1838034147}
+--- !u!70 &258407541
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258407537}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.14407969, y: 0.25934315}
+  m_Size: {x: 0.8153448, y: 0.8153448}
+  m_Direction: 0
 --- !u!1 &258628755
 GameObject:
   m_ObjectHideFlags: 0
@@ -1772,6 +1808,7 @@ GameObject:
   - component: {fileID: 549783305}
   - component: {fileID: 549783307}
   - component: {fileID: 549783306}
+  - component: {fileID: 549783308}
   m_Layer: 0
   m_Name: LampOff
   m_TagString: Untagged
@@ -1858,6 +1895,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!70 &549783308
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549783304}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.14407969, y: 0.25934315}
+  m_Size: {x: 0.8153448, y: 0.8153448}
+  m_Direction: 0
 --- !u!1 &627357135
 GameObject:
   m_ObjectHideFlags: 0
@@ -5358,7 +5430,7 @@ Transform:
   m_GameObject: {fileID: 1539324254}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6, y: 5.3, z: -1}
+  m_LocalPosition: {x: -6, y: 5.3, z: -0.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5962,6 +6034,7 @@ GameObject:
   - component: {fileID: 1812258128}
   - component: {fileID: 1812258127}
   - component: {fileID: 1812258129}
+  - component: {fileID: 1812258130}
   m_Layer: 0
   m_Name: Lampje4
   m_TagString: Untagged
@@ -6030,7 +6103,7 @@ Transform:
   m_GameObject: {fileID: 1812258125}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.15, y: 5.3, z: -2}
+  m_LocalPosition: {x: -4.15, y: 5.3, z: -0.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6051,6 +6124,41 @@ MonoBehaviour:
   Lampje4: {fileID: 1812258125}
   Lever4: {fileID: 1459545298}
   lever4Script: {fileID: 1459545305}
+--- !u!70 &1812258130
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812258125}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.14407969, y: 0.25934315}
+  m_Size: {x: 0.8153448, y: 0.8153448}
+  m_Direction: 0
 --- !u!1 &1838034147
 GameObject:
   m_ObjectHideFlags: 0
