@@ -201,7 +201,7 @@ Transform:
   m_GameObject: {fileID: 3045782}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.15, y: 5.3, z: -1}
+  m_LocalPosition: {x: -4.15, y: 5.3, z: -0.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -576,8 +576,8 @@ Transform:
   m_GameObject: {fileID: 238867126}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.80744, y: 1.65353, z: -0.3}
-  m_LocalScale: {x: 0.88832283, y: 4.6922708, z: 1}
+  m_LocalPosition: {x: 2.80744, y: 1.46, z: -0.3}
+  m_LocalScale: {x: 0.88832283, y: 4.13, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1838034149}
@@ -779,6 +779,7 @@ GameObject:
   - component: {fileID: 258407539}
   - component: {fileID: 258407538}
   - component: {fileID: 258407540}
+  - component: {fileID: 258407541}
   m_Layer: 0
   m_Name: Lampje1
   m_TagString: Untagged
@@ -847,7 +848,7 @@ Transform:
   m_GameObject: {fileID: 258407537}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6, y: 5.3, z: -2}
+  m_LocalPosition: {x: -6, y: 5.3, z: -0.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -867,6 +868,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorGameObject: {fileID: 1575638899}
   ANDGateGameObject: {fileID: 1838034147}
+--- !u!70 &258407541
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258407537}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.14407969, y: 0.25934315}
+  m_Size: {x: 0.8153448, y: 0.8153448}
+  m_Direction: 0
 --- !u!1 &258628755
 GameObject:
   m_ObjectHideFlags: 0
@@ -1990,6 +2026,7 @@ GameObject:
   - component: {fileID: 549783305}
   - component: {fileID: 549783307}
   - component: {fileID: 549783306}
+  - component: {fileID: 549783308}
   m_Layer: 0
   m_Name: LampOff
   m_TagString: Untagged
@@ -2076,6 +2113,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!70 &549783308
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549783304}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.14407969, y: 0.25934315}
+  m_Size: {x: 0.8153448, y: 0.8153448}
+  m_Direction: 0
 --- !u!1 &627357135
 GameObject:
   m_ObjectHideFlags: 0
@@ -3216,7 +3288,7 @@ Transform:
   m_GameObject: {fileID: 855961383}
   serializedVersion: 2
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: -8.211, y: 1.27, z: -1}
+  m_LocalPosition: {x: -8.211, y: 1.9100001, z: -1}
   m_LocalScale: {x: 1, y: 1.0554526, z: 1.0554526}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -4319,7 +4391,7 @@ Transform:
   m_GameObject: {fileID: 1068987843}
   serializedVersion: 2
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: -8.21, y: -1.44, z: -1}
+  m_LocalPosition: {x: -8.21, y: -0.79999995, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -5252,7 +5324,7 @@ Transform:
   m_GameObject: {fileID: 1407627904}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.7699995, y: -0.07000005, z: -1}
+  m_LocalPosition: {x: -7.7699995, y: 0.57, z: -1}
   m_LocalScale: {x: 5.4870014, y: 5.4870014, z: 5.4870014}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -5543,7 +5615,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 99bed42da8df2f8439387d4f45f60f94, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.15, y: 0.16}
@@ -5561,7 +5633,7 @@ Transform:
   m_GameObject: {fileID: 1459545298}
   serializedVersion: 2
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: -8.261001, y: 4.135, z: -1}
+  m_LocalPosition: {x: -0.502, y: 4.165, z: -1}
   m_LocalScale: {x: 1, y: 1.0554526, z: 1.0554526}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -5878,7 +5950,7 @@ Transform:
   m_GameObject: {fileID: 1539324254}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6, y: 5.3, z: -1}
+  m_LocalPosition: {x: -6, y: 5.3, z: -0.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6566,6 +6638,7 @@ GameObject:
   - component: {fileID: 1812258128}
   - component: {fileID: 1812258127}
   - component: {fileID: 1812258129}
+  - component: {fileID: 1812258130}
   m_Layer: 0
   m_Name: Lampje4
   m_TagString: Untagged
@@ -6634,7 +6707,7 @@ Transform:
   m_GameObject: {fileID: 1812258125}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.15, y: 5.3, z: -2}
+  m_LocalPosition: {x: -4.15, y: 5.3, z: -0.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6655,6 +6728,41 @@ MonoBehaviour:
   Lampje4: {fileID: 1812258125}
   Lever4: {fileID: 1459545298}
   lever4Script: {fileID: 1459545305}
+--- !u!70 &1812258130
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812258125}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.14407969, y: 0.25934315}
+  m_Size: {x: 0.8153448, y: 0.8153448}
+  m_Direction: 0
 --- !u!1 &1838034147
 GameObject:
   m_ObjectHideFlags: 0
@@ -6733,7 +6841,7 @@ Transform:
   m_GameObject: {fileID: 1838034147}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.98, y: -0.18, z: 0}
+  m_LocalPosition: {x: -9.98, y: 0.46000004, z: 0}
   m_LocalScale: {x: 1.4734324, y: 1.4556872, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6836,7 +6944,7 @@ Transform:
   m_GameObject: {fileID: 1874603098}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.8510003, y: 5.5200005, z: -1}
+  m_LocalPosition: {x: 0.344, y: 5.23, z: -1}
   m_LocalScale: {x: 5.4870014, y: 5.4870014, z: 5.4870014}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -8036,7 +8144,7 @@ Transform:
   m_GameObject: {fileID: 2133235378}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.73, y: 2.655, z: -1}
+  m_LocalPosition: {x: -7.73, y: 3.2949998, z: -1}
   m_LocalScale: {x: 5.4870014, y: 5.4870014, z: 5.4870014}
   m_ConstrainProportionsScale: 1
   m_Children: []
