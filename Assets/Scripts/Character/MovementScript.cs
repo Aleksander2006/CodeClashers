@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class MovementScript : MonoBehaviour {
     
     public float MoveSpeed = 5f;
     public Rigidbody2D RigidBodyLink;
     public Animator animator;
-    Vector2 movement; 
+    Vector2 movement;
 
     void Update() {
         //keyboard input 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+
+        movement = movement.normalized;
 
         //movement output
         animator.SetFloat("Horizontal", movement.x);
@@ -24,4 +27,4 @@ public class MovementScript : MonoBehaviour {
         //movement systeem
         RigidBodyLink.MovePosition(RigidBodyLink.position + movement * MoveSpeed * Time.fixedDeltaTime);
     }
-}    
+}
