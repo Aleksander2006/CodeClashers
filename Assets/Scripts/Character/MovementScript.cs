@@ -10,8 +10,10 @@ public class MovementScript : MonoBehaviour {
     public Animator animator;
     Vector2 movement;
 
+    public AudioSource audioSource;
+
     void Update() {
-        //keyboard input 
+        //keyboard input
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
@@ -21,6 +23,16 @@ public class MovementScript : MonoBehaviour {
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
+
+        if (movement.x > 0.01 || movement.y > 0.01 || movement.sqrMagnitude > 0.01) {
+        
+            if (!audioSource.isPlaying) {
+                audioSource.Play();
+            }
+        } 
+        else {
+            audioSource.Stop();
+        }
     }
 
     void FixedUpdate() {
