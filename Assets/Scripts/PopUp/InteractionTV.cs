@@ -1,19 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class InteractionTV : MonoBehaviour
 {
     public GameObject[] notificationPanels;
-    public Button closeButton;
     private bool inTriggerZone = false;
     private int currentPanelIndex = 0;
 
     private void Start()
     {
         ShowPopup(currentPanelIndex);
-        closeButton.onClick.AddListener(ClosePopup);
     }
 
     private void Update()
@@ -68,11 +65,10 @@ public class InteractionTV : MonoBehaviour
 
     private void ClosePopup()
     {
-        currentPanelIndex = 0; // Reset currentPanelIndex naar nul
+        currentPanelIndex = 0; // Reset currentPanelIndex to zero
         foreach (GameObject panel in notificationPanels)
         {
             panel.SetActive(false);
         }
     }
 }
-
