@@ -1264,7 +1264,7 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388602831}
-  m_CullTransparentMesh: 0
+  m_CullTransparentMesh: 1
 --- !u!1 &419112743
 GameObject:
   m_ObjectHideFlags: 0
@@ -5275,8 +5275,8 @@ Transform:
   m_GameObject: {fileID: 1244173200}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.19, y: 0.99, z: -1.0446744}
-  m_LocalScale: {x: 0.92, y: 3.87, z: 1}
+  m_LocalPosition: {x: 2.54, y: 1.03, z: -1.0446744}
+  m_LocalScale: {x: 3.59, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -5293,7 +5293,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbe848c3e1412514bb58bd8bcf5ce0ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popupGameObject: {fileID: 1592282756}
+  popupGameObjects:
+  - {fileID: 1592282756}
+  - {fileID: 36719623}
+  - {fileID: 2053521086}
+  - {fileID: 388602831}
 --- !u!1 &1319579377
 GameObject:
   m_ObjectHideFlags: 0
