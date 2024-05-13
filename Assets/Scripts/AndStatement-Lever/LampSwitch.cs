@@ -8,8 +8,6 @@ public class LampSwitch : MonoBehaviour, Ilamp
 
     [SerializeField] private GameObject ANDGateGameObject;
 
-    [SerializeField] private GameObject IFGateGameObject;
-
     private IDoor door;
     private void Awake()
     {
@@ -18,7 +16,6 @@ public class LampSwitch : MonoBehaviour, Ilamp
     void Start()
     {
         ANDGateGameObject.SetActive(false);
-        IFGateGameObject.SetActive(false);
     }
     private bool isLeverOn1 = false;
 
