@@ -1,48 +1,59 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class lever4 : MonoBehaviour{
-    [SerializeField] GameObject lampOff;
-    [SerializeField] GameObject lever4GameObject;
-    private Ilamp lamp;
-    private bool isKeyPressed = false;
+public class Lever_4 : MonoBehaviour
+{
+    public Transform Lever4;
+    public GameObject lever4;
+    public bool isLeverOn4 = false; // Start met de hendel uitgeschakeld
+    private bool IsCharacterInside = false;
 
-    private bool isCharacterInside = false;
-
-    private void Awake(){
-        lamp = lampOff.GetComponent<Ilamp>();
+    void Start()
+    {
+        Lever4.GetComponent<Transform>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collider)  {
-        if (collider.GetComponent<MovementScript>() != null) {
-            isCharacterInside = true;
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Character")
+        {
+            IsCharacterInside = true;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collider) {
-        if (collider.GetComponent<MovementScript>() != null) {
-            isCharacterInside = false;
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Character")
+        {
+            IsCharacterInside = false;
         }
     }
 
-    void Update() {
-        if (isCharacterInside == true) {
-            if (Input.GetKeyDown(KeyCode.E)) {
-                isKeyPressed = !isKeyPressed;
-                lever4GameObject.transform.Rotate(0, 180, 180);
-                if (isKeyPressed == true) {
-                    lamp.leverOnSignal4();
-                }
-
-                if (isKeyPressed == false) {
-                    lamp.leverOffSignal4();
-                }
+    void Update()
+    {
+        if (IsCharacterInside)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            { // Gebruik de toets 'E' voor lever4
+                isLeverOn4 = !isLeverOn4; // Wissel de status van de hendel
+                UpdateLeverRotation(); // Roep een functie aan om de rotatie van de hendel bij te werken
             }
         }
     }
+
+    void UpdateLeverRotation()
+    {
+        if (isLeverOn4)
+        {
+            lever4.transform.localRotation = Quaternion.Euler(0, 180, 180);
+            Debug.Log("Lever 4 staat AAN");
+        }
+        else
+        {
+            lever4.transform.localRotation = Quaternion.Euler(0, 0, 0);
+            Debug.Log("Lever 4 staat UIT");
+        }
+    }
 }
-
-
 

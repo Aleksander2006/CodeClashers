@@ -5,15 +5,14 @@ using UnityEngine;
 
 public class DoorSetActive : MonoBehaviour, IDoor
 {
+
     private bool isDoorOpen = false;
     public bool isDoorOpen1 = false;
     public bool isDoorOpen2 = false;
-    public bool isDoorOpen4 = false;
-  
+    public bool isLampOn2 = false;
     [SerializeField] private Animator DoorOpen;
 
-    public void Start()
-    {
+    public void Start() {
         DoorOpen.SetBool("AnimPlayer", false);
     }
 
@@ -28,7 +27,7 @@ public class DoorSetActive : MonoBehaviour, IDoor
         isDoorOpen = true;
     }
 
-    //Show de closed door
+    //Showd de closed door
     public void CloseDoor()
     {
         isDoorOpen = false;
@@ -39,7 +38,6 @@ public class DoorSetActive : MonoBehaviour, IDoor
     public void DoorSignal1()
     {
         isDoorOpen1 = true;
-        isDoorOpen = isDoorOpen1 && isDoorOpen2 && isDoorOpen4;
         gameObject.SetActive(true);
         Debug.Log("door1 TRUE");
     }
@@ -50,13 +48,6 @@ public class DoorSetActive : MonoBehaviour, IDoor
         isDoorOpen2 = true;
         gameObject.SetActive(true);
         Debug.Log("door2 TRUE");
-    }
-
-    public void DoorSignal4()
-    {
-        isDoorOpen4 = true;
-        gameObject.SetActive(true);
-        Debug.Log("door4 TRUE");
     }
 
     //Reset de values van signalen van AND lampje
@@ -72,16 +63,11 @@ public class DoorSetActive : MonoBehaviour, IDoor
         isDoorOpen2 = false;
         isDoorOpen = false;
     }
-    public void DoorSignalClose4()
-    {
-        isDoorOpen4 = false;
-        isDoorOpen = false;
-    }
 
-   //Checkt of de signalen van bijde lampjes aan zijn, opent dan de deur
+    //Checkt of de signalen van bijde lampjes aan zijn, opent dan de deur
     public void DoorSignal3()
     {
-        if (isDoorOpen1 && isDoorOpen2 && isDoorOpen4)
+        if (isDoorOpen1 && isDoorOpen2)
         {
             if (!isDoorOpen)
             {
@@ -90,6 +76,4 @@ public class DoorSetActive : MonoBehaviour, IDoor
             }
         }
     }
-
-    
 }
