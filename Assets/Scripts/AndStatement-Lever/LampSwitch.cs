@@ -8,6 +8,8 @@ public class LampSwitch : MonoBehaviour, Ilamp
 
     [SerializeField] private GameObject ANDGateGameObject;
 
+    [SerializeField] private GameObject IFGateGameObject;
+
     private IDoor door;
     private void Awake()
     {
@@ -16,10 +18,13 @@ public class LampSwitch : MonoBehaviour, Ilamp
     void Start()
     {
         ANDGateGameObject.SetActive(false);
+        IFGateGameObject.SetActive(false);
     }
     private bool isLeverOn1 = false;
 
     private bool isLeverOn2 = false;
+
+    private bool isLeverOn4 = false;
 
     public void leverOnSignal1()
     {
@@ -37,6 +42,23 @@ public class LampSwitch : MonoBehaviour, Ilamp
             isLeverOn2 = true;
             Debug.Log("Lever2 = TRUE");
         }
+    }
+
+    public void leverOnSignal4() {
+        if (isLeverOn4 == false)
+        {
+            isLeverOn4 = true;
+            Debug.Log("Lever2 = TRUE");
+        }
+    }
+
+    public void leverOffSignal4() {
+        if (isLeverOn4 == true)
+        {
+            isLeverOn4 = false;
+            Debug.Log("Lever1 = FALSE");
+        }
+        gameObject.SetActive(true);
     }
 
     public void leverOffSignal1()
