@@ -39898,6 +39898,8 @@ GameObject:
   - component: {fileID: 1583672690}
   - component: {fileID: 1583672689}
   - component: {fileID: 1583672691}
+  - component: {fileID: 1583672693}
+  - component: {fileID: 1583672692}
   m_Layer: 0
   m_Name: HeelErgTijdelijkHuis (3)
   m_TagString: Untagged
@@ -40038,6 +40040,55 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1583672692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583672687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25378eb06b6e8d34b9211820401205d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Crossfade: {fileID: 545038947}
+  sceneBuildIndex: 4
+--- !u!70 &1583672693
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583672687}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.2207325, y: -1.8980874}
+  m_Size: {x: 0.813798, y: 1.3237008}
+  m_Direction: 0
 --- !u!1 &1598224692
 GameObject:
   m_ObjectHideFlags: 0
