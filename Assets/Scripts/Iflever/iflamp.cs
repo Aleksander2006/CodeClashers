@@ -2,75 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class iflamp : MonoBehaviour, Ilamp
+public class Lampje4AanUit : MonoBehaviour
 {
-    [SerializeField] private GameObject doorGameObject;
+    public GameObject Lampje4;
+    public GameObject Lever4;
 
-    private IDoor door;
+    public Lever_4 lever4Script;
 
-    private void Awake()
+    void Start()
     {
-        door = doorGameObject.GetComponent<IDoor>();
+        lever4Script = Lever4.GetComponent<Lever_4>();
     }
 
-    private bool isLeverOn4 = false;
-
-    public IDoor Door { get => door; set => door = value; }
-
-    public void leverOnSignal4()
+    void Update()
     {
-        if (!isLeverOn4)
-        {
-            isLeverOn4 = true;
-            Debug.Log("Lever4 = TRUE");
-        }
-    }
+        Debug.Log("Lever 4 status: " + lever4Script.isLeverOn4);
 
-    public void leverOffSignal4()
-    {
-        if (isLeverOn4)
+        // Controleer alleen de status van Lever4
+        if (lever4Script.isLeverOn4)
         {
-            isLeverOn4 = false;
-            Debug.Log("Lever4 = FALSE");
-        }
-        gameObject.SetActive(true);
-    }
-
-    public void Update()
-    {
-        if (isLeverOn4)
-        {
-            gameObject.SetActive(false);
-            Door.DoorSignal4(); // Make sure IDoor has DoorSignal4 method
-            Debug.Log("lamp4 AAN");
+            Lampje4.SetActive(true); // Schakel Lampje4 in
         }
         else
         {
-            gameObject.SetActive(true);
-            Debug.Log("lamp4 UIT");
-            Door.DoorSignalClose1();
+            Lampje4.SetActive(false); // Schakel Lampje4 uit
         }
     }
-
-    public void leverOnSignal1()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void leverOnSignal2()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void leverOffSignal1()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void leverOffSignal2()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    // Implement other methods from Ilamp interface if needed
 }
