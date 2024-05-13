@@ -9,7 +9,7 @@ public class DoorSetActive : MonoBehaviour, IDoor
     private bool isDoorOpen = false;
     public bool isDoorOpen1 = false;
     public bool isDoorOpen2 = false;
-    public bool isLampOn2 = false;
+    public bool isDoorOpen3 = false;                                                    //!nieuw
     [SerializeField] private Animator DoorOpen;
 
     public void Start() {
@@ -50,6 +50,14 @@ public class DoorSetActive : MonoBehaviour, IDoor
         Debug.Log("door2 TRUE");
     }
 
+    public void DoorSignal4() {
+        isDoorOpen3 = true;
+    }
+
+    public void DoorSignalClose3() {
+        isDoorOpen3 = false;
+    }
+
     //Reset de values van signalen van AND lampje
     public void DoorSignalClose1()
     {
@@ -67,7 +75,7 @@ public class DoorSetActive : MonoBehaviour, IDoor
     //Checkt of de signalen van bijde lampjes aan zijn, opent dan de deur
     public void DoorSignal3()
     {
-        if (isDoorOpen1 && isDoorOpen2)
+        if (isDoorOpen1 && isDoorOpen2 && isDoorOpen3)
         {
             if (!isDoorOpen)
             {

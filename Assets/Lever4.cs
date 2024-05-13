@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-public class lever4 : MonoBehaviour {
-    // [SerializeField] GameObject lampOff;
-
+public class lever4 : MonoBehaviour{
     [SerializeField] GameObject lever4GameObject;
 
-    // private Ilamp lamp;
+    [SerializeField] GameObject lampje4;
+
+    [SerializeField] private GameObject doorGameObject;
+    private IDoor door;
+    private void Awake() {
+        door = doorGameObject.GetComponent<IDoor>();
+    }
 
     private bool isKeyPressed = false;
     
     private bool isCharacterInside = false;
-
-    // private void Awake() {
-    //         lamp = lampOff.GetComponent<Ilamp>();
-    //     }
 
     private void OnTriggerEnter2D(Collider2D collider) {
             if (collider.GetComponent<MovementScript>() != null) {
@@ -35,11 +35,13 @@ public class lever4 : MonoBehaviour {
                 isKeyPressed = !isKeyPressed;
                 lever4GameObject.transform.Rotate(0, 180, 180);
                 if (isKeyPressed == true) {
-                    Debug.Log("lever4 on");
+                    lampje4.gameObject.SetActive(false);
+                    door.DoorSignal4();
                 }
 
                 if (isKeyPressed == false) {
-                    Debug.Log("lever 4 off");
+                    lampje4.gameObject.SetActive(true);
+                    door.DoorSignalClose3();
                 } 
             }
         }

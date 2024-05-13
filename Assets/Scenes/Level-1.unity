@@ -734,6 +734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorGameObject: {fileID: 1575638899}
   ANDGateGameObject: {fileID: 1838034147}
+  IFGateGameObject: {fileID: 0}
 --- !u!70 &258407541
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -5478,7 +5479,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07141137, y: 0.0077558756}
+  m_Offset: {x: -0.066749096, y: 0.0077558756}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5489,7 +5490,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.89888144, y: 1.0643845}
+  m_Size: {x: 0.8895571, y: 1.0643845}
   m_EdgeRadius: 0
 --- !u!61 &1459545302
 BoxCollider2D:
@@ -5523,7 +5524,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.18035245, y: 0.012421012}
+  m_Offset: {x: 0.08037925, y: 0.025067449}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5534,7 +5535,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.4024091, y: 1.0048199}
+  m_Size: {x: 1.4159698, y: 1.1650503}
   m_EdgeRadius: 0
 --- !u!212 &1459545303
 SpriteRenderer:
@@ -5612,12 +5613,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1459545298}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88b226cc8f01f034eaab7cb2613e0b19, type: 3}
+  m_Script: {fileID: 11500000, guid: f359d277e9bfacf4e9afbd00c1f113ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Lever4: {fileID: 1459545304}
-  lever4: {fileID: 1459545298}
-  isLeverOn4: 1
+  lever4GameObject: {fileID: 1459545298}
+  lampje4: {fileID: 1812258125}
+  doorGameObject: {fileID: 1575638899}
 --- !u!1 &1513240453
 GameObject:
   m_ObjectHideFlags: 0
@@ -5895,7 +5896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDoorOpen1: 0
   isDoorOpen2: 0
-  isLampOn2: 0
+  isDoorOpen3: 0
   DoorOpen: {fileID: 1575638904}
 --- !u!212 &1575638901
 SpriteRenderer:
@@ -6467,7 +6468,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1812258128}
   - component: {fileID: 1812258127}
-  - component: {fileID: 1812258129}
   - component: {fileID: 1812258130}
   m_Layer: 0
   m_Name: Lampje4
@@ -6543,21 +6543,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1812258129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1812258125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc97497e2a471bb41b3505ff82fdd3f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Lampje4: {fileID: 1812258125}
-  Lever4: {fileID: 1459545298}
-  lever4Script: {fileID: 1459545305}
 --- !u!70 &1812258130
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

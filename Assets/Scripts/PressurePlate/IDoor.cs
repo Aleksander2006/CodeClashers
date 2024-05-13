@@ -15,7 +15,11 @@ public interface IDoor {
 
     void DoorSignal3();
 
+    void DoorSignal4();
+
     void DoorSignalClose1();
 
     void DoorSignalClose2();
+
+    void DoorSignalClose3();
 }
