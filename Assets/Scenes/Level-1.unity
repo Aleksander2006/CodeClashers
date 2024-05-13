@@ -5200,6 +5200,7 @@ GameObject:
   - component: {fileID: 1244173204}
   - component: {fileID: 1244173203}
   - component: {fileID: 1244173206}
+  - component: {fileID: 1244173207}
   m_Layer: 0
   m_Name: triggertutorialnadeur
   m_TagString: Untagged
@@ -5285,6 +5286,19 @@ MonoBehaviour:
   - {fileID: 2053521086}
   - {fileID: 388602831}
   Go: {fileID: 1592282756}
+--- !u!114 &1244173207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244173200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b914412c1ebd29e4ab86e40eff3f3576, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popupGameObject: {fileID: 2137668608}
 --- !u!1 &1319579377
 GameObject:
   m_ObjectHideFlags: 0

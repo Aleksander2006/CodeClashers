@@ -43,6 +43,7 @@ public class InteractionTV : MonoBehaviour
         if (collision.CompareTag("Character"))
         {
             inTriggerZone = true;
+            ShowPopup(0);
         }
     }
 
