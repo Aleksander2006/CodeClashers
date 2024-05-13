@@ -5,75 +5,66 @@ using UnityEngine;
 public class LampSwitch : MonoBehaviour, Ilamp
 {
     [SerializeField] private GameObject doorGameObject;
-
     [SerializeField] private GameObject ANDGateGameObject;
 
     private IDoor door;
+
+    private bool isLeverOn1 = false;
+    private bool isLeverOn2 = false;
+
     private void Awake()
     {
         door = doorGameObject.GetComponent<IDoor>();
     }
-    void Start()
+
+    private void Start()
     {
         ANDGateGameObject.SetActive(false);
     }
-    private bool isLeverOn1 = false;
-
-    private bool isLeverOn2 = false;
 
     public void leverOnSignal1()
     {
-        if (isLeverOn1 == false)
-        {
-            isLeverOn1 = true;
-            Debug.Log("Lever1 = TRUE");
-        }
+        isLeverOn1 = true;
+        Debug.Log("Lever1 = TRUE");
     }
 
     public void leverOnSignal2()
     {
-        if (isLeverOn2 == false)
-        {
-            isLeverOn2 = true;
-            Debug.Log("Lever2 = TRUE");
-        }
+        isLeverOn2 = true;
+        Debug.Log("Lever2 = TRUE");
     }
 
     public void leverOffSignal1()
     {
-        if (isLeverOn1 == true)
-        {
-            isLeverOn1 = false;
-            Debug.Log("Lever1 = FALSE");
-        }
-        gameObject.SetActive(true);
+        isLeverOn1 = false;
+        Debug.Log("Lever1 = FALSE");
     }
 
     public void leverOffSignal2()
     {
-        if (isLeverOn2 == true)
-        {
-            isLeverOn2 = false;
-            Debug.Log("Lever2 = FALSE");
-        }
-        gameObject.SetActive(true);
+        isLeverOn2 = false;
+        Debug.Log("Lever2 = FALSE");
     }
 
     public void Update()
     {
-        if (isLeverOn1 == true && isLeverOn2 == true)
+        if (isLeverOn1 && isLeverOn2)
         {
             gameObject.SetActive(false);
             ANDGateGameObject.SetActive(true);
-            door.DoorSignal1();
-            Debug.Log("lamp AAN");
+            door.DoorSignal1(); // Assuming DoorSignal1 corresponds to the combined signal of lever 1 and 2
+            Debug.Log("lamp1 AAN");
         }
-        if (isLeverOn1 == false || isLeverOn2 == false)
+        else
         {
             gameObject.SetActive(true);
             ANDGateGameObject.SetActive(false);
-            Debug.Log("lamp UIT");
+            Debug.Log("lamp1 UIT");
             door.DoorSignalClose1();
         }
     }
+
+    // Implement these methods to satisfy the Ilamp interface
+    public void leverOnSignal4() { }
+    public void leverOffSignal4() { }
 }
