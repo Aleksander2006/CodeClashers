@@ -5199,8 +5199,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1244173204}
   - component: {fileID: 1244173203}
-  - component: {fileID: 1244173201}
-  - component: {fileID: 1244173205}
+  - component: {fileID: 1244173206}
   m_Layer: 0
   m_Name: triggertutorialnadeur
   m_TagString: Untagged
@@ -5208,19 +5207,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1244173201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1244173200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b914412c1ebd29e4ab86e40eff3f3576, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  popupGameObject: {fileID: 2137668608}
 --- !u!61 &1244173203
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5281,7 +5267,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1244173205
+--- !u!114 &1244173206
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5290,14 +5276,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1244173200}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbe848c3e1412514bb58bd8bcf5ce0ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 20b9b342db49ed946b3a1c1569f967b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popupGameObjects:
+  notificationPanels:
   - {fileID: 1592282756}
   - {fileID: 36719623}
   - {fileID: 2053521086}
   - {fileID: 388602831}
+  Go: {fileID: 1592282756}
 --- !u!1 &1319579377
 GameObject:
   m_ObjectHideFlags: 0
@@ -5735,10 +5722,10 @@ RectTransform:
   - {fileID: 1174753816}
   - {fileID: 768926369}
   - {fileID: 1356330727}
-  - {fileID: 1592282759}
-  - {fileID: 36719624}
   - {fileID: 2053521087}
+  - {fileID: 36719624}
   - {fileID: 388602832}
+  - {fileID: 1592282759}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -7298,6 +7285,7 @@ MonoBehaviour:
   - {fileID: 1174753815}
   - {fileID: 768926368}
   - {fileID: 1356330726}
+  Go: {fileID: 1592282756}
 --- !u!1 &1944142928
 GameObject:
   m_ObjectHideFlags: 0

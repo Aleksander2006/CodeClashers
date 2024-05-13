@@ -8,9 +8,13 @@ public class InteractionTV : MonoBehaviour
     private bool inTriggerZone = false;
     private int currentPanelIndex = 0;
 
+    [SerializeField] GameObject Go;
+
     private void Start()
     {
         ShowPopup(currentPanelIndex);
+        Go.SetActive(false);
+        
     }
 
     private void Update()

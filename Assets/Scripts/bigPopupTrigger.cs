@@ -48,6 +48,11 @@ public class bigPopupTrigger : MonoBehaviour
         {
             // Geeft aan dat de speler zich in de trigger zone bevindt
             inTriggerZone = true;
+            // Toon alle pop-ups onmiddellijk
+            foreach (var popup in popupGameObjects)
+            {
+                popup.SetActive(true);
+            }
         }
     }
 
