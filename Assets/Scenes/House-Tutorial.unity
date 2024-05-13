@@ -2295,8 +2295,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20b9b342db49ed946b3a1c1569f967b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notificationPanels: []
-  closeButton: {fileID: 228085731}
+  notificationPanels:
+  - {fileID: 836436192}
+  - {fileID: 491399408}
+  Go: {fileID: 0}
 --- !u!61 &1921527746
 BoxCollider2D:
   m_ObjectHideFlags: 0

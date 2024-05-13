@@ -9,10 +9,13 @@ public class InteractionTV : MonoBehaviour
     private int currentPanelIndex = 0;
     [SerializeField] GameObject Go;
 
+    private bool firstPopup = false;
+
     private void Start()
     {
         ShowPopup(currentPanelIndex);
         Go.SetActive(false);
+        firstPopup = true;
     }
 
     private void Update()
@@ -43,7 +46,11 @@ public class InteractionTV : MonoBehaviour
         if (collision.CompareTag("Character"))
         {
             inTriggerZone = true;
+        }
+
+        if (firstPopup == true) {
             ShowPopup(0);
+            firstPopup = false;
         }
     }
 
