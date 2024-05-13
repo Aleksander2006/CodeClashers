@@ -40053,7 +40053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Crossfade: {fileID: 545038947}
-  sceneBuildIndex: 4
+  sceneBuildIndex: 3
 --- !u!70 &1583672693
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
