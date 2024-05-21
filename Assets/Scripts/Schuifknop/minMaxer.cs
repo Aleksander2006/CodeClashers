@@ -45,21 +45,13 @@ public class minMaxer : MonoBehaviour
 
     public void ScaleLayer (){
         if (status == true){
-            //StartCoroutine(FadeDelay());
-            FloatLayer();
+            StartCoroutine(FadeDelay());
+            IntLayer();
         }
     }
 
-    // private IEnumerator FadeDelay() {
-    //     yield return new WaitForSeconds(6);
-    // }
-
-    public void FloatLayer() {
-        floatWaterLayer.transform.localScale -= new Vector3(1, 1, 0) * speed;
-
-        if (floatWaterLayer.transform.localScale.x <= 0f && floatWaterLayer.transform.localScale.y <= 0f) {
-            floatWaterLayer.transform.localScale = Vector3.zero;
-        }
+    private IEnumerator FadeDelay() {
+        yield return new WaitForSeconds(6);
     }
 
     public void IntLayer() {
@@ -69,23 +61,6 @@ public class minMaxer : MonoBehaviour
             floatWaterLayer.transform.localScale = Vector3.zero;
         }
     }
-
-    public void BoolLayer (){
-         if (status == true){
-            floatWaterLayer.SetActive(false);    
-        }
-    }
-
-
-    // public void LoopFloatNumbers (){
-    //     for (float i = 0; i < endPoint; i++) {
-
-    //     transform.localScale = transform.localScale - new Vector3(0.1f, 0.1f, 0); 
-
-    //     }    
-    // }
-
-    
 
     //------------Schuifknop Functionaliteit-------------
 
