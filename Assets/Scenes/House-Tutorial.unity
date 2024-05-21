@@ -2426,7 +2426,7 @@ MonoBehaviour:
   notificationPanels:
   - {fileID: 836436192}
   - {fileID: 491399408}
-  Go: {fileID: 0}
+  Go: {fileID: 1077342638}
 --- !u!61 &1921527746
 BoxCollider2D:
   m_ObjectHideFlags: 0
