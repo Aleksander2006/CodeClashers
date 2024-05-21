@@ -23,6 +23,7 @@ public class minMaxer : MonoBehaviour
     public bool status = false;
 
     public float speed = 0;
+
     //public float endPoint = 10f;
 
     //[Range(1f, 0f)]
@@ -45,7 +46,7 @@ public class minMaxer : MonoBehaviour
     public void ScaleLayer (){
         if (status == true){
             //StartCoroutine(FadeDelay());
-            IntLayer();
+            FloatLayer();
         }
     }
 
@@ -54,7 +55,7 @@ public class minMaxer : MonoBehaviour
     // }
 
     public void FloatLayer() {
-        floatWaterLayer.transform.localScale -= new Vector3(0.1f, 0.1f, 0) * speed;
+        floatWaterLayer.transform.localScale -= new Vector3(1, 1, 0) * speed;
 
         if (floatWaterLayer.transform.localScale.x <= 0f && floatWaterLayer.transform.localScale.y <= 0f) {
             floatWaterLayer.transform.localScale = Vector3.zero;

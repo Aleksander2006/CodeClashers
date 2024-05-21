@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level-2.unity
     guid: 282ffdc4c41330947b4f588f0be2de91
+  - enabled: 1
+    path: Assets/Scenes/UitlegKamerLevel2.unity
+    guid: 743d35babe7c71d418c165ffb3f2b744
   m_configObjects: {}
