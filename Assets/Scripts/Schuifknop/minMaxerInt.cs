@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.Jobs;
 using UnityEngine.TextCore.Text;
 
-public class minMaxer : MonoBehaviour
+public class minMaxer : MonoBehaviour 
 {
     private bool movable = false;
     private bool colliding = false;
@@ -20,10 +20,38 @@ public class minMaxer : MonoBehaviour
     private float startPosY = 0;
     Vector2 movement;
 
+    public bool status = false;
+    public float speed = 0;
+
+    [SerializeField] GameObject floatWaterLayer;
+
     void Start() {
         startPosX = startPosX + gameObject.transform.position.x;
         startPosY = startPosY + gameObject.transform.position.y;
+
+        floatWaterLayer.GetComponent<Transform>();
     }
+
+    public void ScaleLayer (){
+        if (status == true){
+            //StartCoroutine(FadeDelay());
+            IntLayer();
+        }
+    }
+
+    // private IEnumerator FadeDelay() {
+    //     yield return new WaitForSeconds(6);
+    // }
+
+    public void IntLayer() {
+        floatWaterLayer.transform.localScale -= new Vector3(0.7f, 0.7f, 0) * speed;
+
+        if (floatWaterLayer.transform.localScale.x <= 0f && floatWaterLayer.transform.localScale.y <= 0f) {
+            floatWaterLayer.transform.localScale = Vector3.zero;
+        }
+    }
+
+    //------------Schuifknop Functionaliteit-------------
 
     public void posLimiter() {
         if(gameObject.transform.position.x > (startPosX + 0.715f) || transform.position.x < (startPosX - 0.715f)) {
@@ -42,7 +70,7 @@ public class minMaxer : MonoBehaviour
         if(gameObject.transform.position.x > (startPosX + 0.715f)) {
             if(colliding == false) {
                 gameObject.transform.position = new Vector3(startPosX + 0.71f, startPosY, -3.24f);
-            }
+            } status = true;
         }
     }
 
@@ -50,7 +78,7 @@ public class minMaxer : MonoBehaviour
         if(gameObject.transform.position.x < (startPosX - 0.715f)) {
             if(colliding == false) {
                 gameObject.transform.position = new Vector3(startPosX - 0.71f, startPosY, -3.24f);
-            }
+            } status = false;
         }
     }
 
@@ -66,15 +94,16 @@ public class minMaxer : MonoBehaviour
         colliding = false;
     }
 
-    void FixedUpdate() {
+    void FixedUpdate(){
+        ScaleLayer();
         posLimiter();
         posLimitRight();
         posLimitLeft();
-            if(colliding == true) {
-                RigidBodyLink.MovePosition(RigidBodyLink.position + movement * MoveSpeed * Time.fixedDeltaTime);
-                Debug.Log("Movable...");
-            } else {
-                Debug.Log("Not Movable...");
-            }
-        }  
-    }
+        if(colliding == true) {
+            RigidBodyLink.MovePosition(RigidBodyLink.position + movement * MoveSpeed * Time.fixedDeltaTime);
+            Debug.Log("Movable...");
+        } else {
+            Debug.Log("Not Movable...");
+        }
+    } 
+}
