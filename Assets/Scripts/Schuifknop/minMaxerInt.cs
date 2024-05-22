@@ -22,8 +22,6 @@ public class minMaxer : MonoBehaviour
     Vector2 movement;
 
     public bool status = false;
-    //public float speed = 0.012f;
-
     private int counter = 10;
     private float timer = 0;
     private float delay = 0.5f; // 0,5 seconde vertraging
@@ -57,45 +55,6 @@ public class minMaxer : MonoBehaviour
             }
         }
     }
-
-
-    
-
-    // private void IntLayer() { //Zorgt ervoor dat de WaterLayer kleiner wordt
-    //     floatWaterLayer.transform.localScale = transform.TransformVector(10, 10, 10) - new Vector3(1, 1, 0);
-    //     StartCoroutine(FadeDelay2());
-        
-    //     floatWaterLayer.transform.localScale = transform.TransformVector(9, 9, 9) - new Vector3(1, 1, 0);
-    //     StartCoroutine(FadeDelay2());
-        
-    //     floatWaterLayer.transform.localScale = transform.TransformVector(8, 8, 8) - new Vector3(1, 1, 0);
-    //     StartCoroutine(FadeDelay2());
-
-    //     floatWaterLayer.transform.localScale = transform.TransformVector(7, 7, 7) - new Vector3(1, 1, 0);
-    //     StartCoroutine(FadeDelay2());
-
-    //     floatWaterLayer.transform.localScale = transform.TransformVector(6, 6, 6) - new Vector3(1, 1, 0);
-    //     StartCoroutine(FadeDelay2());
-
-    //     floatWaterLayer.transform.localScale = transform.TransformVector(5, 5, 5) - new Vector3(1, 1, 0);
-    //     StartCoroutine(FadeDelay2());
-
-    //     floatWaterLayer.transform.localScale = transform.TransformVector(4, 4, 4) - new Vector3(1, 1, 0);
-    //     StartCoroutine(FadeDelay2());
-
-    //     floatWaterLayer.transform.localScale = transform.TransformVector(3, 3, 3) - new Vector3(1, 1, 0);
-    //     StartCoroutine(FadeDelay2());
-
-    //     floatWaterLayer.transform.localScale = transform.TransformVector(2, 2, 2) - new Vector3(1, 1, 0);
-    //     StartCoroutine(FadeDelay2());
-
-    //     floatWaterLayer.transform.localScale = transform.TransformVector(1, 1, 1) - new Vector3(1, 1, 0);
-    //     StartCoroutine(FadeDelay2());
-
-    //     // if (floatWaterLayer.transform.localScale.x <= 0 && floatWaterLayer.transform.localScale.y <= 0) {
-    //     //     floatWaterLayer.transform.localScale = Vector2.zero;
-    //     // }
-    // }
 
     //------------Schuifknop Functionaliteit-------------
 
