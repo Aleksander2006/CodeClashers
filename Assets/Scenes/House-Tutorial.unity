@@ -1021,7 +1021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a6cda6d0ea0d5c4ca165cee51730083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teleporter_0a: {fileID: 0}
+  teleporter_0a: {fileID: 1618288676}
   teleporter_1a: {fileID: 0}
   teleporter_1b: {fileID: 0}
   teleporter_1c: {fileID: 0}
@@ -1031,7 +1031,6 @@ MonoBehaviour:
   teleporter_3a: {fileID: 0}
   teleporter_3b: {fileID: 0}
   teleporter_4a: {fileID: 0}
-  teleporter_4b: {fileID: 0}
 --- !u!1 &1077342638
 GameObject:
   m_ObjectHideFlags: 0
@@ -2000,6 +1999,7 @@ GameObject:
   - component: {fileID: 1618288678}
   - component: {fileID: 1618288680}
   - component: {fileID: 1618288681}
+  - component: {fileID: 1618288682}
   m_Layer: 0
   m_Name: teleporter_0a
   m_TagString: Untagged
@@ -2081,6 +2081,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.284954, y: 0.69126403}
   m_EdgeRadius: 0
+--- !u!114 &1618288682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618288676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8cde76592b70946915257b004aa52d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theValue: '#'
 --- !u!1 &1730281847
 GameObject:
   m_ObjectHideFlags: 0

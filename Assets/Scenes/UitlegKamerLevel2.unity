@@ -189,6 +189,8 @@ EdgeCollider2D:
   - {x: 1.121391, y: 1.8896277}
   - {x: 1.1288595, y: 4.344909}
   - {x: 1.263463, y: 4.352546}
+  - {x: 1.2633393, y: 5.214024}
+  - {x: -1.690196, y: 5.2231154}
   - {x: -1.6944809, y: 4.3503504}
   - {x: -1.6811161, y: 1.8853803}
   - {x: -1.5389342, y: 1.8867004}
@@ -478,6 +480,7 @@ GameObject:
   - component: {fileID: 1354162677}
   - component: {fileID: 1354162676}
   - component: {fileID: 1354162675}
+  - component: {fileID: 1354162678}
   m_Layer: 0
   m_Name: teleporter_4a
   m_TagString: Untagged
@@ -517,7 +520,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00347507, y: 0.08534396}
+  m_Offset: {x: -0.00347507, y: 0.42488575}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -528,7 +531,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.1607506, y: 0.5384629}
+  m_Size: {x: 2.1607506, y: 0.6139164}
   m_EdgeRadius: 0
 --- !u!114 &1354162676
 MonoBehaviour:
@@ -559,6 +562,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1354162678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354162674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8cde76592b70946915257b004aa52d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theValue: '#'
 --- !u!1 &1712960535
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,6 +692,7 @@ GameObject:
   - component: {fileID: 1840222094}
   - component: {fileID: 1840222093}
   - component: {fileID: 1840222092}
+  - component: {fileID: 1840222099}
   m_Layer: 0
   m_Name: Main_Character
   m_TagString: Character
@@ -946,6 +963,28 @@ Transform:
   - {fileID: 855334642}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1840222099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840222091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a6cda6d0ea0d5c4ca165cee51730083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleporter_0a: {fileID: 0}
+  teleporter_1a: {fileID: 0}
+  teleporter_1b: {fileID: 0}
+  teleporter_1c: {fileID: 0}
+  teleporter_1d: {fileID: 0}
+  teleporter_2a: {fileID: 0}
+  teleporter_2b: {fileID: 0}
+  teleporter_3a: {fileID: 0}
+  teleporter_3b: {fileID: 0}
+  teleporter_4a: {fileID: 1354162674}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

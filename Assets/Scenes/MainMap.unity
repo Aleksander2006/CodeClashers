@@ -3656,6 +3656,7 @@ GameObject:
   - component: {fileID: 319958609}
   - component: {fileID: 319958608}
   - component: {fileID: 319958610}
+  - component: {fileID: 319958611}
   m_Layer: 0
   m_Name: teleporter_1b
   m_TagString: Untagged
@@ -3852,6 +3853,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &319958611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319958603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8cde76592b70946915257b004aa52d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theValue: '#'
 --- !u!1 &326752537
 GameObject:
   m_ObjectHideFlags: 0
@@ -25135,6 +25149,7 @@ GameObject:
   - component: {fileID: 533640548}
   - component: {fileID: 533640547}
   - component: {fileID: 533640550}
+  - component: {fileID: 533640551}
   m_Layer: 0
   m_Name: teleporter_1d
   m_TagString: Untagged
@@ -25275,6 +25290,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &533640551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533640546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8cde76592b70946915257b004aa52d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theValue: '#'
 --- !u!1 &545038944
 GameObject:
   m_ObjectHideFlags: 0
@@ -27570,6 +27598,7 @@ GameObject:
   - component: {fileID: 668391066}
   - component: {fileID: 668391071}
   - component: {fileID: 668391072}
+  - component: {fileID: 668391073}
   m_Layer: 0
   m_Name: Main_Character
   m_TagString: Character
@@ -27716,7 +27745,7 @@ Transform:
   m_GameObject: {fileID: 668391065}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.8, y: -0.676, z: -1.8677}
+  m_LocalPosition: {x: -4.8, y: -0.676, z: -3.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -27840,6 +27869,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &668391073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668391065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a6cda6d0ea0d5c4ca165cee51730083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleporter_0a: {fileID: 0}
+  teleporter_1a: {fileID: 1009182353}
+  teleporter_1b: {fileID: 319958603}
+  teleporter_1c: {fileID: 1583672687}
+  teleporter_1d: {fileID: 533640546}
+  teleporter_2a: {fileID: 0}
+  teleporter_2b: {fileID: 0}
+  teleporter_3a: {fileID: 0}
+  teleporter_3b: {fileID: 0}
+  teleporter_4a: {fileID: 0}
 --- !u!1 &672978001
 GameObject:
   m_ObjectHideFlags: 0
@@ -32623,6 +32674,7 @@ GameObject:
   - component: {fileID: 1009182358}
   - component: {fileID: 1009182359}
   - component: {fileID: 1009182360}
+  - component: {fileID: 1009182361}
   m_Layer: 0
   m_Name: teleporter_1a
   m_TagString: Untagged
@@ -32817,6 +32869,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1009182361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009182353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8cde76592b70946915257b004aa52d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theValue: '#'
 --- !u!1 &1017613600
 GameObject:
   m_ObjectHideFlags: 0
@@ -39900,6 +39965,7 @@ GameObject:
   - component: {fileID: 1583672691}
   - component: {fileID: 1583672693}
   - component: {fileID: 1583672692}
+  - component: {fileID: 1583672694}
   m_Layer: 0
   m_Name: teleporter_1c
   m_TagString: Untagged
@@ -40089,6 +40155,19 @@ CapsuleCollider2D:
   m_Offset: {x: -1.2207325, y: -1.8980874}
   m_Size: {x: 0.813798, y: 1.3237008}
   m_Direction: 0
+--- !u!114 &1583672694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583672687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8cde76592b70946915257b004aa52d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theValue: '#'
 --- !u!1 &1598224692
 GameObject:
   m_ObjectHideFlags: 0

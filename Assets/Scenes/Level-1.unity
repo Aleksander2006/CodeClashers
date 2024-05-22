@@ -2475,7 +2475,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06796229, y: -0.61166483}
+  m_Offset: {x: 0.053565502, y: -0.6212633}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2486,7 +2486,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6921642, y: 0.4892696}
+  m_Size: {x: 1.6424029, y: 0.75802433}
   m_EdgeRadius: 0
 --- !u!1 &710988483
 GameObject:
@@ -3984,6 +3984,7 @@ GameObject:
   - component: {fileID: 946981427}
   - component: {fileID: 946981430}
   - component: {fileID: 946981429}
+  - component: {fileID: 946981431}
   m_Layer: 0
   m_Name: teleporter_2b
   m_TagString: Untagged
@@ -4117,6 +4118,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.1882877, y: 0.8918735}
   m_EdgeRadius: 0
+--- !u!114 &946981431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946981426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8cde76592b70946915257b004aa52d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theValue: '#'
 --- !u!1 &969537722
 GameObject:
   m_ObjectHideFlags: 0
@@ -4887,6 +4901,7 @@ GameObject:
   - component: {fileID: 1230386476}
   - component: {fileID: 1230386475}
   - component: {fileID: 1230386481}
+  - component: {fileID: 1230386482}
   m_Layer: 0
   m_Name: Main_Character
   m_TagString: Character
@@ -5157,6 +5172,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1230386482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230386474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a6cda6d0ea0d5c4ca165cee51730083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleporter_0a: {fileID: 0}
+  teleporter_1a: {fileID: 0}
+  teleporter_1b: {fileID: 0}
+  teleporter_1c: {fileID: 0}
+  teleporter_1d: {fileID: 0}
+  teleporter_2a: {fileID: 1325300319}
+  teleporter_2b: {fileID: 946981426}
+  teleporter_3a: {fileID: 0}
+  teleporter_3b: {fileID: 0}
+  teleporter_4a: {fileID: 0}
 --- !u!1 &1236250247
 GameObject:
   m_ObjectHideFlags: 0
@@ -5385,6 +5422,7 @@ GameObject:
   - component: {fileID: 1325300322}
   - component: {fileID: 1325300320}
   - component: {fileID: 1325300323}
+  - component: {fileID: 1325300324}
   m_Layer: 0
   m_Name: teleporter_2a
   m_TagString: Untagged
@@ -5466,6 +5504,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.299963, y: 0.57692814}
   m_EdgeRadius: 0
+--- !u!114 &1325300324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325300319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8cde76592b70946915257b004aa52d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theValue: '#'
 --- !u!1 &1356330726
 GameObject:
   m_ObjectHideFlags: 0
