@@ -9,7 +9,6 @@ public class MovementScript : MonoBehaviour {
     public Rigidbody2D RigidBodyLink;
     public Animator animator;
     Vector2 movement;
-
     public AudioSource audioSource;
 
     void Update() {
