@@ -887,8 +887,9 @@ GameObject:
   - component: {fileID: 987589154}
   - component: {fileID: 987589152}
   - component: {fileID: 987589155}
+  - component: {fileID: 987589156}
   m_Layer: 0
-  m_Name: Trigger-mainmap (1)
+  m_Name: teleporter_3b
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -906,6 +907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25378eb06b6e8d34b9211820401205d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementScript: {fileID: 1900691934}
   Crossfade: {fileID: 1087602195}
   sceneBuildIndex: 4
 --- !u!4 &987589154
@@ -968,6 +970,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 2.9225187}
   m_EdgeRadius: 0
+--- !u!114 &987589156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987589151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8cde76592b70946915257b004aa52d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theValue: '#'
 --- !u!1 &1087602192
 GameObject:
   m_ObjectHideFlags: 0
@@ -1673,10 +1688,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1860601668}
-  - component: {fileID: 1860601667}
   - component: {fileID: 1860601666}
+  - component: {fileID: 1860601669}
+  - component: {fileID: 1860601670}
   m_Layer: 0
-  m_Name: Trigger-mainmap
+  m_Name: teleporter_3a
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1694,10 +1710,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25378eb06b6e8d34b9211820401205d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementScript: {fileID: 1900691934}
   Crossfade: {fileID: 1087602195}
   sceneBuildIndex: 1
---- !u!70 &1860601667
-CapsuleCollider2D:
+--- !u!4 &1860601668
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860601665}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.11, y: -4.85, z: -0.0055333613}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1860601669
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1728,24 +1760,32 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.33546185, y: 0}
-  m_Size: {x: 1.2741418, y: 1.2741418}
-  m_Direction: 0
---- !u!4 &1860601668
-Transform:
+  m_Offset: {x: 0.056868076, y: -0.055573225}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.8532295, y: 0.2465787}
+  m_EdgeRadius: 0
+--- !u!114 &1860601670
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1860601665}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.11, y: -4.85, z: -0.0055333613}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8cde76592b70946915257b004aa52d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theValue: '#'
 --- !u!1 &1900691930
 GameObject:
   m_ObjectHideFlags: 0
@@ -1761,6 +1801,7 @@ GameObject:
   - component: {fileID: 1900691933}
   - component: {fileID: 1900691932}
   - component: {fileID: 1900691931}
+  - component: {fileID: 1900691938}
   m_Layer: 0
   m_Name: Main_Character
   m_TagString: Character
@@ -2031,6 +2072,28 @@ Transform:
   - {fileID: 1112681568}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1900691938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900691930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a6cda6d0ea0d5c4ca165cee51730083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleporter_0a: {fileID: 0}
+  teleporter_1a: {fileID: 0}
+  teleporter_1b: {fileID: 0}
+  teleporter_1c: {fileID: 0}
+  teleporter_1d: {fileID: 0}
+  teleporter_2a: {fileID: 0}
+  teleporter_2b: {fileID: 0}
+  teleporter_3a: {fileID: 1860601665}
+  teleporter_3b: {fileID: 987589151}
+  teleporter_4a: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
