@@ -3795,6 +3795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25378eb06b6e8d34b9211820401205d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementScript: {fileID: 668391067}
   Crossfade: {fileID: 545038947}
   sceneBuildIndex: 2
 --- !u!70 &319958609
@@ -3829,8 +3830,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.2207325, y: -1.8980874}
-  m_Size: {x: 0.813798, y: 1.3237008}
+  m_Offset: {x: -1.2207325, y: -1.6790928}
+  m_Size: {x: 0.813798, y: 0.8857114}
   m_Direction: 0
 --- !u!95 &319958610
 Animator:
@@ -32831,8 +32832,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.2285832, y: -1.8114827}
-  m_Size: {x: 0.88852394, y: 1.5097841}
+  m_Offset: {x: -1.2285832, y: -1.6515596}
+  m_Size: {x: 0.88852394, y: 1.1899374}
   m_Direction: 0
 --- !u!114 &1009182359
 MonoBehaviour:
@@ -32846,6 +32847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25378eb06b6e8d34b9211820401205d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementScript: {fileID: 668391067}
   Crossfade: {fileID: 545038947}
   sceneBuildIndex: 0
 --- !u!95 &1009182360
@@ -40208,6 +40210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25378eb06b6e8d34b9211820401205d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementScript: {fileID: 668391067}
   Crossfade: {fileID: 545038947}
   sceneBuildIndex: 3
 --- !u!70 &1583672693
@@ -40242,8 +40245,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.2207325, y: -1.8980874}
-  m_Size: {x: 0.813798, y: 1.3237008}
+  m_Offset: {x: -1.2207325, y: -1.6913189}
+  m_Size: {x: 0.813798, y: 0.9101637}
   m_Direction: 0
 --- !u!114 &1583672694
 MonoBehaviour:

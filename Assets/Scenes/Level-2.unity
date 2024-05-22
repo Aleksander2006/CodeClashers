@@ -907,6 +907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25378eb06b6e8d34b9211820401205d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementScript: {fileID: 1900691934}
   Crossfade: {fileID: 1087602195}
   sceneBuildIndex: 4
 --- !u!4 &987589154
@@ -1709,6 +1710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25378eb06b6e8d34b9211820401205d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementScript: {fileID: 1900691934}
   Crossfade: {fileID: 1087602195}
   sceneBuildIndex: 1
 --- !u!4 &1860601668
@@ -1758,7 +1760,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.056868076, y: 0.04348731}
+  m_Offset: {x: 0.056868076, y: -0.055573225}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1769,7 +1771,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.8532295, y: 0.44469976}
+  m_Size: {x: 2.8532295, y: 0.2465787}
   m_EdgeRadius: 0
 --- !u!114 &1860601670
 MonoBehaviour:
