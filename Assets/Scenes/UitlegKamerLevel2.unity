@@ -479,7 +479,7 @@ GameObject:
   - component: {fileID: 1354162676}
   - component: {fileID: 1354162675}
   m_Layer: 0
-  m_Name: Trigger-mainmap
+  m_Name: teleporter_4a
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0

@@ -3657,7 +3657,7 @@ GameObject:
   - component: {fileID: 319958608}
   - component: {fileID: 319958610}
   m_Layer: 0
-  m_Name: HeelErgTijdelijkHuis (1)
+  m_Name: teleporter_1b
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25136,7 +25136,7 @@ GameObject:
   - component: {fileID: 533640547}
   - component: {fileID: 533640550}
   m_Layer: 0
-  m_Name: HeelErgTijdelijkHuis (2)
+  m_Name: teleporter_1d
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27716,7 +27716,7 @@ Transform:
   m_GameObject: {fileID: 668391065}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.8, y: 1.27, z: -1.8677}
+  m_LocalPosition: {x: -4.8, y: -0.676, z: -1.8677}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -32624,7 +32624,7 @@ GameObject:
   - component: {fileID: 1009182359}
   - component: {fileID: 1009182360}
   m_Layer: 0
-  m_Name: HeelErgTijdelijkHuis
+  m_Name: teleporter_1a
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39901,7 +39901,7 @@ GameObject:
   - component: {fileID: 1583672693}
   - component: {fileID: 1583672692}
   m_Layer: 0
-  m_Name: HeelErgTijdelijkHuis (3)
+  m_Name: teleporter_1c
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
