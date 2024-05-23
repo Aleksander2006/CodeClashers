@@ -905,14 +905,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1004054247}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.47, y: 10.46, z: -1}
+  m_LocalRotation: {x: -0, y: -0.0927373, z: -0, w: 0.9956906}
+  m_LocalPosition: {x: 6.36, y: 10.54, z: -1.269949}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2022140381}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -10.642, z: 0}
 --- !u!82 &1004054254
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2108,7 +2108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5a74b64b441ebd43aca9627c8a54829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementScript: {fileID: 1004054250}
 --- !u!1 &1730281847
 GameObject:
   m_ObjectHideFlags: 0
@@ -2464,8 +2463,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1921527747}
   - component: {fileID: 1921527746}
-  - component: {fileID: 1921527745}
   - component: {fileID: 1921527748}
+  - component: {fileID: 1921527749}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
@@ -2473,22 +2472,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1921527745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1921527744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20b9b342db49ed946b3a1c1569f967b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  notificationPanels:
-  - {fileID: 836436192}
-  - {fileID: 491399408}
-  Go: {fileID: 1077342638}
 --- !u!61 &1921527746
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2562,6 +2545,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupGameObject: {fileID: 165073844}
+--- !u!114 &1921527749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921527744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b0d226b247a10841acef559a16b78cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  notificationPanels:
+  - {fileID: 836436192}
+  - {fileID: 491399408}
+  Go: {fileID: 1077342638}
 --- !u!1 &2022140378
 GameObject:
   m_ObjectHideFlags: 0
