@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using JetBrains.Annotations;
 using Unity.VisualScripting;
@@ -21,7 +22,9 @@ public class minMaxer : MonoBehaviour
     Vector2 movement;
 
     public bool status = false;
-    public float speed = 0;
+    private int counter = 10;
+    private float timer = 0;
+    private float delay = 0.5f; // 0,5 seconde vertraging
 
     [SerializeField] GameObject floatWaterLayer;
 
@@ -32,22 +35,24 @@ public class minMaxer : MonoBehaviour
         floatWaterLayer.GetComponent<Transform>();
     }
 
-    public void ScaleLayer (){
+    public void ScaleLayer (){ //Check of Schuifknop AANstaat
         if (status == true){
-            //StartCoroutine(FadeDelay());
-            IntLayer();
+            StartCoroutine(FadeDelay());
         }
     }
 
-    // private IEnumerator FadeDelay() {
-    //     yield return new WaitForSeconds(6);
-    // }
+    private IEnumerator FadeDelay() {
+        yield return new WaitForSeconds(0.5f);
+        IntLayer();
+    }
 
-    public void IntLayer() {
-        floatWaterLayer.transform.localScale -= new Vector3(0.7f, 0.7f, 0) * speed;
-
-        if (floatWaterLayer.transform.localScale.x <= 0f && floatWaterLayer.transform.localScale.y <= 0f) {
-            floatWaterLayer.transform.localScale = Vector3.zero;
+    private void IntLayer() {
+        if (timer > delay) {
+            timer = 0f;
+            if (counter >= 1) {
+                floatWaterLayer.transform.localScale = transform.TransformVector(counter, counter, counter) - new Vector3(1, 1, 0);
+                counter--;
+            }
         }
     }
 
@@ -95,15 +100,20 @@ public class minMaxer : MonoBehaviour
     }
 
     void FixedUpdate(){
+       
         ScaleLayer();
         posLimiter();
         posLimitRight();
         posLimitLeft();
         if(colliding == true) {
             RigidBodyLink.MovePosition(RigidBodyLink.position + movement * MoveSpeed * Time.fixedDeltaTime);
-            Debug.Log("Movable...");
+            //Debug.Log("Movable...");
         } else {
-            Debug.Log("Not Movable...");
+            //Debug.Log("Not Movable...");
         }
     } 
+
+    void Update (){
+        timer += Time.deltaTime;
+    }
 }
