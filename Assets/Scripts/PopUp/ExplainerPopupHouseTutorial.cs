@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractionTV : MonoBehaviour
+public class ExplainerPopupHouseTutorial : MonoBehaviour
 {
     public GameObject[] notificationPanels;
     private bool inTriggerZone = false;
     private int currentPanelIndex = 0;
     [SerializeField] GameObject Go;
-    [SerializeField] GameObject IngangTrigger;
 
     private bool firstPopup = false;
 
@@ -16,11 +15,15 @@ public class InteractionTV : MonoBehaviour
     {
         ShowPopup(currentPanelIndex);
         Go.SetActive(false);
-        firstPopup = true;
     }
 
     private void Update()
     {
+        if(StaticData.floatToKeep == "teleporter_1a") {
+            ClosePopup();
+            StaticData.floatToKeep = "teleporter_1a_u";
+        }
+
         if (inTriggerZone && Input.GetKeyDown(KeyCode.E))
         {
             if (notificationPanels[currentPanelIndex].activeSelf)
@@ -50,7 +53,7 @@ public class InteractionTV : MonoBehaviour
         }
 
         if (firstPopup == true) {
-            //ShowPopup(0);
+            ShowPopup(0);
             firstPopup = false;
         }
     }
@@ -81,9 +84,5 @@ public class InteractionTV : MonoBehaviour
         {
             panel.SetActive(false);
         }
-    }
-
-    public void OnTriggerExit2D(){
-        IngangTrigger.SetActive(false);
     }
 }

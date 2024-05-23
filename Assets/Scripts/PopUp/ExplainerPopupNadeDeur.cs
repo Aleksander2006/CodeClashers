@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractionTV : MonoBehaviour
+public class ExplainerPopupNadeDeur : MonoBehaviour
 {
     public GameObject[] notificationPanels;
     private bool inTriggerZone = false;
@@ -50,7 +50,7 @@ public class InteractionTV : MonoBehaviour
         }
 
         if (firstPopup == true) {
-            //ShowPopup(0);
+            ShowPopup(0);
             firstPopup = false;
         }
     }
