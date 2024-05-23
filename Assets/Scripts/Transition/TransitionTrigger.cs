@@ -20,7 +20,7 @@ public class TransitionTrigger : MonoBehaviour {
     bool theValue = false;
 
     void Start() {
-        if(StaticData.floatToKeep == "teleporter_1a" || StaticData.floatToKeep == "teleporter_1b" || StaticData.floatToKeep == "teleporter_1c" || StaticData.floatToKeep == "teleporter_1d" || StaticData.floatToKeep == null) {
+        if(StaticData.floatToKeep == "teleporter_1a" || StaticData.floatToKeep == "teleporter_1b" || StaticData.floatToKeep == "teleporter_1c" || StaticData.floatToKeep == "teleporter_1d" || StaticData.floatToKeep == null || StaticData.floatToKeep == "teleporter_1a_u") {
             theValue = true;
         }
     }
