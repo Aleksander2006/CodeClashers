@@ -14,36 +14,40 @@ public class TransitionTrigger : MonoBehaviour {
     public int sceneBuildIndex; 
     private bool triggered = false;
     private float speed = 1.25f;
-    private float timer;
+    private float timerBuiten;
+    private float timerBinnen;
+
+    bool theValue = false;
+
+    void Start() {
+        if(StaticData.floatToKeep == "teleporter_1a" || StaticData.floatToKeep == "teleporter_1b" || StaticData.floatToKeep == "teleporter_1c" || StaticData.floatToKeep == "teleporter_1d" || StaticData.floatToKeep == null) {
+            theValue = true;
+        }
+    }
 
     private void Update() {
-        if (timer > 0){
-            timer -= Time.deltaTime;
-            if (timer <= 0f){
+        if (timerBuiten > 0){
+            timerBuiten -= Time.deltaTime;
+            if (timerBuiten <= 0f){
                 StartCoroutine(FadeDelay());
                 Crossfade.SetTrigger("Go");
             }
 
-            if(/*een van de teleporters binnen var*/) {
-                TimerOff();
-            }
-
-            if(/*een van de teleporters buiten var*/) {
-                TimerOn();
-            }
-
-            if(/**/) {
-                
+        if(timerBinnen > 0){
+            timerBinnen -= Time.deltaTime;
+            if (timerBinnen <= 0f){
+                StartCoroutine(FadeDelay());
+                Crossfade.SetTrigger("Go");
             }
         }
-    }
 
-    private void TimerOn() {
-        timer = 0.5f;
-    }
-
-    private void TimerOff() {
-        timer = 0f;
+        if(theValue == true && triggered == true) {
+            timerBinnen = 0.01f;
+            timerBuiten = 0.01f;
+            Debug.Log("timer = 0");
+            theValue = false;
+            }  
+        }
     }
    
     void FixedUpdate() {
@@ -63,10 +67,12 @@ public class TransitionTrigger : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "Character"){
             triggered = true;
+            Debug.Log("triggered = true");
             movementScript.animator.SetFloat("Horizontal", 0f);
             movementScript.animator.SetFloat("Vertical", 0f);
             movementScript.animator.SetFloat("Speed", 0f);
             movementScript.enabled = false;
+            timerBuiten = 0.5f;
         } 
     }
 
