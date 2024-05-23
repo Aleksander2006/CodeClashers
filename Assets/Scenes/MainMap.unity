@@ -3796,6 +3796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementScript: {fileID: 668391067}
+  mainCamera: {fileID: 1496627771}
   Crossfade: {fileID: 545038947}
   sceneBuildIndex: 2
 --- !u!70 &319958609
@@ -32848,6 +32849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementScript: {fileID: 668391067}
+  mainCamera: {fileID: 1496627771}
   Crossfade: {fileID: 545038947}
   sceneBuildIndex: 0
 --- !u!95 &1009182360
@@ -40211,6 +40213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementScript: {fileID: 668391067}
+  mainCamera: {fileID: 1496627771}
   Crossfade: {fileID: 545038947}
   sceneBuildIndex: 3
 --- !u!70 &1583672693
