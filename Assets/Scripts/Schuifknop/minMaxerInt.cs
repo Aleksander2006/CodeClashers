@@ -26,13 +26,13 @@ public class minMaxer : MonoBehaviour
     private float timer = 0;
     private float delay = 0.5f; // 0,5 seconde vertraging
 
-    [SerializeField] GameObject floatWaterLayer;
+    [SerializeField] GameObject IntWaterLayer;
 
     void Start() {
         startPosX = startPosX + gameObject.transform.position.x;
         startPosY = startPosY + gameObject.transform.position.y;
 
-        floatWaterLayer.GetComponent<Transform>();
+        IntWaterLayer.GetComponent<Transform>();
     }
 
     public void ScaleLayer (){ //Check of Schuifknop AANstaat
@@ -41,16 +41,16 @@ public class minMaxer : MonoBehaviour
         }
     }
 
-    private IEnumerator FadeDelay() {
+    private IEnumerator FadeDelay() { //Zorgt ervoor dat de waterlayer wacht voor 0,5 seconden en dan doorgaat.
         yield return new WaitForSeconds(0.5f);
         IntLayer();
     }
 
-    private void IntLayer() {
+    private void IntLayer() { // De functie die ervoor zorgt dat de Waterlayer steeds -1 downscaled
         if (timer > delay) {
             timer = 0f;
             if (counter >= 1) {
-                floatWaterLayer.transform.localScale = transform.TransformVector(counter, counter, counter) - new Vector3(1, 1, 0);
+                IntWaterLayer.transform.localScale = transform.TransformVector(counter, counter, counter) - new Vector3(1, 1, 0);
                 counter--;
             }
         }
