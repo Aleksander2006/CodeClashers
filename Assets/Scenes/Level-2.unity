@@ -546,7 +546,6 @@ GameObject:
   m_Component:
   - component: {fileID: 292770127}
   - component: {fileID: 292770128}
-  - component: {fileID: 292770129}
   m_Layer: 7
   m_Name: waterlayer3
   m_TagString: Untagged
@@ -610,7 +609,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 979c7b21363264f9ba68ecff6f6130af, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d7ee487c1cdebad49ac4d6d2766dc929, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -621,27 +620,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &292770129
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 292770126}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 51321998759f44134b39601eb60328dd, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &340622702
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,6 +1096,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementScript: {fileID: 1900691934}
+  mainCamera: {fileID: 0}
   Crossfade: {fileID: 1087602195}
   sceneBuildIndex: 4
 --- !u!4 &987589154
@@ -1313,7 +1292,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1095984964}
   - component: {fileID: 1095984965}
-  - component: {fileID: 1095984966}
   m_Layer: 6
   m_Name: waterlayer2
   m_TagString: Untagged
@@ -1377,7 +1355,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 873e5c32eba2b41acb515c28c4e84d4e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a560e89a059f2c041b9a0bd98fc65bac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1388,27 +1366,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &1095984966
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1095984963}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 35939748765b74fc79fece65aeee7387, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1112681567
 GameObject:
   m_ObjectHideFlags: 0
@@ -2124,6 +2081,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementScript: {fileID: 1900691934}
+  mainCamera: {fileID: 0}
   Crossfade: {fileID: 1087602195}
   sceneBuildIndex: 1
 --- !u!4 &1860601668
