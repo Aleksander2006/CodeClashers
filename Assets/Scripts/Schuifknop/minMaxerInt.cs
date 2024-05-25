@@ -25,7 +25,7 @@ public class minMaxer : MonoBehaviour
     private float counter = 7.842517f;
     private float counter2 = 6.596645f;
     private float timer = 0;
-    private float delay = 0.5f; // 0,5 seconde vertraging
+    private float delay = 0.8f; // 0,8 seconden vertraging elke Layer
 
     [SerializeField] GameObject IntWaterLayer;
 
@@ -42,8 +42,8 @@ public class minMaxer : MonoBehaviour
         }
     }
 
-    private IEnumerator FadeDelay() { //Zorgt ervoor dat de waterlayer wacht voor 0,5 seconden en dan doorgaat.
-        yield return new WaitForSeconds(0.5f);
+    private IEnumerator FadeDelay() { //Zorgt ervoor dat de Schuifknop wacht voor 0,7 seconden en dan doorgaat.
+        yield return new WaitForSeconds(0.7f);
         IntLayer();
     }
 
