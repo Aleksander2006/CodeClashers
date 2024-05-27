@@ -22,9 +22,10 @@ public class minMaxer : MonoBehaviour
     Vector2 movement;
 
     public bool status = false;
-    private int counter = 10;
+    private float counter = 7.842517f;
+    private float counter2 = 6.596645f;
     private float timer = 0;
-    private float delay = 0.5f; // 0,5 seconde vertraging
+    private float delay = 0.8f; // 0,8 seconden vertraging elke Layer
 
     [SerializeField] GameObject IntWaterLayer;
 
@@ -41,8 +42,8 @@ public class minMaxer : MonoBehaviour
         }
     }
 
-    private IEnumerator FadeDelay() { //Zorgt ervoor dat de waterlayer wacht voor 0,5 seconden en dan doorgaat.
-        yield return new WaitForSeconds(0.5f);
+    private IEnumerator FadeDelay() { //Zorgt ervoor dat de Schuifknop wacht voor 0,7 seconden en dan doorgaat.
+        yield return new WaitForSeconds(0.7f);
         IntLayer();
     }
 
@@ -50,8 +51,9 @@ public class minMaxer : MonoBehaviour
         if (timer > delay) {
             timer = 0f;
             if (counter >= 1) {
-                IntWaterLayer.transform.localScale = transform.TransformVector(counter, counter, counter) - new Vector3(1, 1, 0);
+                IntWaterLayer.transform.localScale = transform.TransformVector(counter, counter2, 0) - new Vector3(0.842517f, 0.596645f, 0);
                 counter--;
+                counter2--;
             }
         }
     }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractionTV : MonoBehaviour
+public class ExplainerPopupIngang : MonoBehaviour
 {
     public GameObject[] notificationPanels;
     private bool inTriggerZone = false;
@@ -14,9 +14,12 @@ public class InteractionTV : MonoBehaviour
 
     private void Start()
     {
-        ShowPopup(currentPanelIndex);
-        Go.SetActive(false);
-        firstPopup = true;
+        if(inTriggerZone == true){
+            ShowPopup(currentPanelIndex);
+            Go.SetActive(false);
+            firstPopup = true;
+        }
+        
     }
 
     private void Update()
@@ -33,6 +36,7 @@ public class InteractionTV : MonoBehaviour
                 else
                 {
                     ClosePopup();
+                    IngangTrigger.SetActive(false);
                 }
             }
             else
@@ -50,7 +54,7 @@ public class InteractionTV : MonoBehaviour
         }
 
         if (firstPopup == true) {
-            //ShowPopup(0);
+            ShowPopup(0);
             firstPopup = false;
         }
     }
@@ -61,6 +65,7 @@ public class InteractionTV : MonoBehaviour
         {
             inTriggerZone = false;
             ClosePopup();
+            IngangTrigger.SetActive(false);
         }
     }
 
@@ -83,7 +88,7 @@ public class InteractionTV : MonoBehaviour
         }
     }
 
-    public void OnTriggerExit2D(){
-        IngangTrigger.SetActive(false);
-    }
+    // public void OnTriggerExit2D(){
+    //     IngangTrigger.SetActive(false);
+    // }
 }
