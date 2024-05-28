@@ -3773,7 +3773,7 @@ EdgeCollider2D:
   - {x: -0.51695865, y: -1.5615505}
   - {x: -1.9362437, y: -1.5527537}
   - {x: -1.991327, y: -1.9016435}
-  - {x: -2.3912418, y: -1.9304401}
+  - {x: -4.018222, y: -1.9220531}
   - {x: -2.3945038, y: 2.9808078}
   - {x: 2.4644437, y: 2.9617896}
   - {x: 2.4477117, y: 1.7177027}
@@ -37484,9 +37484,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0054196715, y: -0.00090180244}
+  m_Offset: {x: -0.025181415, y: 0.017002383}
   serializedVersion: 2
-  m_Radius: 0.12891078
+  m_Radius: 0.12325685
 --- !u!1 &1431053648
 GameObject:
   m_ObjectHideFlags: 0
