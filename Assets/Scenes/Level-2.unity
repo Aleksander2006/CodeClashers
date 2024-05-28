@@ -1597,7 +1597,7 @@ MonoBehaviour:
   notificationPanels:
   - {fileID: 1456249306}
   - {fileID: 29159338}
-  Go: {fileID: 0}
+  Go: {fileID: 1160611621}
   IngangTrigger: {fileID: 1160611621}
 --- !u!1 &1253197597
 GameObject:
@@ -1774,8 +1774,6 @@ MonoBehaviour:
   notificationPanels:
   - {fileID: 1456249306}
   - {fileID: 29159338}
-  Go: {fileID: 0}
-  IngangTrigger: {fileID: 0}
 --- !u!61 &1257346940
 BoxCollider2D:
   m_ObjectHideFlags: 0
