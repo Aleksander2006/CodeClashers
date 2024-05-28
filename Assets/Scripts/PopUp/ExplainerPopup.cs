@@ -7,13 +7,15 @@ public class InteractionTV : MonoBehaviour
     public GameObject[] notificationPanels;
     private bool inTriggerZone = false;
     private int currentPanelIndex = 0;
+    [SerializeField] GameObject Go;
+    [SerializeField] GameObject IngangTrigger;
 
     private bool firstPopup = false;
 
     private void Start()
     {
         ShowPopup(currentPanelIndex);
-        
+        Go.SetActive(false);
         firstPopup = true;
     }
 
@@ -79,5 +81,9 @@ public class InteractionTV : MonoBehaviour
         {
             panel.SetActive(false);
         }
+    }
+
+    public void OnTriggerExit2D(){
+        IngangTrigger.SetActive(false);
     }
 }
