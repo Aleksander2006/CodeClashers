@@ -24,13 +24,23 @@ public class LegeSchuifknopScript : MonoBehaviour
     [SerializeField] GameObject FloatWaterLayer;
     [SerializeField] Camera mainCamera;
     [SerializeField] GameObject MainCharacter;
+    private bool scaleble = true;
 
     void Start()
     {
         startPosX = startPosX + gameObject.transform.position.x;
         startPosY = startPosY + gameObject.transform.position.y;
-
         FloatWaterLayer.transform.localScale = FloatWaterLayer.transform.localScale;
+    }
+
+    private void mainCamChanger(){
+        if(status == true && scaleble == true) {
+            mainCamera.transform.position = new Vector3(6.14f, -0.7f, -26.66666f);
+            mainCamera.orthographicSize -= 0.01f;
+            if(mainCamera.orthographicSize <= 3.5f) {
+                scaleble = false;
+            }
+        }
     }
 
     public void ScaleLayer()
@@ -38,7 +48,6 @@ public class LegeSchuifknopScript : MonoBehaviour
         if (status == true)
         {
             FloatLayer();
-            
         }
     }
 
@@ -51,14 +60,13 @@ public class LegeSchuifknopScript : MonoBehaviour
         }
     }
 
-    //------------Schuifknop Functionaliteit-------------
+    //------------Schuifknop Functionaliteit-------------//
 
     public void posLimiter()
     {
         if (gameObject.transform.position.x > (startPosX + 0.715f) || transform.position.x < (startPosX - 0.715f))
         {
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-            movable = false;
 
         }
         else
@@ -66,7 +74,6 @@ public class LegeSchuifknopScript : MonoBehaviour
             if (colliding == true)
             {
                 GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-                movable = true;
             }
         }
     }
@@ -113,6 +120,7 @@ public class LegeSchuifknopScript : MonoBehaviour
 
     void FixedUpdate()
     {
+        mainCamChanger();
         ScaleLayer();
         posLimiter();
         posLimitRight();
