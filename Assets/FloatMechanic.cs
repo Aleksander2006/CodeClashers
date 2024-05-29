@@ -24,8 +24,6 @@ public class LegeSchuifknopScript : MonoBehaviour
     [SerializeField] GameObject FloatWaterLayer;
     [SerializeField] Camera mainCamera;
     [SerializeField] GameObject MainCharacter;
-    [SerializeField] GameObject DupeCharacter;
-    private float characterZ;
 
     void Start()
     {
@@ -33,19 +31,6 @@ public class LegeSchuifknopScript : MonoBehaviour
         startPosY = startPosY + gameObject.transform.position.y;
 
         FloatWaterLayer.transform.localScale = FloatWaterLayer.transform.localScale;
-        characterZ = MainCharacter.transform.position.z;
-    }
-
-    private void DupeTp() {
-        if(characterZ == -2) {
-            MainCharacter.GetComponent<SpriteRenderer>().enabled = false;
-            MainCharacter.GetComponent<Animator>().enabled = false;
-            MainCharacter.GetComponent<MovementScript>().enabled = false;
-        }
-    }
-
-    void Update() {
-        DupeTp();
     }
 
     public void ScaleLayer()
@@ -53,10 +38,9 @@ public class LegeSchuifknopScript : MonoBehaviour
         if (status == true)
         {
             FloatLayer();
-            characterZ = -2;
+            
         }
     }
-
 
     private void FloatLayer()
     { // De functie die ervoor zorgt dat de Waterlayer steeds -1 downscaled
