@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Diagnostics.Tracing;
 using TMPro;
 using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,8 +15,8 @@ public class TransitionTrigger : MonoBehaviour {
     private float speed = 1.25f;
     private float timerBuiten;
     private float timerBinnen;
-
     bool theValue = false;
+    bool doZoom = false;
 
     void Start() {
         if(StaticData.floatToKeep == "teleporter_1a" || StaticData.floatToKeep == "teleporter_1b" || StaticData.floatToKeep == "teleporter_1c" || StaticData.floatToKeep == "teleporter_1d" || StaticData.floatToKeep == null || StaticData.floatToKeep == "teleporter_1a_u") {
@@ -26,6 +25,14 @@ public class TransitionTrigger : MonoBehaviour {
     }
 
     private void Update() {
+        if (mainCamera == null) {
+            doZoom = false;
+        } else {
+            doZoom = true;
+            }
+
+        Debug.Log(doZoom + "= doZoom");
+
         if (timerBuiten > 0){
             timerBuiten -= Time.deltaTime;
             if (timerBuiten <= 0f){
@@ -44,14 +51,13 @@ public class TransitionTrigger : MonoBehaviour {
         if(theValue == true && triggered == true) {
             timerBinnen = 0.01f;
             timerBuiten = 0.01f;
-            Debug.Log("timer = 0");
+            //Debug.Log("timer = 0");
             theValue = false;
             }  
         }
     }
-   
     void FixedUpdate() {
-        if(triggered == true) {
+        if(doZoom == true && triggered == true) {
             Zooming();
         }
     }
@@ -67,7 +73,7 @@ public class TransitionTrigger : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.tag == "Character"){
             triggered = true;
-            Debug.Log("triggered = true");
+            //Debug.Log("triggered = true");
             movementScript.animator.SetFloat("Horizontal", 0f);
             movementScript.animator.SetFloat("Vertical", 0f);
             movementScript.animator.SetFloat("Speed", 0f);
@@ -75,7 +81,6 @@ public class TransitionTrigger : MonoBehaviour {
             timerBuiten = 0.5f;
         } 
     }
-
     private IEnumerator FadeDelay() {
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
