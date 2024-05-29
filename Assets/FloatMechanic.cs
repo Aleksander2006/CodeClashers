@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO.Compression;
 using System.Runtime.CompilerServices;
 using JetBrains.Annotations;
 using Unity.VisualScripting;
@@ -20,8 +21,11 @@ public class LegeSchuifknopScript : MonoBehaviour
     private float startPosY = 0;
     Vector2 movement;
     public bool status = false;
-
     [SerializeField] GameObject FloatWaterLayer;
+    [SerializeField] Camera mainCamera;
+    [SerializeField] GameObject MainCharacter;
+    [SerializeField] GameObject DupeCharacter;
+    private float characterZ;
 
     void Start()
     {
@@ -29,13 +33,27 @@ public class LegeSchuifknopScript : MonoBehaviour
         startPosY = startPosY + gameObject.transform.position.y;
 
         FloatWaterLayer.transform.localScale = FloatWaterLayer.transform.localScale;
-
+        characterZ = MainCharacter.transform.position.z;
     }
+
+    private void DupeTp() {
+        if(characterZ == -2) {
+            MainCharacter.GetComponent<SpriteRenderer>().enabled = false;
+            MainCharacter.GetComponent<Animator>().enabled = false;
+            MainCharacter.GetComponent<MovementScript>().enabled = false;
+        }
+    }
+
+    void Update() {
+        DupeTp();
+    }
+
     public void ScaleLayer()
     { //Check of Schuifknop AANstaat
         if (status == true)
         {
             FloatLayer();
+            characterZ = -2;
         }
     }
 
