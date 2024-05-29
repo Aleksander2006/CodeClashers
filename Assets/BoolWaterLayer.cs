@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.Jobs;
 using UnityEngine.TextCore.Text;
 
-public class LegeSchuifknopScript : MonoBehaviour
+public class BoolWaterLayer : MonoBehaviour
 {
     private bool movable = false;
     private bool colliding = false;
@@ -20,33 +20,26 @@ public class LegeSchuifknopScript : MonoBehaviour
     private float startPosY = 0;
     Vector2 movement;
     public bool status = false;
-
-    [SerializeField] GameObject FloatWaterLayer;
+    [SerializeField] GameObject BLayer;
 
     void Start()
     {
         startPosX = startPosX + gameObject.transform.position.x;
         startPosY = startPosY + gameObject.transform.position.y;
 
-        FloatWaterLayer.transform.localScale = FloatWaterLayer.transform.localScale;
-
     }
     public void ScaleLayer()
     { //Check of Schuifknop AANstaat
         if (status == true)
         {
-            FloatLayer();
+            BoolLayer();
         }
     }
 
 
-    private void FloatLayer()
+    private void BoolLayer()
     { // De functie die ervoor zorgt dat de Waterlayer steeds -1 downscaled
-        FloatWaterLayer.transform.localScale -= new Vector3(0.05f, 0.05f, 0f);
-        if (FloatWaterLayer.transform.localScale.x <= 0f && FloatWaterLayer.transform.localScale.y <= 0f)
-        {
-            FloatWaterLayer.transform.localScale = new Vector3(0, 0, 0);
-        }
+        BLayer.SetActive(false);
     }
 
     //------------Schuifknop Functionaliteit-------------
