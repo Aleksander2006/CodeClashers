@@ -68,7 +68,7 @@ public class BoolWaterLayer : MonoBehaviour
         {
             if (colliding == false)
             {
-                gameObject.transform.position = new Vector3(startPosX + 0.71f, startPosY, -3.24f);
+                gameObject.transform.position = new Vector3(startPosX + 0.71f, startPosY, 0f);
             }
             status = true;
         }
@@ -80,7 +80,7 @@ public class BoolWaterLayer : MonoBehaviour
         {
             if (colliding == false)
             {
-                gameObject.transform.position = new Vector3(startPosX - 0.71f, startPosY, -3.24f);
+                gameObject.transform.position = new Vector3(startPosX - 0.71f, startPosY, 0f);
             }
             status = false;
 
