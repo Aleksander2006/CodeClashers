@@ -33,7 +33,7 @@ public class LegeSchuifknopScript : MonoBehaviour
         startPosX = startPosX + gameObject.transform.position.x;
         startPosY = startPosY + gameObject.transform.position.y;
 
-        FloatWaterLayer.GetComponent<Transform>();
+        FloatWaterLayer.transform.localScale = FloatWaterLayer.transform.localScale;
 
     }
     public void ScaleLayer()
@@ -43,89 +43,91 @@ public class LegeSchuifknopScript : MonoBehaviour
             FloatLayer();
         }
     }
-}
 
 
-
-private void FloatLayer()
-{ // De functie die ervoor zorgt dat de Waterlayer steeds -1 downscaled
-
-    FloatWaterLayer.transform.localScale = transform.TransformVector(counter, counter2, 0) - new Vector3(0.842517f, 0.596645f, 0);
-
-
-}
-
-//------------Schuifknop Functionaliteit-------------
-
-public void posLimiter()
-{
-    if (gameObject.transform.position.x > (startPosX + 0.715f) || transform.position.x < (startPosX - 0.715f))
-    {
-        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-        movable = false;
-
+    private void FloatLayer()
+    { // De functie die ervoor zorgt dat de Waterlayer steeds -1 downscaled
+        FloatWaterLayer.transform.localScale -= new Vector3(0.1f, 0.1f, 0f);
+        if (FloatWaterLayer.transform.localScale = new Vector3(0f, 0f, 1f))
+        {
+            FloatWaterLayer.transform.localScale = new Vector3(0, 0, 0);
+        }
     }
-    else
+
+    //------------Schuifknop Functionaliteit-------------
+
+    public void posLimiter()
     {
+        if (gameObject.transform.position.x > (startPosX + 0.715f) || transform.position.x < (startPosX - 0.715f))
+        {
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            movable = false;
+
+        }
+        else
+        {
+            if (colliding == true)
+            {
+                GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                movable = true;
+            }
+        }
+    }
+
+    public void posLimitRight()
+    {
+        if (gameObject.transform.position.x > (startPosX + 0.715f))
+        {
+            if (colliding == false)
+            {
+                gameObject.transform.position = new Vector3(startPosX + 0.71f, startPosY, -3.24f);
+            }
+            status = true;
+        }
+    }
+
+    public void posLimitLeft()
+    {
+        if (gameObject.transform.position.x < (startPosX - 0.715f))
+        {
+            if (colliding == false)
+            {
+                gameObject.transform.position = new Vector3(startPosX - 0.71f, startPosY, -3.24f);
+            }
+            status = false;
+
+        }
+    }
+
+    private void OnTriggerEnter2D()
+    {
+        colliding = true;
+    }
+
+    private void OnTriggerStay2D()
+    {
+        colliding = true;
+    }
+
+    private void OnTriggerExit2D()
+    {
+        colliding = false;
+    }
+
+    void FixedUpdate()
+    {
+        ScaleLayer();
+        posLimiter();
+        posLimitRight();
+        posLimitLeft();
         if (colliding == true)
         {
-            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-            movable = true;
+            RigidBodyLink.MovePosition(RigidBodyLink.position + movement * MoveSpeed * Time.fixedDeltaTime);
+            Debug.Log("Movable...");
         }
-    }
-}
-
-public void posLimitRight()
-{
-    if (gameObject.transform.position.x > (startPosX + 0.715f))
-    {
-        if (colliding == false)
+        else
         {
-            gameObject.transform.position = new Vector3(startPosX + 0.71f, startPosY, -3.24f);
+            Debug.Log("Not Movable...");
         }
     }
 }
-
-public void posLimitLeft()
-{
-    if (gameObject.transform.position.x < (startPosX - 0.715f))
-    {
-        if (colliding == false)
-        {
-            gameObject.transform.position = new Vector3(startPosX - 0.71f, startPosY, -3.24f);
-        }
-    }
-}
-
-private void OnTriggerEnter2D()
-{
-    colliding = true;
-}
-
-private void OnTriggerStay2D()
-{
-    colliding = true;
-}
-
-private void OnTriggerExit2D()
-{
-    colliding = false;
-}
-
-void FixedUpdate()
-{
-    ScaleLayer();
-    posLimiter();
-    posLimitRight();
-    posLimitLeft();
-    if (colliding == true)
-    {
-        RigidBodyLink.MovePosition(RigidBodyLink.position + movement * MoveSpeed * Time.fixedDeltaTime);
-        Debug.Log("Movable...");
-    }
-    else
-    {
-        Debug.Log("Not Movable...");
-    }
-}
-
