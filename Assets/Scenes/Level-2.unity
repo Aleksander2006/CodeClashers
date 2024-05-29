@@ -1622,7 +1622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 5
-  RigidBodyLink: {fileID: 0}
+  RigidBodyLink: {fileID: 1006135465}
   status: 0
   BLayer: {fileID: 292770126}
 --- !u!70 &1006135463
