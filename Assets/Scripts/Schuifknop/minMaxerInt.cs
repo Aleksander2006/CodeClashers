@@ -22,11 +22,14 @@ public class minMaxer : MonoBehaviour
     public bool status = false;
     private float counter = 7.842517f;
     private float counter2 = 6.596645f;
-
-    private float counterWaterpeil = 7.842517f;
-    private float counterWaterpeil2 = 6.596645f;
     private float timer = 0;
     private float delay = 0.8f; // 0,8 seconden vertraging elke Layer
+
+    //Waterpeil
+    private float counterWaterpeil = 10f;
+    [SerializeField] float speed = 0;
+
+    
 
     [SerializeField] GameObject IntWaterLayer;
     [SerializeField] GameObject WaterpeilIntLayer;
@@ -38,6 +41,7 @@ public class minMaxer : MonoBehaviour
         startPosY = startPosY + gameObject.transform.position.y;
 
         IntWaterLayer.GetComponent<Transform>();
+        WaterpeilIntLayer.GetComponent<Transform>();
     }
 
     public void ScaleLayer()
@@ -65,12 +69,15 @@ public class minMaxer : MonoBehaviour
                 counter--;
                 counter2--;
             }
-            if (counter >= 1)
+
+            if (counterWaterpeil >= 1)
             {
-                WaterpeilIntLayer.transform.localScale = transform.TransformVector(counterWaterpeil, counterWaterpeil2, 0) - new Vector3(0.842517f, 0.596645f, 0);
+                WaterpeilIntLayer.transform.localScale = transform.TransformVector(counterWaterpeil, 10, 0) - new Vector3(4f, 0, 0);
                 counterWaterpeil--;
-                counterWaterpeil2--;
-            }
+                if (WaterpeilIntLayer.transform.localScale.x <= 0){
+                    WaterpeilIntLayer.transform.localScale = Vector3.zero;
+                }
+            }  
         }
     }
 

@@ -582,6 +582,7 @@ MonoBehaviour:
   MoveSpeed: 5
   RigidBodyLink: {fileID: 260356166}
   status: 0
+  speed: 1
   IntWaterLayer: {fileID: 1095984963}
   WaterpeilIntLayer: {fileID: 1742567160}
 --- !u!1 &263221355
@@ -2683,8 +2684,8 @@ Transform:
   m_GameObject: {fileID: 1742567160}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.398, y: -0.35, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1.401, y: -0.355, z: 0}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1414617592}
@@ -3488,6 +3489,7 @@ MonoBehaviour:
   MoveSpeed: 5
   RigidBodyLink: {fileID: 1976266956}
   waterObject: {fileID: 292770126}
+  WaterpeilBoolLayer: {fileID: 1545644993}
 --- !u!1 &2044884446
 GameObject:
   m_ObjectHideFlags: 0
