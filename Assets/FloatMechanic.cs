@@ -21,14 +21,17 @@ public class LegeSchuifknopScript : MonoBehaviour
     private float startPosY = 0;
     Vector2 movement;
     public bool status = false;
-    [SerializeField] GameObject FloatWaterLayer;
-    [SerializeField] GameObject MainCharacter;
 
+    [SerializeField] float speed = 0f;
+    [SerializeField] GameObject FloatWaterLayer;
+    [SerializeField] GameObject WaterpeilFloatLayer;
+    
     void Start()
     {
         startPosX = startPosX + gameObject.transform.position.x;
         startPosY = startPosY + gameObject.transform.position.y;
         FloatWaterLayer.transform.localScale = FloatWaterLayer.transform.localScale;
+        WaterpeilFloatLayer.transform.localScale = WaterpeilFloatLayer.transform.localScale;
     }
 
     public void ScaleLayer()
@@ -45,6 +48,12 @@ public class LegeSchuifknopScript : MonoBehaviour
         if (FloatWaterLayer.transform.localScale.x <= 0f && FloatWaterLayer.transform.localScale.y <= 0f)
         {
             FloatWaterLayer.transform.localScale = new Vector3(0, 0, 0);
+        }
+
+        WaterpeilFloatLayer.transform.localScale -= new Vector3(0.05f, 0f, 0f) * speed;
+        if (WaterpeilFloatLayer.transform.localScale.x <= 0f)
+        {
+            WaterpeilFloatLayer.transform.localScale = new Vector3(0, 0, 0);
         }
     }
 
