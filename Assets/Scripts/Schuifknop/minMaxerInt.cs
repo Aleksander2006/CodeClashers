@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.Jobs;
 using UnityEngine.TextCore.Text;
 
-public class minMaxer : MonoBehaviour
+public class minMaxer : MonoBehaviour 
 {
     private bool movable = false;
     private bool colliding = false;
@@ -27,36 +27,28 @@ public class minMaxer : MonoBehaviour
 
     [SerializeField] GameObject IntWaterLayer;
 
-
-    void Start()
-    {
+    void Start() {
         startPosX = startPosX + gameObject.transform.position.x;
         startPosY = startPosY + gameObject.transform.position.y;
 
         IntWaterLayer.GetComponent<Transform>();
     }
 
-    public void ScaleLayer()
-    { //Check of Schuifknop AANstaat
-        if (status == true)
-        {
+    public void ScaleLayer (){ //Check of Schuifknop AANstaat
+        if (status == true){
             StartCoroutine(FadeDelay());
         }
     }
 
-    private IEnumerator FadeDelay()
-    { //Zorgt ervoor dat de Schuifknop wacht voor 0,7 seconden en dan doorgaat.
+    private IEnumerator FadeDelay() { //Zorgt ervoor dat de Schuifknop wacht voor 0,7 seconden en dan doorgaat.
         yield return new WaitForSeconds(0.7f);
         IntLayer();
     }
 
-    private void IntLayer()
-    { // De functie die ervoor zorgt dat de Waterlayer steeds -1 downscaled
-        if (timer > delay)
-        {
+    private void IntLayer() { // De functie die ervoor zorgt dat de Waterlayer steeds -1 downscaled
+        if (timer > delay) {
             timer = 0f;
-            if (counter >= 1)
-            {
+            if (counter >= 1) {
                 IntWaterLayer.transform.localScale = transform.TransformVector(counter, counter2, 0) - new Vector3(0.842517f, 0.596645f, 0);
                 counter--;
                 counter2--;
@@ -66,83 +58,62 @@ public class minMaxer : MonoBehaviour
 
     //------------Schuifknop Functionaliteit-------------
 
-    public void posLimiter()
-    {
-        if (gameObject.transform.position.x > (startPosX + 0.715f) || transform.position.x < (startPosX - 0.715f))
-        {
+    public void posLimiter() {
+        if(gameObject.transform.position.x > (startPosX + 0.715f) || transform.position.x < (startPosX - 0.715f)) {
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             movable = false;
-
-        }
-        else
-        {
-            if (colliding == true)
-            {
-                GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-                movable = true;
+            
+        } else {
+            if(colliding == true){
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+            movable = true;
             }
         }
     }
 
-    public void posLimitRight()
-    {
-        if (gameObject.transform.position.x > (startPosX + 0.715f))
-        {
-            if (colliding == false)
-            {
+    public void posLimitRight() {
+        if(gameObject.transform.position.x > (startPosX + 0.715f)) {
+            if(colliding == false) {
                 gameObject.transform.position = new Vector3(startPosX + 0.71f, startPosY, -3.24f);
-            }
-            status = true;
+            } status = true;
         }
     }
 
-    public void posLimitLeft()
-    {
-        if (gameObject.transform.position.x < (startPosX - 0.715f))
-        {
-            if (colliding == false)
-            {
+    public void posLimitLeft() {
+        if(gameObject.transform.position.x < (startPosX - 0.715f)) {
+            if(colliding == false) {
                 gameObject.transform.position = new Vector3(startPosX - 0.71f, startPosY, -3.24f);
-            }
-            status = false;
+            } status = false;
         }
     }
 
-    private void OnTriggerEnter2D()
-    {
+    private void OnTriggerEnter2D(){
         colliding = true;
     }
 
-    private void OnTriggerStay2D()
-    {
+    private void OnTriggerStay2D() {
         colliding = true;
     }
 
-    private void OnTriggerExit2D()
-    {
+    private void OnTriggerExit2D(){
         colliding = false;
     }
 
-    void FixedUpdate()
-    {
-
+    void FixedUpdate(){
+       
         ScaleLayer();
         posLimiter();
         posLimitRight();
         posLimitLeft();
-        if (colliding == true)
-        {
+        if(colliding == true) {
             RigidBodyLink.MovePosition(RigidBodyLink.position + movement * MoveSpeed * Time.fixedDeltaTime);
             //Debug.Log("Movable...");
-        }
-        else
-        {
+        } else {
             //Debug.Log("Not Movable...");
         }
-    }
+    } 
 
-    void Update()
-    {
+    void Update (){
         timer += Time.deltaTime;
     }
 }
