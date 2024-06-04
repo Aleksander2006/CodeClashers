@@ -1,15 +1,17 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
+using System.IO.Compression;
 using System.Runtime.CompilerServices;
 using JetBrains.Annotations;
 using Unity.VisualScripting;
+using Unity.VisualScripting.ReorderableList;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.Jobs;
 using UnityEngine.TextCore.Text;
 
-public class minMaxer : MonoBehaviour
+public class LegeSchuifknopScript : MonoBehaviour
 {
     private bool movable = false;
     private bool colliding = false;
@@ -18,60 +20,41 @@ public class minMaxer : MonoBehaviour
     private float startPosX = 0;
     private float startPosY = 0;
     Vector2 movement;
-
     public bool status = false;
-    private float counter = 7.842517f;
-    private float counter2 = 6.596645f;
-    private float timer = 0;
-    private float delay = 0.8f; // 0,8 seconden vertraging elke Layer
-
-    [SerializeField] GameObject IntWaterLayer;
-
+    [SerializeField] GameObject FloatWaterLayer;
+    [SerializeField] GameObject MainCharacter;
 
     void Start()
     {
         startPosX = startPosX + gameObject.transform.position.x;
         startPosY = startPosY + gameObject.transform.position.y;
-
-        IntWaterLayer.GetComponent<Transform>();
+        FloatWaterLayer.transform.localScale = FloatWaterLayer.transform.localScale;
     }
 
     public void ScaleLayer()
     { //Check of Schuifknop AANstaat
         if (status == true)
         {
-            StartCoroutine(FadeDelay());
+            FloatLayer();
         }
     }
 
-    private IEnumerator FadeDelay()
-    { //Zorgt ervoor dat de Schuifknop wacht voor 0,7 seconden en dan doorgaat.
-        yield return new WaitForSeconds(0.7f);
-        IntLayer();
-    }
-
-    private void IntLayer()
+    private void FloatLayer()
     { // De functie die ervoor zorgt dat de Waterlayer steeds -1 downscaled
-        if (timer > delay)
+        FloatWaterLayer.transform.localScale -= new Vector3(0.05f, 0.05f, 0f);
+        if (FloatWaterLayer.transform.localScale.x <= 0f && FloatWaterLayer.transform.localScale.y <= 0f)
         {
-            timer = 0f;
-            if (counter >= 1)
-            {
-                IntWaterLayer.transform.localScale = transform.TransformVector(counter, counter2, 0) - new Vector3(0.842517f, 0.596645f, 0);
-                counter--;
-                counter2--;
-            }
+            FloatWaterLayer.transform.localScale = new Vector3(0, 0, 0);
         }
     }
 
-    //------------Schuifknop Functionaliteit-------------
+    //------------Schuifknop Functionaliteit-------------//
 
     public void posLimiter()
     {
         if (gameObject.transform.position.x > (startPosX + 0.715f) || transform.position.x < (startPosX - 0.715f))
         {
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-            movable = false;
 
         }
         else
@@ -79,7 +62,6 @@ public class minMaxer : MonoBehaviour
             if (colliding == true)
             {
                 GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-                movable = true;
             }
         }
     }
@@ -105,6 +87,7 @@ public class minMaxer : MonoBehaviour
                 gameObject.transform.position = new Vector3(startPosX - 0.71f, startPosY, -3.24f);
             }
             status = false;
+
         }
     }
 
@@ -125,7 +108,6 @@ public class minMaxer : MonoBehaviour
 
     void FixedUpdate()
     {
-
         ScaleLayer();
         posLimiter();
         posLimitRight();
@@ -133,16 +115,11 @@ public class minMaxer : MonoBehaviour
         if (colliding == true)
         {
             RigidBodyLink.MovePosition(RigidBodyLink.position + movement * MoveSpeed * Time.fixedDeltaTime);
-            //Debug.Log("Movable...");
+            Debug.Log("Movable...");
         }
         else
         {
-            //Debug.Log("Not Movable...");
+            Debug.Log("Not Movable...");
         }
-    }
-
-    void Update()
-    {
-        timer += Time.deltaTime;
     }
 }
