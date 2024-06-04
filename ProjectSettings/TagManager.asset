@@ -8,7 +8,6 @@ TagManager:
   - TV
   - Lever3
   - Lever1
-  - Character_Dupe
   layers:
   - Default
   - TransparentFX
