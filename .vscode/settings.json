@@ -5,6 +5,7 @@
         "**/.vs": true,
         "**/.gitmodules": true,
         "**/.vsconfig": true,
+        "CS.errorSquiggles": true,
         "**/*.booproj": true,
         "**/*.pidb": true,
         "**/*.suo": true,
