@@ -22,12 +22,12 @@ public class Timer4s : MonoBehaviour
 
     [SerializeField] Animator animator;
     [SerializeField] MovementScript movementScript;
-
-    [SerializeField] TextMeshProUGUI redTimer;
+    [SerializeField] RectTransform redTimerPos;
+    [SerializeField] TextMeshProUGUI redTimerText;
 
     void Start(){
         transitionTrigger.GetComponent<TransitionTrigger>();
-        redTimer.enabled = false;
+        redTimerText.enabled = false;
     }
     
     private void OnTriggerEnter2D (Collider2D other){
@@ -74,6 +74,7 @@ public class Timer4s : MonoBehaviour
             StartCoroutine(FadeDelay());
             Crossfade.SetTrigger("Go");
             timer = 0f;
+            redTimerPos.anchoredPosition = new Vector3(125f, 150, 0);
         }
 
         if(timer < 1.75) {
@@ -82,16 +83,16 @@ public class Timer4s : MonoBehaviour
         }
 
         if(timer < 4) {
-            redTimer.enabled = true;
+            redTimerText.enabled = true;
         }
 
         if(timer > 3.99) {
-            redTimer.enabled = false;
+            redTimerText.enabled = false;
         }
 
         timerRounded = (float)Math.Round(timer, 1);
         timerString = timerRounded.ToString();
-        redTimer.text = timerString;
+        redTimerText.text = timerString;
     }
 }
 

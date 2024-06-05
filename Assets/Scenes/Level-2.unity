@@ -4134,7 +4134,8 @@ MonoBehaviour:
   transitionTrigger: {fileID: 1860601666}
   animator: {fileID: 1900691932}
   movementScript: {fileID: 1900691934}
-  redTimer: {fileID: 299761650}
+  redTimerPos: {fileID: 299761649}
+  redTimerText: {fileID: 299761650}
 --- !u!1 &1976266951
 GameObject:
   m_ObjectHideFlags: 0
