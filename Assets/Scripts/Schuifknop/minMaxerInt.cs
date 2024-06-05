@@ -23,14 +23,14 @@ public class minMaxer : MonoBehaviour
     private float counter = 7.842517f;
     private float counter2 = 6.596645f;
 
-    private float MinGetalX = 1.30708617f;
-    private float MinGetalY = 1.09944083f;
+    private float MinGetalX = 1.5685034f;
+    private float MinGetalY = 1.319329f;
     private float timer = 0;
     private float delay = 0.8f; // 0,8 seconden vertraging elke Layer
 
     //Waterpeil
     private float counterWaterpeil = 10f;
-    private float MinGetalXWaterpeil = 1.66666667f;
+    private float MinGetalXWaterpeil = 2f;
     [SerializeField] float speed = 0;
 
     
