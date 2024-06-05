@@ -22,6 +22,9 @@ public class minMaxer : MonoBehaviour
     public bool status = false;
     private float counter = 7.842517f;
     private float counter2 = 6.596645f;
+
+    private float counterMinGetalX = 1.30708617f;
+    private float counterMinGetalY = 1.09944083f;
     private float timer = 0;
     private float delay = 0.8f; // 0,8 seconden vertraging elke Layer
 
@@ -65,9 +68,12 @@ public class minMaxer : MonoBehaviour
             timer = 0f;
             if (counter >= 1)
             {
-                IntWaterLayer.transform.localScale = transform.TransformVector(counter, counter2, 0) - new Vector3(0.842517f, 0.596645f, 0);
-                counter--;
-                counter2--;
+                IntWaterLayer.transform.localScale = transform.TransformVector(counter, counter2, 0) - new Vector3(counterMinGetalX, counterMinGetalY, 0);
+                counter -= counterMinGetalX;
+                counter2 -= counterMinGetalY;
+                if (IntWaterLayer.transform.localScale.x <= 0 && IntWaterLayer.transform.localScale.y <= 0){
+                    IntWaterLayer.transform.localScale = Vector3.zero;
+                }
             }
 
             if (counterWaterpeil >= 1)
