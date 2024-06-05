@@ -9,6 +9,9 @@ TagManager:
   - Lever3
   - Lever1
   - Character_Dupe
+  - Waterlayer1
+  - Waterlayer2
+  - Waterlayer3
   layers:
   - Default
   - TransparentFX
