@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class WaterScaleRef : MonoBehaviour {
     [SerializeField] GameObject waterGo;
-    [SerializeField] 
 
     public float waterScale;
     public float waterScaleOld;

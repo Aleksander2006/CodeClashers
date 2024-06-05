@@ -25,7 +25,8 @@ public class LegeSchuifknopScript : MonoBehaviour
     [SerializeField] GameObject FloatWaterLayer;
     [SerializeField] BoxCollider2D waterLevel;
     [SerializeField] GameObject WaterpeilFloatLayer;
-    
+    [SerializeField] float speed = 0.2f;
+
     void Start()
     {
         startPosX = startPosX + gameObject.transform.position.x;
@@ -52,7 +53,7 @@ public class LegeSchuifknopScript : MonoBehaviour
             waterLevel.size = new Vector2(0,0);
         }
 
-        WaterpeilFloatLayer.transform.localScale -= new Vector3(0.05f, 0f, 0f);
+        WaterpeilFloatLayer.transform.localScale -= new Vector3(0.05f, 0f, 0f) * speed;
         if (WaterpeilFloatLayer.transform.localScale.x <= 0f)
         {
             WaterpeilFloatLayer.transform.localScale = new Vector3(0, 0, 0);

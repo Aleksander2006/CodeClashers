@@ -29,7 +29,7 @@ public class LiveWaterscaleScript : MonoBehaviour {
         }
 
         if(scaleWater < 1 && scaleWater > 0.0001) {
-            scaleWater = (float)Math.Round(scaleWater, 3) + 0.0001f;
+            scaleWater = (float)Math.Round(scaleWater, 3);
         }
 
         levelSize = scaleWater.ToString();
