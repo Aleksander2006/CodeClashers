@@ -23,12 +23,19 @@ public class Boolbutton : MonoBehaviour
 
     [SerializeField] GameObject WaterpeilBoolLayer;
     [SerializeField] BoxCollider2D WaterLevel;
-    private bool isWaterObjectDeactivated = false;
+    public bool isWaterObjectDeactivated = false;
+
+    //Script links met Bool en Int Layer
+    [SerializeField] LegeSchuifknopScript floatScript;
+    [SerializeField] minMaxerInt minMaxerint;
 
     void Start()
     {
         startPosX = startPosX + gameObject.transform.position.x;
         startPosY = startPosY + gameObject.transform.position.y;
+
+        floatScript.GetComponent<LegeSchuifknopScript>();
+        minMaxerint.GetComponent<minMaxerInt>();
     }
 
     public void posLimiter()

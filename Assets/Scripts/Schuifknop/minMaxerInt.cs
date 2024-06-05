@@ -38,11 +38,18 @@ public class minMaxerInt : MonoBehaviour
     [SerializeField] GameObject WaterpeilIntLayer;
     [SerializeField] BoxCollider2D waterLevel;
 
+    //Script links met Bool en Float Layer
+    [SerializeField] Boolbutton boolbutton;
+    [SerializeField] LegeSchuifknopScript floatScipt;
+
 
     void Start()
     {
         startPosX = startPosX + gameObject.transform.position.x;
         startPosY = startPosY + gameObject.transform.position.y;
+        
+        boolbutton.GetComponent<Boolbutton>();
+        floatScipt.GetComponent<LegeSchuifknopScript>();
     }
 
     public void ScaleLayer()
