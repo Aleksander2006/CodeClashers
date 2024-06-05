@@ -25,6 +25,9 @@ public class Boolbutton : MonoBehaviour
     [SerializeField] BoxCollider2D WaterLevel;
     public bool isWaterObjectDeactivated = false;
 
+    //Check of layer aanstaat
+    public bool LayerAan = true;
+
     //Script links met Bool en Int Layer
     [SerializeField] LegeSchuifknopScript floatScript;
     [SerializeField] minMaxerInt minMaxerint;
@@ -64,8 +67,10 @@ public class Boolbutton : MonoBehaviour
             {
                 gameObject.transform.position = new Vector3(startPosX + 0.71f, startPosY, -3.24f);
             }
-            if (!isWaterObjectDeactivated)
+            if (!isWaterObjectDeactivated && minMaxerint.LayerAan == false && floatScript.LayerAan == false)
             {
+                LayerAan = false;
+
                 WaterLevel.size = WaterLevel.size - new Vector2(1,1);
                 waterObject.SetActive(false);
                 WaterpeilBoolLayer.SetActive(false);

@@ -33,6 +33,9 @@ public class minMaxerInt : MonoBehaviour
     private float MinGetalXWaterpeil = 2f;
     [SerializeField] float speed = 0;
 
+    //Check of layer aanstaat
+    public bool LayerAan = true;
+
     
     [SerializeField] GameObject IntWaterLayer;
     [SerializeField] GameObject WaterpeilIntLayer;
@@ -54,9 +57,10 @@ public class minMaxerInt : MonoBehaviour
 
     public void ScaleLayer()
     { //Check of Schuifknop AANstaat
-        if (status == true)
+        if (status == true && boolbutton.LayerAan == true && floatScipt.LayerAan == false)
         {
             StartCoroutine(FadeDelay());
+            LayerAan = false;
         }
     }
 
@@ -77,6 +81,7 @@ public class minMaxerInt : MonoBehaviour
                 waterLevel.size = waterLevel.size - new Vector2(0.2f, 0.2f);
                 counter -= MinGetalX;
                 counter2 -= MinGetalY;
+
                 if (IntWaterLayer.transform.localScale.x <= 0 && IntWaterLayer.transform.localScale.y <= 0){
                     IntWaterLayer.transform.localScale = Vector3.zero;
                 }

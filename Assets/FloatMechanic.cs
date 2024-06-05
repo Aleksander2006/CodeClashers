@@ -22,6 +22,10 @@ public class LegeSchuifknopScript : MonoBehaviour
     private float startPosY = 0;
     Vector2 movement;
     public bool status = false;
+
+    //Check of layer aanstaat
+    public bool LayerAan = true;
+
     [SerializeField] GameObject FloatWaterLayer;
     [SerializeField] BoxCollider2D waterLevel;
     [SerializeField] GameObject WaterpeilFloatLayer;
@@ -47,9 +51,10 @@ public class LegeSchuifknopScript : MonoBehaviour
 
     public void ScaleLayer()
     { //Check of Schuifknop AANstaat
-        if (status == true && Intlayer.transform.localScale.x == 7.842517f && Intlayer.transform.localScale.y == 6.596645f && boollayer.transform.localScale.x == 9.132553f && boollayer.transform.localScale.y == 6.066544f) 
+        if (status == true && minmaxint.LayerAan == true && boolbutton.LayerAan == true) 
         {
             FloatLayer();
+            LayerAan = false;
         }
     }
 
