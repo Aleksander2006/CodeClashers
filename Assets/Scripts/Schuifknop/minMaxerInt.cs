@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.Jobs;
 using UnityEngine.TextCore.Text;
 
-public class minMaxer : MonoBehaviour
+public class minMaxerInt : MonoBehaviour
 {
     private bool movable = false;
     private bool colliding = false;
