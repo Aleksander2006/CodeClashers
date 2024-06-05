@@ -34,10 +34,8 @@ public class minMaxer : MonoBehaviour
     [SerializeField] float speed = 0;
 
     
-
     [SerializeField] GameObject IntWaterLayer;
     [SerializeField] GameObject WaterpeilIntLayer;
-
     [SerializeField] BoxCollider2D waterLevel;
 
 
@@ -45,9 +43,6 @@ public class minMaxer : MonoBehaviour
     {
         startPosX = startPosX + gameObject.transform.position.x;
         startPosY = startPosY + gameObject.transform.position.y;
-
-        IntWaterLayer.GetComponent<Transform>();
-        WaterpeilIntLayer.GetComponent<Transform>();
     }
 
     public void ScaleLayer()
