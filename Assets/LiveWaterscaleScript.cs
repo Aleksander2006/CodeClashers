@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -8,31 +9,31 @@ using UnityEngine.UIElements;
 public class LiveWaterscaleScript : MonoBehaviour {
     [SerializeField] BoxCollider2D waterLevel;
     [SerializeField] TextMeshProUGUI scalePrinter;
-    private float scaleWaterX;
-    private float scaleWaterY;
+    private float scaleWater;
+    private string levelSize;
 
-    private string levelSizeX;
-    private string levelSizeY;
-
-    void Start() {
-        
+    public float ToSingle(double scaleWater) {
+        return (float)scaleWater;
     }
 
-    void Update() {
-        waterLevel.size = new Vector2(scaleWaterX, scaleWaterY);
-        scaleWaterX = waterLevel.size.x;
-        scaleWaterY = waterLevel.size.y;
-        
+    void FixedUpdate() {
+        scaleWater = waterLevel.size.x;
+        scaleWater = waterLevel.size.y;
 
-        string levelSizeX = scaleWaterX.ToString();
+        if(scaleWater == 1){
+            scaleWater = 1;
+        }
 
-        scalePrinter.text = levelSizeX;
+        if(scaleWater < 0.0001) {
+            scaleWater = 0;
+        }
 
-        Debug.Log(levelSizeX);
-        //gameObject.GetComponent<TMPro.TextMeshProUGUI>().text = scaleWater.size;//waterLayerFloat.transform.localScale;
+        if(scaleWater < 1 && scaleWater > 0.0001) {
+            scaleWater = (float)Math.Round(scaleWater, 3) + 0.0001f;
+        }
+
+        levelSize = scaleWater.ToString();
+        scalePrinter.text = levelSize;
+
     }
-}
-
-
-//nog doen:
-//de waterlevel.size.x en y converten naar een string en onderin de update zetten achter scaleprinter.text = "DAN HIER DE GECONVERTE STRING" 
+} 

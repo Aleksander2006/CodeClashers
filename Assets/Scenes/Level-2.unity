@@ -1052,6 +1052,7 @@ MonoBehaviour:
   RigidBodyLink: {fileID: 394668035}
   status: 0
   FloatWaterLayer: {fileID: 2044884446}
+  waterLevel: {fileID: 609123863}
   MainCharacter: {fileID: 1900691930}
 --- !u!70 &394668033
 CapsuleCollider2D:
@@ -1212,6 +1213,7 @@ GameObject:
   m_Component:
   - component: {fileID: 609123862}
   - component: {fileID: 609123863}
+  - component: {fileID: 609123864}
   m_Layer: 4
   m_Name: WaterLevelScale
   m_TagString: Untagged
@@ -1227,12 +1229,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 609123861}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 8.996914, y: -8.649855, z: -0.1973368}
+  m_LocalScale: {x: 6.6535573, y: 6.5927067, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2044884448}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &609123863
 BoxCollider2D:
@@ -1279,6 +1281,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &609123864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609123861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bbcba25780208b4ba1f550aa6966a24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterGo: {fileID: 2044884446}
+  waterScale: 0
+  waterScaleOld: 0
+  refColliderScale: 0
 --- !u!1 &892625068
 GameObject:
   m_ObjectHideFlags: 0
@@ -3555,8 +3573,7 @@ Transform:
   m_LocalPosition: {x: 12.337, y: -4.18, z: -0.1973368}
   m_LocalScale: {x: 6.6535573, y: 6.5927067, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 609123862}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2044884449
@@ -3641,6 +3658,7 @@ SceneRoots:
   - {fileID: 340622705}
   - {fileID: 1160611625}
   - {fileID: 2044884448}
+  - {fileID: 609123862}
   - {fileID: 1095984964}
   - {fileID: 292770127}
   - {fileID: 1816991216}
