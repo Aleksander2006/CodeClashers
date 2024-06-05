@@ -81,7 +81,7 @@ public class TransitionTrigger : MonoBehaviour {
             timerBuiten = 0.5f;
         } 
     }
-    private IEnumerator FadeDelay() {
+    public IEnumerator FadeDelay() {
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
     }
