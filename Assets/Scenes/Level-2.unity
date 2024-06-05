@@ -586,8 +586,8 @@ MonoBehaviour:
   IntWaterLayer: {fileID: 1095984963}
   WaterpeilIntLayer: {fileID: 1742567160}
   waterLevel: {fileID: 1414302739}
-  boolbutton: {fileID: 0}
-  floatScipt: {fileID: 0}
+  boolbutton: {fileID: 1976266959}
+  floatScipt: {fileID: 394668032}
 --- !u!1 &263221355
 GameObject:
   m_ObjectHideFlags: 0
@@ -1143,6 +1143,8 @@ MonoBehaviour:
   speed: 0.2
   minmaxint: {fileID: 260356169}
   boolbutton: {fileID: 1976266959}
+  Intlayer: {fileID: 1095984963}
+  boollayer: {fileID: 292770126}
 --- !u!70 &394668033
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -4295,6 +4297,8 @@ MonoBehaviour:
   WaterpeilBoolLayer: {fileID: 1545644993}
   WaterLevel: {fileID: 362366720}
   isWaterObjectDeactivated: 0
+  floatScript: {fileID: 394668032}
+  minMaxerint: {fileID: 260356169}
 --- !u!1 &1987353082
 GameObject:
   m_ObjectHideFlags: 0
