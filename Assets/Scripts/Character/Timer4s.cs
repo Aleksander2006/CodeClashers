@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using Unity.VisualScripting;
 using UnityEditor;
+using UnityEditor.U2D.Animation;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,6 +15,9 @@ public class Timer4s : MonoBehaviour
     public Animator Crossfade;
 
     [SerializeField] TransitionTrigger transitionTrigger;
+
+    [SerializeField] Animator animator;
+    [SerializeField] MovementScript movementScript;
 
     void Start(){
         transitionTrigger.GetComponent<TransitionTrigger>();
@@ -31,6 +36,8 @@ public class Timer4s : MonoBehaviour
 
             TimerCheck = false;
             Debug.Log(timer);  
+            animator.SetBool("DrownPlayer", false);
+            animator.SetFloat("Speed", 0.05f);
         }
     }
 
@@ -58,6 +65,11 @@ public class Timer4s : MonoBehaviour
         if (timer <= 0){ 
             StartCoroutine(FadeDelay());
             Crossfade.SetTrigger("Go");
+        }
+
+        if(timer < 1.75) {
+            animator.SetBool("DrownPlayer", true);
+            animator.SetFloat("Speed", 0.001f);
         }
     }
 }
