@@ -20,6 +20,8 @@ public class Boolbutton : MonoBehaviour
     private float startPosY = 0;
     Vector2 movement;
     public GameObject waterObject;
+
+    [SerializeField] GameObject WaterpeilBoolLayer;
     private bool isWaterObjectDeactivated = false;
 
     void Start()
@@ -57,6 +59,7 @@ public class Boolbutton : MonoBehaviour
             if (!isWaterObjectDeactivated)
             {
                 waterObject.SetActive(false);
+                WaterpeilBoolLayer.SetActive(false);
                 isWaterObjectDeactivated = true;
             }
         }

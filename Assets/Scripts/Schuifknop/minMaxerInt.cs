@@ -22,10 +22,21 @@ public class minMaxer : MonoBehaviour
     public bool status = false;
     private float counter = 7.842517f;
     private float counter2 = 6.596645f;
+
+    private float MinGetalX = 1.30708617f;
+    private float MinGetalY = 1.09944083f;
     private float timer = 0;
     private float delay = 0.8f; // 0,8 seconden vertraging elke Layer
 
+    //Waterpeil
+    private float counterWaterpeil = 10f;
+    private float MinGetalXWaterpeil = 1.66666667f;
+    [SerializeField] float speed = 0;
+
+    
+
     [SerializeField] GameObject IntWaterLayer;
+    [SerializeField] GameObject WaterpeilIntLayer;
 
 
     void Start()
@@ -34,6 +45,7 @@ public class minMaxer : MonoBehaviour
         startPosY = startPosY + gameObject.transform.position.y;
 
         IntWaterLayer.GetComponent<Transform>();
+        WaterpeilIntLayer.GetComponent<Transform>();
     }
 
     public void ScaleLayer()
@@ -57,10 +69,23 @@ public class minMaxer : MonoBehaviour
             timer = 0f;
             if (counter >= 1)
             {
-                IntWaterLayer.transform.localScale = transform.TransformVector(counter, counter2, 0) - new Vector3(0.842517f, 0.596645f, 0);
-                counter--;
-                counter2--;
+                IntWaterLayer.transform.localScale = transform.TransformVector(counter, counter2, 0) - new Vector3(MinGetalX, MinGetalY, 0);
+                counter -= MinGetalX;
+                counter2 -= MinGetalY;
+                if (IntWaterLayer.transform.localScale.x <= 0 && IntWaterLayer.transform.localScale.y <= 0){
+                    IntWaterLayer.transform.localScale = Vector3.zero;
+                }
             }
+
+            if (counterWaterpeil >= 1)
+            {
+                WaterpeilIntLayer.transform.localScale = transform.TransformVector(counterWaterpeil, 10, 0) - new Vector3(MinGetalXWaterpeil, 0, 0);
+                
+                counterWaterpeil -= MinGetalXWaterpeil;
+                if (WaterpeilIntLayer.transform.localScale.x <= 0){
+                    WaterpeilIntLayer.transform.localScale = Vector3.zero;
+                }
+            }  
         }
     }
 
