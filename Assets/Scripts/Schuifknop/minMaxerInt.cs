@@ -38,6 +38,8 @@ public class minMaxer : MonoBehaviour
     [SerializeField] GameObject IntWaterLayer;
     [SerializeField] GameObject WaterpeilIntLayer;
 
+    [SerializeField] BoxCollider2D waterLevel;
+
 
     void Start()
     {
@@ -70,6 +72,7 @@ public class minMaxer : MonoBehaviour
             if (counter >= 1)
             {
                 IntWaterLayer.transform.localScale = transform.TransformVector(counter, counter2, 0) - new Vector3(MinGetalX, MinGetalY, 0);
+                waterLevel.size = waterLevel.size - new Vector2(0.2f, 0.2f);
                 counter -= MinGetalX;
                 counter2 -= MinGetalY;
                 if (IntWaterLayer.transform.localScale.x <= 0 && IntWaterLayer.transform.localScale.y <= 0){

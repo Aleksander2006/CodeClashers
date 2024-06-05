@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO.Compression;
 using System.Runtime.CompilerServices;
 using JetBrains.Annotations;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using Unity.VisualScripting.ReorderableList;
 using UnityEditor.Rendering;
@@ -21,11 +22,11 @@ public class LegeSchuifknopScript : MonoBehaviour
     private float startPosY = 0;
     Vector2 movement;
     public bool status = false;
-
-    [SerializeField] float speed = 0f;
     [SerializeField] GameObject FloatWaterLayer;
+    [SerializeField] BoxCollider2D waterLevel;
     [SerializeField] GameObject WaterpeilFloatLayer;
-    
+    [SerializeField] float speed = 0.2f;
+
     void Start()
     {
         startPosX = startPosX + gameObject.transform.position.x;
@@ -45,9 +46,11 @@ public class LegeSchuifknopScript : MonoBehaviour
     private void FloatLayer()
     { // De functie die ervoor zorgt dat de Waterlayer steeds -1 downscaled
         FloatWaterLayer.transform.localScale -= new Vector3(0.05f, 0.05f, 0f);
+        waterLevel.size -= new Vector2(0.009f, 0.009f);
         if (FloatWaterLayer.transform.localScale.x <= 0f && FloatWaterLayer.transform.localScale.y <= 0f)
         {
             FloatWaterLayer.transform.localScale = new Vector3(0, 0, 0);
+            waterLevel.size = new Vector2(0,0);
         }
 
         WaterpeilFloatLayer.transform.localScale -= new Vector3(0.05f, 0f, 0f) * speed;

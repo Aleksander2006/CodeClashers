@@ -22,6 +22,7 @@ public class Boolbutton : MonoBehaviour
     public GameObject waterObject;
 
     [SerializeField] GameObject WaterpeilBoolLayer;
+    [SerializeField] BoxCollider2D WaterLevel;
     private bool isWaterObjectDeactivated = false;
 
     void Start()
@@ -58,6 +59,7 @@ public class Boolbutton : MonoBehaviour
             }
             if (!isWaterObjectDeactivated)
             {
+                WaterLevel.size = WaterLevel.size - new Vector2(1,1);
                 waterObject.SetActive(false);
                 WaterpeilBoolLayer.SetActive(false);
                 isWaterObjectDeactivated = true;
