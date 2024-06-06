@@ -4440,6 +4440,7 @@ MonoBehaviour:
   LayerAan: 1
   floatScript: {fileID: 394668032}
   minMaxerint: {fileID: 260356169}
+  intLayerGo: {fileID: 1095984963}
 --- !u!1 &1987353082
 GameObject:
   m_ObjectHideFlags: 0
