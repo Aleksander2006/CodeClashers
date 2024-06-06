@@ -77,17 +77,7 @@ public class LegeSchuifknopScript : MonoBehaviour
 
     //------------Schuifknop Functionaliteit-------------//
 
-    private void MoveLeft() {
-        if (colliding == false && gameObject.transform.position.x > startPosX) {
-            gameObject.transform.position -= new Vector3(0.025f, 0, 0);
-        }
-    }
-
-    private void MoveRight() {
-        if (colliding == false && gameObject.transform.position.x < startPosX) {
-            gameObject.transform.position = gameObject.transform.position + new Vector3(0.025f, 0, 0);
-        }
-    }
+    
 
     public void posLimiter()
     {
@@ -125,7 +115,6 @@ public class LegeSchuifknopScript : MonoBehaviour
             {
                 gameObject.transform.position = new Vector3(startPosX - 0.71f, startPosY, -3.24f);
             }
-            status = false;
         }
     }
 
@@ -145,8 +134,6 @@ public class LegeSchuifknopScript : MonoBehaviour
         posLimiter();
         posLimitRight();
         posLimitLeft();
-        MoveLeft();
-        MoveRight();
 
         if (colliding == true)
         {

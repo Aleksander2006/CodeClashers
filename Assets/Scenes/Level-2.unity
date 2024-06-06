@@ -583,11 +583,13 @@ MonoBehaviour:
   RigidBodyLink: {fileID: 260356166}
   status: 0
   speed: 1
+  LayerAan: 1
   IntWaterLayer: {fileID: 1095984963}
   WaterpeilIntLayer: {fileID: 1742567160}
   waterLevel: {fileID: 1414302739}
   boolbutton: {fileID: 1976266959}
   floatScipt: {fileID: 394668032}
+  floatLayerGo: {fileID: 2044884446}
 --- !u!1 &263221355
 GameObject:
   m_ObjectHideFlags: 0
@@ -1272,6 +1274,7 @@ MonoBehaviour:
   MoveSpeed: 5
   RigidBodyLink: {fileID: 394668035}
   status: 0
+  LayerAan: 1
   FloatWaterLayer: {fileID: 2044884446}
   waterLevel: {fileID: 609123863}
   WaterpeilFloatLayer: {fileID: 1397587808}
@@ -4434,6 +4437,7 @@ MonoBehaviour:
   WaterpeilBoolLayer: {fileID: 1545644993}
   WaterLevel: {fileID: 362366720}
   isWaterObjectDeactivated: 0
+  LayerAan: 1
   floatScript: {fileID: 394668032}
   minMaxerint: {fileID: 260356169}
 --- !u!1 &1987353082
