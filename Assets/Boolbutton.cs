@@ -32,6 +32,7 @@ public class Boolbutton : MonoBehaviour
     //Script links met Bool en Int Layer
     [SerializeField] LegeSchuifknopScript floatScript;
     [SerializeField] minMaxerInt minMaxerint;
+    [SerializeField] GameObject intLayerGo;
 
     void Start()
     {
@@ -80,7 +81,7 @@ public class Boolbutton : MonoBehaviour
             {
                 gameObject.transform.position = new Vector3(startPosX + 0.71f, startPosY, -3.24f);
             }
-            if (!isWaterObjectDeactivated && minMaxerint.LayerAan == false && floatScript.LayerAan == false)
+            if (!isWaterObjectDeactivated && minMaxerint.LayerAan == false && floatScript.LayerAan == false && intLayerGo.transform.localScale.x == 0)
             {
                 LayerAan = false;
 
@@ -122,7 +123,7 @@ public class Boolbutton : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(floatScript.LayerAan == true || minMaxerint.LayerAan == true) {
+        if(floatScript.LayerAan == true || minMaxerint.LayerAan == true || intLayerGo.transform.localScale.x > 0) {
             MoveLeft();
             MoveRight();
         }
