@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.Jobs;
 using UnityEngine.TextCore.Text;
 
-public class minMaxer : MonoBehaviour
+public class minMaxerInt : MonoBehaviour
 {
     private bool movable = false;
     private bool colliding = false;
@@ -33,28 +33,34 @@ public class minMaxer : MonoBehaviour
     private float MinGetalXWaterpeil = 2f;
     [SerializeField] float speed = 0;
 
-    
+    //Check of layer aanstaat
+    public bool LayerAan = true;
 
+    
     [SerializeField] GameObject IntWaterLayer;
     [SerializeField] GameObject WaterpeilIntLayer;
-
     [SerializeField] BoxCollider2D waterLevel;
+
+    //Script links met Bool en Float Layer
+    [SerializeField] Boolbutton boolbutton;
+    [SerializeField] LegeSchuifknopScript floatScipt;
 
 
     void Start()
     {
         startPosX = startPosX + gameObject.transform.position.x;
         startPosY = startPosY + gameObject.transform.position.y;
-
-        IntWaterLayer.GetComponent<Transform>();
-        WaterpeilIntLayer.GetComponent<Transform>();
+        
+        boolbutton.GetComponent<Boolbutton>();
+        floatScipt.GetComponent<LegeSchuifknopScript>();
     }
 
     public void ScaleLayer()
     { //Check of Schuifknop AANstaat
-        if (status == true)
+        if (status == true && boolbutton.LayerAan == true && floatScipt.LayerAan == false)
         {
             StartCoroutine(FadeDelay());
+            LayerAan = false;
         }
     }
 
@@ -75,6 +81,7 @@ public class minMaxer : MonoBehaviour
                 waterLevel.size = waterLevel.size - new Vector2(0.2f, 0.2f);
                 counter -= MinGetalX;
                 counter2 -= MinGetalY;
+
                 if (IntWaterLayer.transform.localScale.x <= 0 && IntWaterLayer.transform.localScale.y <= 0){
                     IntWaterLayer.transform.localScale = Vector3.zero;
                 }
