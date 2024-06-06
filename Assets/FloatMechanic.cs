@@ -62,6 +62,18 @@ public class LegeSchuifknopScript : MonoBehaviour
 
     //------------Schuifknop Functionaliteit-------------//
 
+    private void MoveLeft() {
+        if (colliding == false && gameObject.transform.position.x > startPosX) {
+            gameObject.transform.position -= new Vector3(0.025f, 0, 0);
+        }
+    }
+
+    private void MoveRight() {
+        if (colliding == false && gameObject.transform.position.x < startPosX) {
+            gameObject.transform.position = gameObject.transform.position + new Vector3(0.025f, 0, 0);
+        }
+    }
+
     public void posLimiter()
     {
         if (gameObject.transform.position.x > (startPosX + 0.715f) || transform.position.x < (startPosX - 0.715f))
@@ -99,16 +111,10 @@ public class LegeSchuifknopScript : MonoBehaviour
                 gameObject.transform.position = new Vector3(startPosX - 0.71f, startPosY, -3.24f);
             }
             status = false;
-
         }
     }
 
     private void OnTriggerEnter2D()
-    {
-        colliding = true;
-    }
-
-    private void OnTriggerStay2D()
     {
         colliding = true;
     }
@@ -124,14 +130,12 @@ public class LegeSchuifknopScript : MonoBehaviour
         posLimiter();
         posLimitRight();
         posLimitLeft();
+        MoveLeft();
+        MoveRight();
+
         if (colliding == true)
         {
-            RigidBodyLink.MovePosition(RigidBodyLink.position + movement * MoveSpeed * Time.fixedDeltaTime);
-            Debug.Log("Movable...");
-        }
-        else
-        {
-            Debug.Log("Not Movable...");
+            RigidBodyLink.MovePosition(RigidBodyLink.position + movement * MoveSpeed * Time.fixedDeltaTime);        
         }
     }
 }
