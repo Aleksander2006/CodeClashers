@@ -32,6 +32,15 @@ public class Boolbutton : MonoBehaviour
     [SerializeField] LegeSchuifknopScript floatScript;
     [SerializeField] minMaxerInt minMaxerint;
 
+    [SerializeField] GameObject BoolSchuif;
+
+    [SerializeField] SpriteRenderer spriteRenderer;
+
+    public bool EersteKeerAangezet = false;
+
+    public bool status = false;
+
+
     void Start()
     {
         startPosX = startPosX + gameObject.transform.position.x;
@@ -39,6 +48,10 @@ public class Boolbutton : MonoBehaviour
 
         floatScript.GetComponent<LegeSchuifknopScript>();
         minMaxerint.GetComponent<minMaxerInt>();
+
+        spriteRenderer = BoolSchuif.GetComponent<SpriteRenderer>();
+
+        spriteRenderer.color = Color.white;
     }
 
     public void posLimiter()
@@ -66,16 +79,24 @@ public class Boolbutton : MonoBehaviour
             if (colliding == false)
             {
                 gameObject.transform.position = new Vector3(startPosX + 0.71f, startPosY, -3.24f);
-            }
-            if (!isWaterObjectDeactivated && minMaxerint.LayerAan == false && floatScript.LayerAan == false)
+            } status = true;
+                
+            if (status == true && minMaxerint.LayerAan == false && floatScript.LayerAan == false)
             {
                 LayerAan = false;
+                spriteRenderer.color = Color.green;
+                EersteKeerAangezet = true;
 
                 WaterLevel.size = WaterLevel.size - new Vector2(1,1);
                 waterObject.SetActive(false);
                 WaterpeilBoolLayer.SetActive(false);
                 isWaterObjectDeactivated = true;
-            }
+            } else {
+                spriteRenderer.color = Color.red;
+            } 
+            if (EersteKeerAangezet == true){
+                spriteRenderer.color = Color.green;
+            }    
         }
         else
         {
@@ -84,7 +105,7 @@ public class Boolbutton : MonoBehaviour
                 waterObject.SetActive(true);
             }
         }
-        }
+    }
 
     public void posLimitLeft()
     {
@@ -93,7 +114,7 @@ public class Boolbutton : MonoBehaviour
             if (colliding == false)
             {
                 gameObject.transform.position = new Vector3(startPosX - 0.71f, startPosY, -3.24f);
-            }
+            } status = true;
         }
     }
 

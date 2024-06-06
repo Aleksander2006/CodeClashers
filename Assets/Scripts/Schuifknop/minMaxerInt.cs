@@ -36,7 +36,10 @@ public class minMaxerInt : MonoBehaviour
     //Check of layer aanstaat
     public bool LayerAan = true;
 
-    
+    public bool EersteKeerAangezet = false;
+
+    public bool AanOpStart = false;
+
     [SerializeField] GameObject IntWaterLayer;
     [SerializeField] GameObject WaterpeilIntLayer;
     [SerializeField] BoxCollider2D waterLevel;
@@ -44,6 +47,10 @@ public class minMaxerInt : MonoBehaviour
     //Script links met Bool en Float Layer
     [SerializeField] Boolbutton boolbutton;
     [SerializeField] LegeSchuifknopScript floatScipt;
+
+    [SerializeField] GameObject IntSchuif;
+
+    [SerializeField] SpriteRenderer spriteRenderer;
 
 
     void Start()
@@ -53,14 +60,28 @@ public class minMaxerInt : MonoBehaviour
         
         boolbutton.GetComponent<Boolbutton>();
         floatScipt.GetComponent<LegeSchuifknopScript>();
+
+        spriteRenderer = IntSchuif.GetComponent<SpriteRenderer>();
+        spriteRenderer.color = Color.white;
     }
 
     public void ScaleLayer()
     { //Check of Schuifknop AANstaat
-        if (status == true && boolbutton.LayerAan == true && floatScipt.LayerAan == false)
-        {
-            StartCoroutine(FadeDelay());
-            LayerAan = false;
+
+        if (AanOpStart == true){
+            if (status == true && boolbutton.LayerAan == true && floatScipt.LayerAan == false)
+            {
+                StartCoroutine(FadeDelay());
+                LayerAan = false;
+                EersteKeerAangezet = true;
+
+                spriteRenderer.color = Color.green;
+            } else {
+                spriteRenderer.color = Color.red;
+            } 
+            if (EersteKeerAangezet == true){
+                spriteRenderer.color = Color.green;
+            }
         }
     }
 
@@ -128,6 +149,7 @@ public class minMaxerInt : MonoBehaviour
                 gameObject.transform.position = new Vector3(startPosX + 0.71f, startPosY, -3.24f);
             }
             status = true;
+            AanOpStart = true;
         }
     }
 

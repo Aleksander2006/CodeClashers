@@ -583,11 +583,16 @@ MonoBehaviour:
   RigidBodyLink: {fileID: 260356166}
   status: 0
   speed: 1
+  LayerAan: 1
+  EersteKeerAangezet: 0
+  AanOpStart: 0
   IntWaterLayer: {fileID: 1095984963}
   WaterpeilIntLayer: {fileID: 1742567160}
   waterLevel: {fileID: 1414302739}
   boolbutton: {fileID: 1976266959}
   floatScipt: {fileID: 394668032}
+  IntSchuif: {fileID: 1619215923}
+  spriteRenderer: {fileID: 1619215925}
 --- !u!1 &263221355
 GameObject:
   m_ObjectHideFlags: 0
@@ -1272,6 +1277,7 @@ MonoBehaviour:
   MoveSpeed: 5
   RigidBodyLink: {fileID: 394668035}
   status: 0
+  LayerAan: 1
   FloatWaterLayer: {fileID: 2044884446}
   waterLevel: {fileID: 609123863}
   WaterpeilFloatLayer: {fileID: 1397587808}
@@ -1280,6 +1286,10 @@ MonoBehaviour:
   boolbutton: {fileID: 1976266959}
   Intlayer: {fileID: 1095984963}
   boollayer: {fileID: 292770126}
+  FloatSchuif: {fileID: 1816991213}
+  spriteRenderer: {fileID: 1816991215}
+  EersteKeerAangezet: 0
+  AanOpStart: 0
 --- !u!70 &394668033
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -4434,8 +4444,13 @@ MonoBehaviour:
   WaterpeilBoolLayer: {fileID: 1545644993}
   WaterLevel: {fileID: 362366720}
   isWaterObjectDeactivated: 0
+  LayerAan: 1
   floatScript: {fileID: 394668032}
   minMaxerint: {fileID: 260356169}
+  BoolSchuif: {fileID: 188906982}
+  spriteRenderer: {fileID: 188906984}
+  EersteKeerAangezet: 0
+  status: 0
 --- !u!1 &1987353082
 GameObject:
   m_ObjectHideFlags: 0
