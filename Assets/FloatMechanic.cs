@@ -38,6 +38,15 @@ public class LegeSchuifknopScript : MonoBehaviour
     [SerializeField] GameObject Intlayer;
     [SerializeField] GameObject boollayer;
 
+    //kleur veranderen
+    [SerializeField] GameObject FloatSchuif;
+
+    [SerializeField] SpriteRenderer spriteRenderer;
+
+    public bool EersteKeerAangezet = false;
+    public bool AanOpStart = false;
+
+
     void Start()
     {
         startPosX = startPosX + gameObject.transform.position.x;
@@ -47,15 +56,29 @@ public class LegeSchuifknopScript : MonoBehaviour
 
         minmaxint.GetComponent<minMaxerInt>();
         boolbutton.GetComponent<Boolbutton>();
+
+        spriteRenderer = FloatSchuif.GetComponent<SpriteRenderer>();
+        spriteRenderer.color = Color.white;
     }
 
     public void ScaleLayer()
     { //Check of Schuifknop AANstaat
-        if (status == true && minmaxint.LayerAan == true && boolbutton.LayerAan == true) 
-        {
-            FloatLayer();
-            LayerAan = false;
-        }
+
+    if (AanOpStart == true){
+            if (status == true && minmaxint.LayerAan == true && boolbutton.LayerAan == true) 
+            {
+                FloatLayer();
+                LayerAan = false;
+                spriteRenderer.color = Color.green;
+                EersteKeerAangezet = true;
+
+            } else {
+                spriteRenderer.color = Color.red;
+            }
+            if (EersteKeerAangezet == true){
+                spriteRenderer.color = Color.green;
+            }
+        }    
     }
 
     private void FloatLayer()
@@ -104,6 +127,7 @@ public class LegeSchuifknopScript : MonoBehaviour
                 gameObject.transform.position = new Vector3(startPosX + 0.71f, startPosY, -3.24f);
             }
             status = true;
+            AanOpStart = true;
         }
     }
 
