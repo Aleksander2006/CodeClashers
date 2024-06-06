@@ -1,17 +1,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using System.Runtime.Serialization.Formatters;
 using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Jobs;
 using UnityEngine.TextCore.Text;
 
-public class minMaxer : MonoBehaviour
+public class minMaxerInt : MonoBehaviour
 {
-    private bool movable = false;
     private bool colliding = false;
     public float MoveSpeed = 5f;
     public Rigidbody2D RigidBodyLink;
@@ -33,28 +32,38 @@ public class minMaxer : MonoBehaviour
     private float MinGetalXWaterpeil = 2f;
     [SerializeField] float speed = 0;
 
-    
+    //Check of layer aanstaat
+    public bool LayerAan = true;
 
+    
     [SerializeField] GameObject IntWaterLayer;
     [SerializeField] GameObject WaterpeilIntLayer;
-
     [SerializeField] BoxCollider2D waterLevel;
+
+    //Script links met Bool en Float Layer
+    [SerializeField] Boolbutton boolbutton;
+    [SerializeField] LegeSchuifknopScript floatScipt;
+
+    [SerializeField] GameObject floatLayerGo;
+    private bool canMoveBack = false;
+    private bool wrongButton = true;
 
 
     void Start()
     {
         startPosX = startPosX + gameObject.transform.position.x;
         startPosY = startPosY + gameObject.transform.position.y;
-
-        IntWaterLayer.GetComponent<Transform>();
-        WaterpeilIntLayer.GetComponent<Transform>();
+        
+        boolbutton.GetComponent<Boolbutton>();
+        floatScipt.GetComponent<LegeSchuifknopScript>();
     }
 
     public void ScaleLayer()
     { //Check of Schuifknop AANstaat
-        if (status == true)
+        if (status == true && boolbutton.LayerAan == true && floatScipt.LayerAan == false)
         {
             StartCoroutine(FadeDelay());
+            LayerAan = false;
         }
     }
 
@@ -75,6 +84,7 @@ public class minMaxer : MonoBehaviour
                 waterLevel.size = waterLevel.size - new Vector2(0.2f, 0.2f);
                 counter -= MinGetalX;
                 counter2 -= MinGetalY;
+
                 if (IntWaterLayer.transform.localScale.x <= 0 && IntWaterLayer.transform.localScale.y <= 0){
                     IntWaterLayer.transform.localScale = Vector3.zero;
                 }
@@ -94,20 +104,33 @@ public class minMaxer : MonoBehaviour
 
     //------------Schuifknop Functionaliteit-------------
 
+    private void MoveLeft() {
+        if (colliding == false && gameObject.transform.position.x > startPosX) {
+            gameObject.transform.position -= new Vector3(0.025f, 0, 0);
+            LayerAan = true;
+        }
+    }
+
+    private void MoveRight() {
+        if (colliding == false && gameObject.transform.position.x < startPosX) {
+            gameObject.transform.position = gameObject.transform.position + new Vector3(0.025f, 0, 0);
+            LayerAan = true;
+        }
+    }
+    
     public void posLimiter()
     {
         if (gameObject.transform.position.x > (startPosX + 0.715f) || transform.position.x < (startPosX - 0.715f))
         {
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-            movable = false;
-
+            canMoveBack = true;
         }
+        
         else
         {
             if (colliding == true)
             {
                 GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-                movable = true;
             }
         }
     }
@@ -120,10 +143,16 @@ public class minMaxer : MonoBehaviour
             {
                 gameObject.transform.position = new Vector3(startPosX + 0.71f, startPosY, -3.24f);
             }
-            status = true;
+            
+            if(floatScipt.LayerAan == true) {
+                status = false;
+            }
+            if(floatScipt.LayerAan == false) {
+                status = true;
+            }
         }
     }
-
+    
     public void posLimitLeft()
     {
         if (gameObject.transform.position.x < (startPosX - 0.715f))
@@ -141,11 +170,6 @@ public class minMaxer : MonoBehaviour
         colliding = true;
     }
 
-    private void OnTriggerStay2D()
-    {
-        colliding = true;
-    }
-
     private void OnTriggerExit2D()
     {
         colliding = false;
@@ -153,8 +177,16 @@ public class minMaxer : MonoBehaviour
 
     void FixedUpdate()
     {
+        if(floatScipt.LayerAan == true) {
+                MoveLeft();
+                MoveRight();       
+        }
 
-        ScaleLayer();
+        if(floatLayerGo.transform.localScale.x == 0 && status == true) {
+            ScaleLayer();
+            status = true;
+        }
+        
         posLimiter();
         posLimitRight();
         posLimitLeft();
@@ -167,6 +199,7 @@ public class minMaxer : MonoBehaviour
         {
             //Debug.Log("Not Movable...");
         }
+
     }
 
     void Update()
