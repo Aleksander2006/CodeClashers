@@ -53,6 +53,7 @@ public class minMaxerInt : MonoBehaviour
     [SerializeField] GameObject IntSchuif;
 
     [SerializeField] SpriteRenderer spriteRenderer;
+    private bool isRight = false;
 
 
     void Start()
@@ -78,9 +79,8 @@ public class minMaxerInt : MonoBehaviour
                 EersteKeerAangezet = true;
 
                 spriteRenderer.color = Color.green;
-            } else {
-                spriteRenderer.color = Color.red;
             } 
+
             if (EersteKeerAangezet == true){
                 spriteRenderer.color = Color.green;
             }
@@ -159,6 +159,7 @@ public class minMaxerInt : MonoBehaviour
     {
         if (gameObject.transform.position.x > (startPosX + 0.715f))
         {
+            isRight = true;
             if (colliding == false)
             {
                 gameObject.transform.position = new Vector3(startPosX + 0.71f, startPosY, -3.24f);
@@ -198,6 +199,14 @@ public class minMaxerInt : MonoBehaviour
 
     void FixedUpdate()
     {
+        if(floatLayerGo.transform.localScale.x > 0 && isRight == true) {
+                spriteRenderer.color = Color.red;
+            }
+
+        if(gameObject.transform.position.x < (startPosX + 0.715f)) {
+           isRight = false; 
+        }
+
         if(floatScipt.LayerAan == true) {
                 MoveLeft();
                 MoveRight();       
