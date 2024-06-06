@@ -152,9 +152,25 @@ public class LegeSchuifknopScript : MonoBehaviour
     {
         colliding = false;
     }
+    
+    private void MoveLeft() {
+        if (colliding == false && gameObject.transform.position.x > startPosX) {
+            gameObject.transform.position -= new Vector3(0.025f, 0, 0);
+        }
+    }
+
+    private void MoveRight() {
+        if (colliding == false && gameObject.transform.position.x < startPosX) {
+            gameObject.transform.position = gameObject.transform.position + new Vector3(0.025f, 0, 0);
+        }
+    }
 
     void FixedUpdate()
     {
+        if(spriteRenderer.color == Color.red || spriteRenderer.color == Color.white) {
+                MoveLeft();
+                MoveRight();       
+        }
         ScaleLayer();
         posLimiter();
         posLimitRight();

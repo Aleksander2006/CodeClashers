@@ -146,9 +146,9 @@ public class Boolbutton : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(floatScript.LayerAan == true || minMaxerint.LayerAan == true || intLayerGo.transform.localScale.x > 0) {
-            MoveLeft();
-            MoveRight();
+        if(spriteRenderer.color == Color.red || spriteRenderer.color == Color.white) {
+                MoveLeft();
+                MoveRight();       
         }
 
         posLimiter();

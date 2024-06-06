@@ -207,7 +207,7 @@ public class minMaxerInt : MonoBehaviour
            isRight = false; 
         }
 
-        if(floatScipt.LayerAan == true) {
+        if(spriteRenderer.color == Color.red || spriteRenderer.color == Color.white) {
                 MoveLeft();
                 MoveRight();       
         }
