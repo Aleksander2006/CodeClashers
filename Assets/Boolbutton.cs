@@ -34,6 +34,15 @@ public class Boolbutton : MonoBehaviour
     [SerializeField] minMaxerInt minMaxerint;
     [SerializeField] GameObject intLayerGo;
 
+    [SerializeField] GameObject BoolSchuif;
+
+    [SerializeField] SpriteRenderer spriteRenderer;
+
+    public bool EersteKeerAangezet = false;
+
+    public bool status = false;
+
+
     void Start()
     {
         startPosX = startPosX + gameObject.transform.position.x;
@@ -41,6 +50,10 @@ public class Boolbutton : MonoBehaviour
 
         floatScript.GetComponent<LegeSchuifknopScript>();
         minMaxerint.GetComponent<minMaxerInt>();
+
+        spriteRenderer = BoolSchuif.GetComponent<SpriteRenderer>();
+
+        spriteRenderer.color = Color.white;
     }
 
     private void MoveLeft() {
@@ -84,12 +97,22 @@ public class Boolbutton : MonoBehaviour
             if (!isWaterObjectDeactivated && minMaxerint.LayerAan == false && floatScript.LayerAan == false && intLayerGo.transform.localScale.x == 0)
             {
                 LayerAan = false;
+                spriteRenderer.color = Color.green;
+                EersteKeerAangezet = true;
 
                 WaterLevel.size = WaterLevel.size - new Vector2(1,1);
                 waterObject.SetActive(false);
                 WaterpeilBoolLayer.SetActive(false);
                 isWaterObjectDeactivated = true;
+            } 
+            
+            if(minMaxerint.LayerAan == true || floatScript.LayerAan == true) {
+                spriteRenderer.color = Color.red;
             }
+            
+            if (EersteKeerAangezet == true){
+                spriteRenderer.color = Color.green;
+            }    
         }
         else
         {
@@ -98,7 +121,7 @@ public class Boolbutton : MonoBehaviour
                 waterObject.SetActive(true);
             }
         }
-        }
+    }
 
     public void posLimitLeft()
     {
@@ -107,7 +130,7 @@ public class Boolbutton : MonoBehaviour
             if (colliding == false)
             {
                 gameObject.transform.position = new Vector3(startPosX - 0.71f, startPosY, -3.24f);
-            }
+            } status = true;
         }
     }
 
@@ -123,9 +146,9 @@ public class Boolbutton : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(floatScript.LayerAan == true || minMaxerint.LayerAan == true || intLayerGo.transform.localScale.x > 0) {
-            MoveLeft();
-            MoveRight();
+        if(spriteRenderer.color == Color.red || spriteRenderer.color == Color.white) {
+                MoveLeft();
+                MoveRight();       
         }
 
         posLimiter();

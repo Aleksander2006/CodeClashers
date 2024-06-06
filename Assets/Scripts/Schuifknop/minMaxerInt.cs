@@ -35,7 +35,10 @@ public class minMaxerInt : MonoBehaviour
     //Check of layer aanstaat
     public bool LayerAan = true;
 
-    
+    public bool EersteKeerAangezet = false;
+
+    public bool AanOpStart = false;
+
     [SerializeField] GameObject IntWaterLayer;
     [SerializeField] GameObject WaterpeilIntLayer;
     [SerializeField] BoxCollider2D waterLevel;
@@ -47,6 +50,10 @@ public class minMaxerInt : MonoBehaviour
     [SerializeField] GameObject floatLayerGo;
     private bool canMoveBack = false;
     private bool wrongButton = true;
+    [SerializeField] GameObject IntSchuif;
+
+    [SerializeField] SpriteRenderer spriteRenderer;
+    private bool isRight = false;
 
 
     void Start()
@@ -56,14 +63,27 @@ public class minMaxerInt : MonoBehaviour
         
         boolbutton.GetComponent<Boolbutton>();
         floatScipt.GetComponent<LegeSchuifknopScript>();
+
+        spriteRenderer = IntSchuif.GetComponent<SpriteRenderer>();
+        spriteRenderer.color = Color.white;
     }
 
     public void ScaleLayer()
     { //Check of Schuifknop AANstaat
-        if (status == true && boolbutton.LayerAan == true && floatScipt.LayerAan == false)
-        {
-            StartCoroutine(FadeDelay());
-            LayerAan = false;
+
+        if (AanOpStart == true){
+            if (status == true && boolbutton.LayerAan == true && floatScipt.LayerAan == false)
+            {
+                StartCoroutine(FadeDelay());
+                LayerAan = false;
+                EersteKeerAangezet = true;
+
+                spriteRenderer.color = Color.green;
+            } 
+
+            if (EersteKeerAangezet == true){
+                spriteRenderer.color = Color.green;
+            }
         }
     }
 
@@ -139,6 +159,7 @@ public class minMaxerInt : MonoBehaviour
     {
         if (gameObject.transform.position.x > (startPosX + 0.715f))
         {
+            isRight = true;
             if (colliding == false)
             {
                 gameObject.transform.position = new Vector3(startPosX + 0.71f, startPosY, -3.24f);
@@ -150,6 +171,7 @@ public class minMaxerInt : MonoBehaviour
             if(floatScipt.LayerAan == false) {
                 status = true;
             }
+            AanOpStart = true;
         }
     }
     
@@ -177,7 +199,15 @@ public class minMaxerInt : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(floatScipt.LayerAan == true) {
+        if(floatLayerGo.transform.localScale.x > 0 && isRight == true) {
+                spriteRenderer.color = Color.red;
+            }
+
+        if(gameObject.transform.position.x < (startPosX + 0.715f)) {
+           isRight = false; 
+        }
+
+        if(spriteRenderer.color == Color.red || spriteRenderer.color == Color.white) {
                 MoveLeft();
                 MoveRight();       
         }
