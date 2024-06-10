@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.Serialization.Formatters;
 using JetBrains.Annotations;
 using Unity.VisualScripting;
+using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 using UnityEngine.Jobs;
 using UnityEngine.TextCore.Text;
@@ -34,8 +35,6 @@ public class minMaxerInt : MonoBehaviour
 
     [SerializeField] float speedStijgen = 0.5f;
 
-    private bool StijgenAan = false;
-
     //Check of layer aanstaat
     public bool LayerAan = true;
 
@@ -60,6 +59,8 @@ public class minMaxerInt : MonoBehaviour
     [SerializeField] SpriteRenderer spriteRenderer;
     private bool isRight = false;
 
+    public bool stijgen = true;
+
 
     void Start()
     {
@@ -76,20 +77,23 @@ public class minMaxerInt : MonoBehaviour
     }
 
     
-    public void WaterGrowInt(){ //Zorgt ervoor dat de layer stijgt als de floatlayer weg is
+    public void WaterGrowInt(){ //Zorgt ervoor dat de Intlayer stijgt als de floatlayer weg is
         if (FloatWaterLayer.transform.localScale.x <= 0 && FloatWaterLayer.transform.localScale.y <= 0)
         {
-            IntWaterLayer.transform.localScale += new Vector3(0.05f, 0.02f,0) * speedStijgen;
-            StijgenAan = true;
+            IntWaterLayer.transform.localScale += new Vector3(0.1f, 0.01f,0) * speedStijgen;
 
             if(IntWaterLayer.transform.localScale.y >= 7.05f){
-               IntWaterLayer.transform.localScale = new Vector3(IntWaterLayer.transform.localScale.x, 7.05f, IntWaterLayer.transform.localScale.z); 
+               IntWaterLayer.transform.localScale = new Vector3(IntWaterLayer.transform.localScale.x, 7.05f, IntWaterLayer.transform.localScale.z);
+               stijgen = false; 
             }
-
+            
+            if (IntWaterLayer.transform.localScale.x <= 0.1f && IntWaterLayer.transform.localScale.y <= 0.1f){
+                IntWaterLayer.transform.localScale = Vector3.zero;
+            }
+            
             if (IntWaterLayer.transform.localScale.x >= 18.68f)
             {
                 IntWaterLayer.transform.localScale = new Vector3(18.68f, 7.05f, 0); 
-                StijgenAan = false;
             }                
         }  
     }
@@ -97,23 +101,21 @@ public class minMaxerInt : MonoBehaviour
 
     public void ScaleLayer()
     { //Check of Schuifknop AANstaat
-        if (StijgenAan == true)
-        {
-            if (AanOpStart == true){
-                if (status == true && boolbutton.LayerAan == true && floatScipt.LayerAan == false)
-                {
-                    StartCoroutine(FadeDelay());
-                    LayerAan = false;
-                    EersteKeerAangezet = true;
+        
+        if (AanOpStart == true){
+            if (status == true && boolbutton.LayerAan == true && floatScipt.LayerAan == false)
+            {
+                StartCoroutine(FadeDelay());
+                LayerAan = false;
+                EersteKeerAangezet = true;
 
-                    spriteRenderer.color = Color.green;
-                } 
+                spriteRenderer.color = Color.green;
+            }
 
-                if (EersteKeerAangezet == true){
-                    spriteRenderer.color = Color.green;
-                }
-            }  
-        }   
+            if (EersteKeerAangezet == true){
+                spriteRenderer.color = Color.green;
+            }
+        }       
     }
 
     private IEnumerator FadeDelay()
@@ -136,7 +138,6 @@ public class minMaxerInt : MonoBehaviour
 
                 if (IntWaterLayer.transform.localScale.x <= 0 && IntWaterLayer.transform.localScale.y <= 0){
                     IntWaterLayer.transform.localScale = Vector3.zero;
-                    StijgenAan = false;
                 }
             }
 
