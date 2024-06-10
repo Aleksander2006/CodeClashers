@@ -148,7 +148,15 @@ public class Boolbutton : MonoBehaviour
 
     private void WaterGrow () {
         if (minMaxerint.LayerAan == false && floatScript.LayerAan == false && intLayerGo.transform.localScale.x <= 0) {
-            waterObject.transform.localScale += new Vector3(0.1f, 0, 0);
+            waterObject.transform.localScale += new Vector3(0.1f, 0.01f, 0);
+        }
+
+        if(waterObject.transform.localScale.y >= 7.05f) {
+            waterObject.transform.localScale = new Vector3(waterObject.transform.localScale.x, 7.05f, waterObject.transform.localScale.z);
+        }
+
+        if(waterObject.transform.localScale.x >= 33.5f){
+            waterObject.transform.localScale = new Vector3(33.5f, waterObject.transform.localScale.y, waterObject.transform.localScale.z);
         }
     }
 
