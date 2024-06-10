@@ -66,6 +66,8 @@ public class minMaxerInt : MonoBehaviour
 
         spriteRenderer = IntSchuif.GetComponent<SpriteRenderer>();
         spriteRenderer.color = Color.white;
+
+        IntWaterLayer.GetComponent<BoxCollider2D>().enabled = false;
     }
 
     public void ScaleLayer()
@@ -215,6 +217,10 @@ public class minMaxerInt : MonoBehaviour
         if(floatLayerGo.transform.localScale.x == 0 && status == true) {
             ScaleLayer();
             status = true;
+        }
+
+        if(floatScipt.LayerAan == false) {
+            IntWaterLayer.GetComponent<BoxCollider2D>().enabled = true;
         }
         
         posLimiter();
