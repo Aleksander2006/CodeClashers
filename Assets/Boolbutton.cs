@@ -54,6 +54,8 @@ public class Boolbutton : MonoBehaviour
         spriteRenderer = BoolSchuif.GetComponent<SpriteRenderer>();
 
         spriteRenderer.color = Color.white;
+
+        waterObject.GetComponent<BoxCollider2D>().enabled = false;
     }
 
     private void MoveLeft() {
@@ -144,6 +146,12 @@ public class Boolbutton : MonoBehaviour
         colliding = false;
     }
 
+    private void WaterGrow () {
+        if (minMaxerint.LayerAan == false && floatScript.LayerAan == false && intLayerGo.transform.localScale.x <= 0) {
+            waterObject.transform.localScale += new Vector3(0.1f, 0, 0);
+        }
+    }
+
     void FixedUpdate()
     {
         if(spriteRenderer.color == Color.red || spriteRenderer.color == Color.white) {
@@ -151,6 +159,11 @@ public class Boolbutton : MonoBehaviour
                 MoveRight();       
         }
 
+        if(floatScript.LayerAan == false && minMaxerint.LayerAan == false) {
+            waterObject.GetComponent<BoxCollider2D>().enabled = true;
+        }
+
+        WaterGrow();
         posLimiter();
         posLimitRight();
         posLimitLeft();
