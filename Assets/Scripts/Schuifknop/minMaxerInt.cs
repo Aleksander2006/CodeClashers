@@ -97,7 +97,7 @@ public class minMaxerInt : MonoBehaviour
 
     public void ScaleLayer()
     { //Check of Schuifknop AANstaat
-        if (StijgenAan == false)
+        if (StijgenAan == true)
         {
             if (AanOpStart == true){
                 if (status == true && boolbutton.LayerAan == true && floatScipt.LayerAan == false)
@@ -136,6 +136,7 @@ public class minMaxerInt : MonoBehaviour
 
                 if (IntWaterLayer.transform.localScale.x <= 0 && IntWaterLayer.transform.localScale.y <= 0){
                     IntWaterLayer.transform.localScale = Vector3.zero;
+                    StijgenAan = false;
                 }
             }
 
