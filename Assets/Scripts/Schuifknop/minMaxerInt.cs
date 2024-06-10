@@ -32,6 +32,10 @@ public class minMaxerInt : MonoBehaviour
     private float MinGetalXWaterpeil = 2f;
     [SerializeField] float speed = 0;
 
+    [SerializeField] float speedStijgen = 0.5f;
+
+    private bool StijgenAan = false;
+
     //Check of layer aanstaat
     public bool LayerAan = true;
 
@@ -40,6 +44,7 @@ public class minMaxerInt : MonoBehaviour
     public bool AanOpStart = false;
 
     [SerializeField] GameObject IntWaterLayer;
+    [SerializeField] GameObject FloatWaterLayer;
     [SerializeField] GameObject WaterpeilIntLayer;
     [SerializeField] BoxCollider2D waterLevel;
 
@@ -70,23 +75,45 @@ public class minMaxerInt : MonoBehaviour
         IntWaterLayer.GetComponent<BoxCollider2D>().enabled = false;
     }
 
+    
+    public void WaterGrowInt(){ //Zorgt ervoor dat de layer stijgt als de floatlayer weg is
+        if (FloatWaterLayer.transform.localScale.x <= 0 && FloatWaterLayer.transform.localScale.y <= 0)
+        {
+            IntWaterLayer.transform.localScale += new Vector3(0.05f, 0.02f,0) * speedStijgen;
+            StijgenAan = true;
+
+            if(IntWaterLayer.transform.localScale.y >= 7.05f){
+               IntWaterLayer.transform.localScale = new Vector3(IntWaterLayer.transform.localScale.x, 7.05f, IntWaterLayer.transform.localScale.z); 
+            }
+
+            if (IntWaterLayer.transform.localScale.x >= 18.68f)
+            {
+                IntWaterLayer.transform.localScale = new Vector3(18.68f, 7.05f, 0); 
+                StijgenAan = false;
+            }                
+        }  
+    }
+
+
     public void ScaleLayer()
     { //Check of Schuifknop AANstaat
+        if (StijgenAan == false)
+        {
+            if (AanOpStart == true){
+                if (status == true && boolbutton.LayerAan == true && floatScipt.LayerAan == false)
+                {
+                    StartCoroutine(FadeDelay());
+                    LayerAan = false;
+                    EersteKeerAangezet = true;
 
-        if (AanOpStart == true){
-            if (status == true && boolbutton.LayerAan == true && floatScipt.LayerAan == false)
-            {
-                StartCoroutine(FadeDelay());
-                LayerAan = false;
-                EersteKeerAangezet = true;
+                    spriteRenderer.color = Color.green;
+                } 
 
-                spriteRenderer.color = Color.green;
-            } 
-
-            if (EersteKeerAangezet == true){
-                spriteRenderer.color = Color.green;
-            }
-        }
+                if (EersteKeerAangezet == true){
+                    spriteRenderer.color = Color.green;
+                }
+            }  
+        }   
     }
 
     private IEnumerator FadeDelay()
@@ -223,6 +250,8 @@ public class minMaxerInt : MonoBehaviour
             IntWaterLayer.GetComponent<BoxCollider2D>().enabled = true;
         }
         
+    
+        WaterGrowInt(); 
         posLimiter();
         posLimitRight();
         posLimitLeft();

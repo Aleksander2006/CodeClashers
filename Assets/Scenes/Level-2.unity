@@ -587,6 +587,7 @@ MonoBehaviour:
   EersteKeerAangezet: 0
   AanOpStart: 0
   IntWaterLayer: {fileID: 1095984963}
+  FloatWaterLayer: {fileID: 2044884446}
   WaterpeilIntLayer: {fileID: 1742567160}
   waterLevel: {fileID: 1414302739}
   boolbutton: {fileID: 1976266959}
