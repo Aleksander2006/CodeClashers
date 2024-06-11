@@ -17,7 +17,7 @@ public class Boolbutton : MonoBehaviour
     private bool colliding = false;
     public float MoveSpeed = 5f;
     public Rigidbody2D RigidBodyLink;
-    private float startPosX = 0;
+    public float startPosX = 0;
     private float startPosY = 0;
     Vector2 movement;
     public GameObject waterObject;

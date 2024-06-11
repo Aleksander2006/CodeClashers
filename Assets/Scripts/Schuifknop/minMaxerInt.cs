@@ -33,7 +33,7 @@ public class minMaxerInt : MonoBehaviour
     private float MinGetalXWaterpeil = 2f;
     [SerializeField] float speed = 0;
 
-    [SerializeField] float speedStijgen = 0.5f;
+    private float speedStijgen = 0.1f;
 
     //Check of layer aanstaat
     public bool LayerAan = true;
@@ -81,7 +81,13 @@ public class minMaxerInt : MonoBehaviour
         
         if (zakken == true && FloatWaterLayer.transform.localScale.x <= 0 && FloatWaterLayer.transform.localScale.y <= 0)
         {
-               
+               if(boolbutton.gameObject.transform.position.x > (boolbutton.startPosX + 0.715f)) {
+                speedStijgen = speedStijgen + 0.05f;
+                    if(speedStijgen >= 0.5f) {
+                        speedStijgen = 0.5f;
+                    }
+               }
+
                 IntWaterLayer.transform.localScale += new Vector3(0.1f, 0.01f,0) * speedStijgen;
                 zakken = true;
 
@@ -276,5 +282,6 @@ public class minMaxerInt : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
+        Debug.Log(speedStijgen);
     }
 }
