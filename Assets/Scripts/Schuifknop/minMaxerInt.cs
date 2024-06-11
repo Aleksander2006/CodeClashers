@@ -59,7 +59,7 @@ public class minMaxerInt : MonoBehaviour
     [SerializeField] SpriteRenderer spriteRenderer;
     private bool isRight = false;
 
-    public bool stijgen = true;
+    public bool zakken = true;
 
 
     void Start()
@@ -78,24 +78,27 @@ public class minMaxerInt : MonoBehaviour
 
     
     public void WaterGrowInt(){ //Zorgt ervoor dat de Intlayer stijgt als de floatlayer weg is
-        if (FloatWaterLayer.transform.localScale.x <= 0 && FloatWaterLayer.transform.localScale.y <= 0)
+        
+        if (zakken == true && FloatWaterLayer.transform.localScale.x <= 0 && FloatWaterLayer.transform.localScale.y <= 0)
         {
-            IntWaterLayer.transform.localScale += new Vector3(0.1f, 0.01f,0) * speedStijgen;
+               
+                IntWaterLayer.transform.localScale += new Vector3(0.1f, 0.01f,0) * speedStijgen;
+                zakken = true;
 
-            if(IntWaterLayer.transform.localScale.y >= 7.05f){
-               IntWaterLayer.transform.localScale = new Vector3(IntWaterLayer.transform.localScale.x, 7.05f, IntWaterLayer.transform.localScale.z);
-               stijgen = false; 
-            }
-            
-            if (IntWaterLayer.transform.localScale.x <= 0.1f && IntWaterLayer.transform.localScale.y <= 0.1f){
-                IntWaterLayer.transform.localScale = Vector3.zero;
-            }
-            
-            if (IntWaterLayer.transform.localScale.x >= 18.68f)
-            {
-                IntWaterLayer.transform.localScale = new Vector3(18.68f, 7.05f, 0); 
-            }                
-        }  
+                if(IntWaterLayer.transform.localScale.y >= 7.05f){
+                IntWaterLayer.transform.localScale = new Vector3(IntWaterLayer.transform.localScale.x, 7.05f, IntWaterLayer.transform.localScale.z);
+                 
+                }
+                
+                if (IntWaterLayer.transform.localScale.x <= 0.1f && IntWaterLayer.transform.localScale.y <= 0.1f){
+                    IntWaterLayer.transform.localScale = Vector3.zero;
+                }
+                
+                if (IntWaterLayer.transform.localScale.x >= 18.68f)
+                {
+                    IntWaterLayer.transform.localScale = new Vector3(18.68f, 7.05f, 0); 
+                }                 
+            }      
     }
 
 
@@ -203,6 +206,7 @@ public class minMaxerInt : MonoBehaviour
                 status = true;
             }
             AanOpStart = true;
+            zakken = false;
         }
     }
     
