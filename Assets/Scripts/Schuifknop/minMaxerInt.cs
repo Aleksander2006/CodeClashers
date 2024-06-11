@@ -83,6 +83,9 @@ public class minMaxerInt : MonoBehaviour
         {
                if(boolbutton.gameObject.transform.position.x > (boolbutton.startPosX + 0.715f)) {
                 speedStijgen = speedStijgen + 0.05f;
+                    if(speedStijgen >= 0.5f) {
+                        speedStijgen = 0.5f;
+                    }
                }
 
                 IntWaterLayer.transform.localScale += new Vector3(0.1f, 0.01f,0) * speedStijgen;
