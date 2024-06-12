@@ -49,7 +49,7 @@ public class LegeSchuifknopScript : MonoBehaviour
 
     //new
     [SerializeField] ExplainerPopupIngang popupscript;
-    private float expandSpeed = 0.1f;
+    public float expandSpeed = 0.1f;
 
 
 
@@ -62,11 +62,11 @@ public class LegeSchuifknopScript : MonoBehaviour
             }
             FloatWaterLayer.transform.localScale = newScale;
 
-            if(FloatWaterLayer.transform.localScale.x <= 0) {
+            if(FloatWaterLayer.transform.localScale.x <= 0.0025) {
                 FloatWaterLayer.transform.localScale = new Vector3(0, FloatWaterLayer.transform.localScale.y, FloatWaterLayer.transform.localScale.z);
             }
 
-            if(FloatWaterLayer.transform.localScale.y <= 0) {
+            if(FloatWaterLayer.transform.localScale.y <= 0.0025) {
                 FloatWaterLayer.transform.localScale = new Vector3(FloatWaterLayer.transform.localScale.x, 0, FloatWaterLayer.transform.localScale.z);
             }
         }
