@@ -43,8 +43,43 @@ public class LegeSchuifknopScript : MonoBehaviour
 
     [SerializeField] SpriteRenderer spriteRenderer;
 
+    [SerializeField] minMaxerInt intSchuif;
     public bool EersteKeerAangezet = false;
     public bool AanOpStart = false;
+
+
+    //new
+    [SerializeField] ExplainerPopupIngang popupscript;
+    public float expandSpeed = 0.1f;
+
+
+
+    private void WaterIncreaseFloat() {
+        if(popupscript.popup == false) {
+            Vector3 newScale = FloatWaterLayer.transform.localScale;
+            newScale.x += expandSpeed * Time.deltaTime;
+            if(newScale.x > 13.5f) {
+                newScale.x = 13.5f;
+            }
+            FloatWaterLayer.transform.localScale = newScale;
+
+            if(FloatWaterLayer.transform.localScale.x <= 0.05) {
+                FloatWaterLayer.transform.localScale = new Vector3(0, FloatWaterLayer.transform.localScale.y, FloatWaterLayer.transform.localScale.z);
+            }
+
+            if(FloatWaterLayer.transform.localScale.y <= 0.05) {
+                FloatWaterLayer.transform.localScale = new Vector3(FloatWaterLayer.transform.localScale.x, 0, FloatWaterLayer.transform.localScale.z);
+            }
+
+            if(boolbutton.gameObject.transform.position.x > (boolbutton.startPosX + 0.715f) || intSchuif.gameObject.transform.position.x > (intSchuif.startPosX + 0.715f)) { 
+                expandSpeed = expandSpeed + 0.1f;
+            }
+
+            if(expandSpeed >= 2.5f) {
+                expandSpeed = 2.5f;
+            }
+        }
+    }
 
 
     void Start()
@@ -83,7 +118,7 @@ public class LegeSchuifknopScript : MonoBehaviour
 
     private void FloatLayer()
     { // De functie die ervoor zorgt dat de Waterlayer steeds -1 downscaled
-        FloatWaterLayer.transform.localScale -= new Vector3(0.05f, 0.05f, 0f);
+        FloatWaterLayer.transform.localScale -= new Vector3(0.1f, 0.05f, 0f);
         waterLevel.size -= new Vector2(0.009f, 0.009f);
         if (FloatWaterLayer.transform.localScale.x <= 0f && FloatWaterLayer.transform.localScale.y <= 0f)
         {
@@ -175,6 +210,7 @@ public class LegeSchuifknopScript : MonoBehaviour
         posLimiter();
         posLimitRight();
         posLimitLeft();
+        WaterIncreaseFloat();
 
         if (colliding == true)
         {

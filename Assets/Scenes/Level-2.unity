@@ -581,6 +581,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 5
   RigidBodyLink: {fileID: 260356166}
+  startPosX: 0
   status: 0
   speed: 1
   LayerAan: 1
@@ -595,6 +596,7 @@ MonoBehaviour:
   floatLayerGo: {fileID: 2044884446}
   IntSchuif: {fileID: 1619215923}
   spriteRenderer: {fileID: 1619215925}
+  zakken: 1
 --- !u!1 &263221355
 GameObject:
   m_ObjectHideFlags: 0
@@ -1290,8 +1292,11 @@ MonoBehaviour:
   boollayer: {fileID: 292770126}
   FloatSchuif: {fileID: 1816991213}
   spriteRenderer: {fileID: 1816991215}
+  intSchuif: {fileID: 260356169}
   EersteKeerAangezet: 0
   AanOpStart: 0
+  popupscript: {fileID: 1160611626}
+  expandSpeed: 0.1
 --- !u!70 &394668033
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2590,6 +2595,7 @@ MonoBehaviour:
   - {fileID: 530446270}
   Go: {fileID: 0}
   IngangTrigger: {fileID: 1160611621}
+  popup: 1
 --- !u!1 &1253197597
 GameObject:
   m_ObjectHideFlags: 0
@@ -4533,6 +4539,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 5
   RigidBodyLink: {fileID: 1976266956}
+  startPosX: 0
   waterObject: {fileID: 292770126}
   WaterpeilBoolLayer: {fileID: 1545644993}
   WaterLevel: {fileID: 362366720}

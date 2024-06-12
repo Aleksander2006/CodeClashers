@@ -9,8 +9,8 @@ public class ExplainerPopupIngang : MonoBehaviour
     private int currentPanelIndex = 0;
     [SerializeField] GameObject Go;
     [SerializeField] GameObject IngangTrigger;
-
     private bool firstPopup = false;
+    public bool popup = true;
 
     private void Start()
     {
@@ -85,6 +85,7 @@ public class ExplainerPopupIngang : MonoBehaviour
         foreach (GameObject panel in notificationPanels)
         {
             panel.SetActive(false);
+            popup = false;
         }
     }
 
