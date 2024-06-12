@@ -118,7 +118,7 @@ public class LegeSchuifknopScript : MonoBehaviour
 
     private void FloatLayer()
     { // De functie die ervoor zorgt dat de Waterlayer steeds -1 downscaled
-        FloatWaterLayer.transform.localScale -= new Vector3(0.1f, 0.05f, 0f);
+        FloatWaterLayer.transform.localScale -= new Vector3(0.05f, 0.05f, 0f);
         waterLevel.size -= new Vector2(0.009f, 0.009f);
         if (FloatWaterLayer.transform.localScale.x <= 0f && FloatWaterLayer.transform.localScale.y <= 0f)
         {
