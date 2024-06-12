@@ -79,7 +79,7 @@ public class minMaxerInt : MonoBehaviour
     
     public void WaterGrowInt(){ //Zorgt ervoor dat de Intlayer stijgt als de floatlayer weg is
         
-        if (zakken == true && FloatWaterLayer.transform.localScale.x <= 0 && FloatWaterLayer.transform.localScale.y <= 0)
+        if (zakken == true && FloatWaterLayer.transform.localScale.y <= 0)
         {
                if(boolbutton.gameObject.transform.position.x > (boolbutton.startPosX + 0.715f)) {
                 speedStijgen = speedStijgen + 0.05f;
