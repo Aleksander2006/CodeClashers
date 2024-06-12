@@ -581,6 +581,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 5
   RigidBodyLink: {fileID: 260356166}
+  startPosX: 0
   status: 0
   speed: 1
   LayerAan: 1
@@ -1291,9 +1292,11 @@ MonoBehaviour:
   boollayer: {fileID: 292770126}
   FloatSchuif: {fileID: 1816991213}
   spriteRenderer: {fileID: 1816991215}
+  intSchuif: {fileID: 260356169}
   EersteKeerAangezet: 0
   AanOpStart: 0
   popupscript: {fileID: 1160611626}
+  expandSpeed: 0.1
 --- !u!70 &394668033
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
