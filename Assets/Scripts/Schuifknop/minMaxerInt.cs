@@ -253,7 +253,7 @@ public class minMaxerInt : MonoBehaviour
                 MoveRight();       
         }
 
-        if(floatLayerGo.transform.localScale.x == 0 && status == true) {
+        if(floatLayerGo.transform.localScale.x <= 0 && status == true) {
             ScaleLayer();
             status = true;
         }

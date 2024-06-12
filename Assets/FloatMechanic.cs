@@ -47,6 +47,32 @@ public class LegeSchuifknopScript : MonoBehaviour
     public bool AanOpStart = false;
 
 
+    //new
+    [SerializeField] ExplainerPopupIngang popupscript;
+    private float expandSpeed = 0.1f;
+
+
+
+    private void WaterIncreaseFloat() {
+        if(popupscript.popup == false) {
+            Vector3 newScale = FloatWaterLayer.transform.localScale;
+            newScale.x += expandSpeed * Time.deltaTime;
+            if(newScale.x > 13.5f) {
+                newScale.x = 13.5f;
+            }
+            FloatWaterLayer.transform.localScale = newScale;
+
+            if(FloatWaterLayer.transform.localScale.x <= 0) {
+                FloatWaterLayer.transform.localScale = new Vector3(0, FloatWaterLayer.transform.localScale.y, FloatWaterLayer.transform.localScale.z);
+            }
+
+            if(FloatWaterLayer.transform.localScale.y <= 0) {
+                FloatWaterLayer.transform.localScale = new Vector3(FloatWaterLayer.transform.localScale.x, 0, FloatWaterLayer.transform.localScale.z);
+            }
+        }
+    }
+
+
     void Start()
     {
         startPosX = startPosX + gameObject.transform.position.x;
@@ -175,6 +201,7 @@ public class LegeSchuifknopScript : MonoBehaviour
         posLimiter();
         posLimitRight();
         posLimitLeft();
+        WaterIncreaseFloat();
 
         if (colliding == true)
         {
