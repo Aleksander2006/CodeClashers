@@ -210,9 +210,9 @@ public class minMaxerInt : MonoBehaviour
             }
             if(floatScipt.LayerAan == false) {
                 status = true;
+                zakken = false;
             }
             AanOpStart = true;
-            zakken = false;
         }
     }
     
