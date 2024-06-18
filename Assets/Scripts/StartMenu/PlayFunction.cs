@@ -6,23 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class PlayFunction : MonoBehaviour
 {
-
     public Animator Crossfade;
-
-
+    [SerializeField] GameObject Fade;
 
     void Start (){
-        //Crossfade.SetBool("Start", false);
-        //Crossfade.enabled = false;
+        Fade.SetActive(false);
     }
 
     public void Playfunction(){
-        Debug.Log("PRESSED");
 
+        Fade.SetActive(true);
         StartCoroutine(FadeDelay());
-        Crossfade.SetTrigger("Go");
-        //Crossfade.SetBool("Start", true);
-        //SceneManager.LoadScene(1);  
+        Crossfade.SetTrigger("Go");  
     }
 
     public IEnumerator FadeDelay() {

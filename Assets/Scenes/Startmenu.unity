@@ -337,6 +337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Crossfade: {fileID: 2142683947}
+  Fade: {fileID: 2142683944}
 --- !u!1 &1281190220
 GameObject:
   m_ObjectHideFlags: 0
