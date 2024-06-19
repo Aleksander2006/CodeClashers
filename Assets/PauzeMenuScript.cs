@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 
@@ -8,6 +9,15 @@ public class PauzeMenuScript : MonoBehaviour {
     [SerializeField] GameObject mainCharacter;
     [SerializeField] GameObject pauzeMenu;
     private static bool escPressed = false;
+    [SerializeField] GameObject dontDestroyGo;
+    [SerializeField] GameObject dontDestroyGo2;
+    [SerializeField] GameObject dontDestroyGo3;
+
+    void Start() {
+        // DontDestroyOnLoad(pauzeMenu);
+        // DontDestroyOnLoad(dontDestroyGo);
+        // DontDestroyOnLoad(dontDestroyGo2);
+    }
 
 
     private void EscToggle() {
