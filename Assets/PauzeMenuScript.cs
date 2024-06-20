@@ -40,7 +40,7 @@ public class PauzeMenuScript : MonoBehaviour {
         if(escPressed == true) {
             Time.timeScale = 0f;
             mainCharacter.GetComponent<Animator>().enabled = false;
-            mainCharacter.GetComponent<AudioSource>().enabled = false;
+            mainCharacter.GetComponent<AudioSource>().Stop();
         }
     }
 
@@ -48,7 +48,7 @@ public class PauzeMenuScript : MonoBehaviour {
         if(escPressed == false) {
             Time.timeScale = 1f;
             mainCharacter.GetComponent<Animator>().enabled = true;
-            mainCharacter.GetComponent<AudioSource>().enabled = false;
+            mainCharacter.GetComponent<AudioSource>().Play();
         }
     }
 
