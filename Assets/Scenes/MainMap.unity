@@ -437,6 +437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCharacter: {fileID: 668391065}
+  backGroundAudio: {fileID: 1703420242}
   pauzeMenu: {fileID: 1194973933}
   resumeButton: {fileID: 711378253}
   quitButton: {fileID: 982914092}

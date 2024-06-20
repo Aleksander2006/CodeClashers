@@ -4293,6 +4293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCharacter: {fileID: 1900691930}
+  backGroundAudio: {fileID: 1253197597}
   pauzeMenu: {fileID: 1229394287}
   resumeButton: {fileID: 1099521016}
   quitButton: {fileID: 697679051}
