@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
@@ -8,22 +9,31 @@ public class PauzeMenuScript : MonoBehaviour {
     
     [SerializeField] GameObject mainCharacter;
     [SerializeField] GameObject pauzeMenu;
-    private static bool escPressed = false;
+    [SerializeField] GameObject resumeButton;
+    [SerializeField] GameObject quitButton;
+    public static bool escPressed = false;
     [SerializeField] GameObject dontDestroyGo;
     [SerializeField] GameObject dontDestroyGo2;
     [SerializeField] GameObject dontDestroyGo3;
 
     void Start() {
+        resumeButton.SetActive(false);
+        quitButton.SetActive(false);
+
         // DontDestroyOnLoad(pauzeMenu);
         // DontDestroyOnLoad(dontDestroyGo);
         // DontDestroyOnLoad(dontDestroyGo2);
     }
 
 
-    private void EscToggle() {
+    public void EscToggle() {
         if(Input.GetKeyDown(KeyCode.Escape)) {
             escPressed = !escPressed;
         } 
+    }
+
+    public void ResumeButtonFunction() {
+            escPressed = !escPressed;
     }
 
     private void Pauzer() {
@@ -43,10 +53,14 @@ public class PauzeMenuScript : MonoBehaviour {
     private void MenuToggle() {
         if(escPressed == false) {
             pauzeMenu.SetActive(false);
+            resumeButton.SetActive(false);
+            quitButton.SetActive(false);
         }
 
         if(escPressed == true) {
             pauzeMenu.SetActive(true);
+            resumeButton.SetActive(true);
+            quitButton.SetActive(true);
         }
     }
 
