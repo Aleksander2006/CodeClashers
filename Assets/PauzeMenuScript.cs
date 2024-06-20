@@ -8,6 +8,7 @@ using UnityEngine.TextCore.Text;
 public class PauzeMenuScript : MonoBehaviour {
     
     [SerializeField] GameObject mainCharacter;
+    [SerializeField] GameObject backGroundAudio;
     [SerializeField] GameObject pauzeMenu;
     [SerializeField] GameObject resumeButton;
     [SerializeField] GameObject quitButton;
@@ -34,12 +35,18 @@ public class PauzeMenuScript : MonoBehaviour {
 
     public void ResumeButtonFunction() {
             escPressed = !escPressed;
+            mainCharacter.GetComponent<AudioSource>().enabled = true;
+            backGroundAudio.GetComponent<AudioSource>().Play();
     }
 
     private void Pauzer() {
         if(escPressed == true) {
             Time.timeScale = 0f;
             mainCharacter.GetComponent<Animator>().enabled = false;
+            if(Input.GetKeyDown(KeyCode.Escape)) {
+            mainCharacter.GetComponent<AudioSource>().enabled = false;
+            backGroundAudio.GetComponent<AudioSource>().Pause();
+            }
         }
     }
 
@@ -47,6 +54,10 @@ public class PauzeMenuScript : MonoBehaviour {
         if(escPressed == false) {
             Time.timeScale = 1f;
             mainCharacter.GetComponent<Animator>().enabled = true;
+            if(Input.GetKeyDown(KeyCode.Escape)) {
+            mainCharacter.GetComponent<AudioSource>().enabled = true;
+            backGroundAudio.GetComponent<AudioSource>().Play();
+            }
         }
     }
 

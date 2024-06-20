@@ -819,6 +819,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCharacter: {fileID: 1230386474}
+  backGroundAudio: {fileID: 1598507585}
   pauzeMenu: {fileID: 50868422}
   resumeButton: {fileID: 1078503717}
   quitButton: {fileID: 1745821938}
@@ -7883,8 +7884,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1745821940}
-        m_TargetAssemblyTypeName: QuitFunction, Assembly-CSharp
-        m_MethodName: 
+        m_TargetAssemblyTypeName: QuitEscFunc, Assembly-CSharp
+        m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
