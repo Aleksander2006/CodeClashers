@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
@@ -7,29 +8,45 @@ using UnityEngine.TextCore.Text;
 public class PauzeMenuScript : MonoBehaviour {
     
     [SerializeField] GameObject mainCharacter;
+    [SerializeField] GameObject backGroundAudio;
     [SerializeField] GameObject pauzeMenu;
-    private static bool escPressed = false;
+    [SerializeField] GameObject resumeButton;
+    [SerializeField] GameObject quitButton;
+    public static bool escPressed = false;
     [SerializeField] GameObject dontDestroyGo;
     [SerializeField] GameObject dontDestroyGo2;
     [SerializeField] GameObject dontDestroyGo3;
 
     void Start() {
+        resumeButton.SetActive(false);
+        quitButton.SetActive(false);
+
         // DontDestroyOnLoad(pauzeMenu);
         // DontDestroyOnLoad(dontDestroyGo);
         // DontDestroyOnLoad(dontDestroyGo2);
     }
 
 
-    private void EscToggle() {
+    public void EscToggle() {
         if(Input.GetKeyDown(KeyCode.Escape)) {
             escPressed = !escPressed;
         } 
+    }
+
+    public void ResumeButtonFunction() {
+            escPressed = !escPressed;
+            mainCharacter.GetComponent<AudioSource>().enabled = true;
+            backGroundAudio.GetComponent<AudioSource>().Play();
     }
 
     private void Pauzer() {
         if(escPressed == true) {
             Time.timeScale = 0f;
             mainCharacter.GetComponent<Animator>().enabled = false;
+            if(Input.GetKeyDown(KeyCode.Escape)) {
+            mainCharacter.GetComponent<AudioSource>().enabled = false;
+            backGroundAudio.GetComponent<AudioSource>().Pause();
+            }
         }
     }
 
@@ -37,16 +54,24 @@ public class PauzeMenuScript : MonoBehaviour {
         if(escPressed == false) {
             Time.timeScale = 1f;
             mainCharacter.GetComponent<Animator>().enabled = true;
+            if(Input.GetKeyDown(KeyCode.Escape)) {
+            mainCharacter.GetComponent<AudioSource>().enabled = true;
+            backGroundAudio.GetComponent<AudioSource>().Play();
+            }
         }
     }
 
     private void MenuToggle() {
         if(escPressed == false) {
             pauzeMenu.SetActive(false);
+            resumeButton.SetActive(false);
+            quitButton.SetActive(false);
         }
 
         if(escPressed == true) {
             pauzeMenu.SetActive(true);
+            resumeButton.SetActive(true);
+            quitButton.SetActive(true);
         }
     }
 

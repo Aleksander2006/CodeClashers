@@ -1,16 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
-using JetBrains.Annotations;
 using UnityEngine;
+using JetBrains.Annotations;
 using UnityEngine.SceneManagement;
 
-public class PlayFunction : MonoBehaviour
+public class StartMenu : MonoBehaviour
 {
     public Animator Crossfade;
     [SerializeField] GameObject Fade;
 
-    void Start (){
+     void Start (){
         Fade.SetActive(false);
+    }
+
+    public void Quitfunction(){
+        Application.Quit();
+        Debug.Log("Exit");
     }
 
     public void Playfunction(){
