@@ -13,6 +13,10 @@ using UnityEngine.TextCore.Text;
 public class minMaxerInt : MonoBehaviour
 {
     private bool colliding = false;
+
+    public AudioSource audioSource;
+    private bool soundPlayed = false;
+
     public float MoveSpeed = 5f;
     public Rigidbody2D RigidBodyLink;
     public float startPosX = 0;
@@ -66,7 +70,7 @@ public class minMaxerInt : MonoBehaviour
     {
         startPosX = startPosX + gameObject.transform.position.x;
         startPosY = startPosY + gameObject.transform.position.y;
-        
+
         boolbutton.GetComponent<Boolbutton>();
         floatScipt.GetComponent<LegeSchuifknopScript>();
 
@@ -76,42 +80,48 @@ public class minMaxerInt : MonoBehaviour
         IntWaterLayer.GetComponent<BoxCollider2D>().enabled = false;
     }
 
-    
-    public void WaterGrowInt(){ //Zorgt ervoor dat de Intlayer stijgt als de floatlayer weg is
-        
+
+    public void WaterGrowInt()
+    { //Zorgt ervoor dat de Intlayer stijgt als de floatlayer weg is
+
         if (zakken == true && FloatWaterLayer.transform.localScale.y <= 0)
         {
-               if(boolbutton.gameObject.transform.position.x > (boolbutton.startPosX + 0.715f)) {
+            if (boolbutton.gameObject.transform.position.x > (boolbutton.startPosX + 0.715f))
+            {
                 speedStijgen = speedStijgen + 0.05f;
-                    if(speedStijgen >= 0.5f) {
-                        speedStijgen = 0.5f;
-                    }
-               }
-
-                IntWaterLayer.transform.localScale += new Vector3(0.1f, 0.01f,0) * speedStijgen;
-                zakken = true;
-
-                if(IntWaterLayer.transform.localScale.y >= 7.05f){
-                IntWaterLayer.transform.localScale = new Vector3(IntWaterLayer.transform.localScale.x, 7.05f, IntWaterLayer.transform.localScale.z);
-                 
-                }
-                
-                if (IntWaterLayer.transform.localScale.x <= 0.1f && IntWaterLayer.transform.localScale.y <= 0.1f){
-                    IntWaterLayer.transform.localScale = Vector3.zero;
-                }
-                
-                if (IntWaterLayer.transform.localScale.x >= 18.68f)
+                if (speedStijgen >= 0.5f)
                 {
-                    IntWaterLayer.transform.localScale = new Vector3(18.68f, 7.05f, 0); 
-                }                 
-            }      
+                    speedStijgen = 0.5f;
+                }
+            }
+
+            IntWaterLayer.transform.localScale += new Vector3(0.1f, 0.01f, 0) * speedStijgen;
+            zakken = true;
+
+            if (IntWaterLayer.transform.localScale.y >= 7.05f)
+            {
+                IntWaterLayer.transform.localScale = new Vector3(IntWaterLayer.transform.localScale.x, 7.05f, IntWaterLayer.transform.localScale.z);
+
+            }
+
+            if (IntWaterLayer.transform.localScale.x <= 0.1f && IntWaterLayer.transform.localScale.y <= 0.1f)
+            {
+                IntWaterLayer.transform.localScale = Vector3.zero;
+            }
+
+            if (IntWaterLayer.transform.localScale.x >= 18.68f)
+            {
+                IntWaterLayer.transform.localScale = new Vector3(18.68f, 7.05f, 0);
+            }
+        }
     }
 
 
     public void ScaleLayer()
-    { //Check of Schuifknop AANstaat
-        
-        if (AanOpStart == true){
+    {
+        // Check if the toggle switch is ON
+        if (AanOpStart == true)
+        {
             if (status == true && boolbutton.LayerAan == true && floatScipt.LayerAan == false)
             {
                 StartCoroutine(FadeDelay());
@@ -121,10 +131,18 @@ public class minMaxerInt : MonoBehaviour
                 spriteRenderer.color = Color.green;
             }
 
-            if (EersteKeerAangezet == true){
+            if (EersteKeerAangezet == true)
+            {
                 spriteRenderer.color = Color.green;
+
+                // Play the sound only once
+                if (!soundPlayed)
+                {
+                    audioSource.Play();
+                    soundPlayed = true; // Set the flag to true after playing the sound
+                }
             }
-        }       
+        }
     }
 
     private IEnumerator FadeDelay()
@@ -145,7 +163,8 @@ public class minMaxerInt : MonoBehaviour
                 counter -= MinGetalX;
                 counter2 -= MinGetalY;
 
-                if (IntWaterLayer.transform.localScale.x <= 0 && IntWaterLayer.transform.localScale.y <= 0){
+                if (IntWaterLayer.transform.localScale.x <= 0 && IntWaterLayer.transform.localScale.y <= 0)
+                {
                     IntWaterLayer.transform.localScale = Vector3.zero;
                 }
             }
@@ -153,31 +172,36 @@ public class minMaxerInt : MonoBehaviour
             if (counterWaterpeil >= 1)
             {
                 WaterpeilIntLayer.transform.localScale = transform.TransformVector(counterWaterpeil, 10, 0) - new Vector3(MinGetalXWaterpeil, 0, 0);
-                
+
                 counterWaterpeil -= MinGetalXWaterpeil;
-                if (WaterpeilIntLayer.transform.localScale.x <= 0){
+                if (WaterpeilIntLayer.transform.localScale.x <= 0)
+                {
                     WaterpeilIntLayer.transform.localScale = Vector3.zero;
                 }
-            }  
+            }
         }
     }
 
     //------------Schuifknop Functionaliteit-------------
 
-    private void MoveLeft() {
-        if (colliding == false && gameObject.transform.position.x > startPosX) {
+    private void MoveLeft()
+    {
+        if (colliding == false && gameObject.transform.position.x > startPosX)
+        {
             gameObject.transform.position -= new Vector3(0.025f, 0, 0);
             LayerAan = true;
         }
     }
 
-    private void MoveRight() {
-        if (colliding == false && gameObject.transform.position.x < startPosX) {
+    private void MoveRight()
+    {
+        if (colliding == false && gameObject.transform.position.x < startPosX)
+        {
             gameObject.transform.position = gameObject.transform.position + new Vector3(0.025f, 0, 0);
             LayerAan = true;
         }
     }
-    
+
     public void posLimiter()
     {
         if (gameObject.transform.position.x > (startPosX + 0.715f) || transform.position.x < (startPosX - 0.715f))
@@ -185,7 +209,7 @@ public class minMaxerInt : MonoBehaviour
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             canMoveBack = true;
         }
-        
+
         else
         {
             if (colliding == true)
@@ -204,18 +228,20 @@ public class minMaxerInt : MonoBehaviour
             {
                 gameObject.transform.position = new Vector3(startPosX + 0.71f, startPosY, -3.24f);
             }
-            
-            if(floatScipt.LayerAan == true) {
+
+            if (floatScipt.LayerAan == true)
+            {
                 status = false;
             }
-            if(floatScipt.LayerAan == false) {
+            if (floatScipt.LayerAan == false)
+            {
                 status = true;
                 zakken = false;
             }
             AanOpStart = true;
         }
     }
-    
+
     public void posLimitLeft()
     {
         if (gameObject.transform.position.x < (startPosX - 0.715f))
@@ -240,30 +266,35 @@ public class minMaxerInt : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(floatLayerGo.transform.localScale.x > 0 && isRight == true) {
-                spriteRenderer.color = Color.red;
-            }
-
-        if(gameObject.transform.position.x < (startPosX + 0.715f)) {
-           isRight = false; 
+        if (floatLayerGo.transform.localScale.x > 0 && isRight == true)
+        {
+            spriteRenderer.color = Color.red;
         }
 
-        if(spriteRenderer.color == Color.red || spriteRenderer.color == Color.white) {
-                MoveLeft();
-                MoveRight();       
+        if (gameObject.transform.position.x < (startPosX + 0.715f))
+        {
+            isRight = false;
         }
 
-        if(floatLayerGo.transform.localScale.x <= 0 && status == true) {
+        if (spriteRenderer.color == Color.red || spriteRenderer.color == Color.white)
+        {
+            MoveLeft();
+            MoveRight();
+        }
+
+        if (floatLayerGo.transform.localScale.x <= 0 && status == true)
+        {
             ScaleLayer();
             status = true;
         }
 
-        if(floatScipt.LayerAan == false) {
+        if (floatScipt.LayerAan == false)
+        {
             IntWaterLayer.GetComponent<BoxCollider2D>().enabled = true;
         }
-        
-    
-        WaterGrowInt(); 
+
+
+        WaterGrowInt();
         posLimiter();
         posLimitRight();
         posLimitLeft();

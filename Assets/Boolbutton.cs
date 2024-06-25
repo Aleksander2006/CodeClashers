@@ -14,6 +14,7 @@ using UnityEngine.TextCore.Text;
 public class Boolbutton : MonoBehaviour
 {
     private bool movable = false;
+    private bool soundPlayed = false;
 
     public AudioSource audioSource;
 
@@ -123,13 +124,13 @@ public class Boolbutton : MonoBehaviour
             if (EersteKeerAangezet == true)
             {
                 spriteRenderer.color = Color.green;
-            }
-        }
-        else
-        {
-            if (!isWaterObjectDeactivated)
-            {
-                waterObject.SetActive(true);
+
+                // Play the sound only once
+                if (!soundPlayed)
+                {
+                    audioSource.Play();
+                    soundPlayed = true; // Set the flag to true after playing the sound
+                }
             }
         }
     }

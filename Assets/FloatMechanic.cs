@@ -15,6 +15,12 @@ using UnityEngine.TextCore.Text;
 public class LegeSchuifknopScript : MonoBehaviour
 {
     private bool movable = false;
+    public AudioClip correct;
+
+    public float volume;
+    public AudioSource correctsound;
+    private bool soundPlayed = false;
+
     private bool colliding = false;
     public float MoveSpeed = 5f;
     public Rigidbody2D RigidBodyLink;
@@ -54,28 +60,35 @@ public class LegeSchuifknopScript : MonoBehaviour
 
 
 
-    private void WaterIncreaseFloat() {
-        if(popupscript.popup == false) {
+    private void WaterIncreaseFloat()
+    {
+        if (popupscript.popup == false)
+        {
             Vector3 newScale = FloatWaterLayer.transform.localScale;
             newScale.x += expandSpeed * Time.deltaTime;
-            if(newScale.x > 13.5f) {
+            if (newScale.x > 13.5f)
+            {
                 newScale.x = 13.5f;
             }
             FloatWaterLayer.transform.localScale = newScale;
 
-            if(FloatWaterLayer.transform.localScale.x <= 0.1) {
+            if (FloatWaterLayer.transform.localScale.x <= 0.1)
+            {
                 FloatWaterLayer.transform.localScale = new Vector3(0, FloatWaterLayer.transform.localScale.y, FloatWaterLayer.transform.localScale.z);
             }
 
-            if(FloatWaterLayer.transform.localScale.y <= 0.05) {
+            if (FloatWaterLayer.transform.localScale.y <= 0.05)
+            {
                 FloatWaterLayer.transform.localScale = new Vector3(FloatWaterLayer.transform.localScale.x, 0, FloatWaterLayer.transform.localScale.z);
             }
 
-            if(boolbutton.gameObject.transform.position.x > (boolbutton.startPosX + 0.715f) || intSchuif.gameObject.transform.position.x > (intSchuif.startPosX + 0.715f)) { 
+            if (boolbutton.gameObject.transform.position.x > (boolbutton.startPosX + 0.715f) || intSchuif.gameObject.transform.position.x > (intSchuif.startPosX + 0.715f))
+            {
                 expandSpeed = expandSpeed + 0.1f;
             }
 
-            if(expandSpeed >= 2.5f) {
+            if (expandSpeed >= 2.5f)
+            {
                 expandSpeed = 2.5f;
             }
         }
@@ -99,23 +112,33 @@ public class LegeSchuifknopScript : MonoBehaviour
     public void ScaleLayer()
     { //Check of Schuifknop AANstaat
 
-    if (AanOpStart == true){
-            if (status == true && minmaxint.LayerAan == true && boolbutton.LayerAan == true) 
+        if (AanOpStart == true)
+        {
+            if (status == true && minmaxint.LayerAan == true && boolbutton.LayerAan == true)
             {
                 FloatLayer();
                 LayerAan = false;
                 spriteRenderer.color = Color.green;
                 EersteKeerAangezet = true;
-
-            } else {
+            }
+            else
+            {
                 spriteRenderer.color = Color.red;
             }
-            if (EersteKeerAangezet == true){
-                spriteRenderer.color = Color.green;
-            }
-        }    
-    }
 
+            if (EersteKeerAangezet == true)
+            {
+                spriteRenderer.color = Color.green;
+
+                // Play the sound only once
+                if (!soundPlayed)
+                {
+                    correctsound.PlayOneShot(correct, volume);
+                    soundPlayed = true; // Set the flag to true after playing the sound
+                }
+            }
+        }
+    }
     private void FloatLayer()
     { // De functie die ervoor zorgt dat de Waterlayer steeds -1 downscaled
         FloatWaterLayer.transform.localScale -= new Vector3(0.05f, 0.05f, 0f);
@@ -123,7 +146,7 @@ public class LegeSchuifknopScript : MonoBehaviour
         if (FloatWaterLayer.transform.localScale.y <= 0f)
         {
             FloatWaterLayer.transform.localScale = new Vector3(0, 0, 0);
-            waterLevel.size = new Vector2(0,0);
+            waterLevel.size = new Vector2(0, 0);
         }
 
         WaterpeilFloatLayer.transform.localScale -= new Vector3(0.05f, 0f, 0f) * speed;
@@ -135,7 +158,7 @@ public class LegeSchuifknopScript : MonoBehaviour
 
     //------------Schuifknop Functionaliteit-------------//
 
-    
+
 
     public void posLimiter()
     {
@@ -187,24 +210,29 @@ public class LegeSchuifknopScript : MonoBehaviour
     {
         colliding = false;
     }
-    
-    private void MoveLeft() {
-        if (colliding == false && gameObject.transform.position.x > startPosX) {
+
+    private void MoveLeft()
+    {
+        if (colliding == false && gameObject.transform.position.x > startPosX)
+        {
             gameObject.transform.position -= new Vector3(0.025f, 0, 0);
         }
     }
 
-    private void MoveRight() {
-        if (colliding == false && gameObject.transform.position.x < startPosX) {
+    private void MoveRight()
+    {
+        if (colliding == false && gameObject.transform.position.x < startPosX)
+        {
             gameObject.transform.position = gameObject.transform.position + new Vector3(0.025f, 0, 0);
         }
     }
 
     void FixedUpdate()
     {
-        if(spriteRenderer.color == Color.red || spriteRenderer.color == Color.white) {
-                MoveLeft();
-                MoveRight();       
+        if (spriteRenderer.color == Color.red || spriteRenderer.color == Color.white)
+        {
+            MoveLeft();
+            MoveRight();
         }
         ScaleLayer();
         posLimiter();
@@ -214,7 +242,7 @@ public class LegeSchuifknopScript : MonoBehaviour
 
         if (colliding == true)
         {
-            RigidBodyLink.MovePosition(RigidBodyLink.position + movement * MoveSpeed * Time.fixedDeltaTime);        
+            RigidBodyLink.MovePosition(RigidBodyLink.position + movement * MoveSpeed * Time.fixedDeltaTime);
         }
     }
 }
