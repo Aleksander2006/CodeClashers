@@ -14,6 +14,10 @@ using UnityEngine.TextCore.Text;
 public class Boolbutton : MonoBehaviour
 {
     private bool movable = false;
+    private bool soundPlayed = false;
+
+    public AudioSource audioSource;
+
     private bool colliding = false;
     public float MoveSpeed = 5f;
     public Rigidbody2D RigidBodyLink;
@@ -58,14 +62,18 @@ public class Boolbutton : MonoBehaviour
         waterObject.GetComponent<BoxCollider2D>().enabled = false;
     }
 
-    private void MoveLeft() {
-        if (colliding == false && gameObject.transform.position.x > startPosX) {
+    private void MoveLeft()
+    {
+        if (colliding == false && gameObject.transform.position.x > startPosX)
+        {
             gameObject.transform.position -= new Vector3(0.025f, 0, 0);
         }
     }
 
-    private void MoveRight() {
-        if (colliding == false && gameObject.transform.position.x < startPosX) {
+    private void MoveRight()
+    {
+        if (colliding == false && gameObject.transform.position.x < startPosX)
+        {
             gameObject.transform.position = gameObject.transform.position + new Vector3(0.025f, 0, 0);
         }
     }
@@ -102,25 +110,26 @@ public class Boolbutton : MonoBehaviour
                 spriteRenderer.color = Color.green;
                 EersteKeerAangezet = true;
 
-                WaterLevel.size = WaterLevel.size - new Vector2(1,1);
+                WaterLevel.size = WaterLevel.size - new Vector2(1, 1);
                 waterObject.SetActive(false);
                 WaterpeilBoolLayer.SetActive(false);
                 isWaterObjectDeactivated = true;
-            } 
-            
-            if(minMaxerint.LayerAan == true || floatScript.LayerAan == true) {
+            }
+
+            if (minMaxerint.LayerAan == true || floatScript.LayerAan == true)
+            {
                 spriteRenderer.color = Color.red;
             }
-            
-            if (EersteKeerAangezet == true){
-                spriteRenderer.color = Color.green;
-            }    
-        }
-        else
-        {
-            if (!isWaterObjectDeactivated)
+
+            if (EersteKeerAangezet == true)
             {
-                waterObject.SetActive(true);
+                spriteRenderer.color = Color.green;
+
+                if (!soundPlayed)
+                {
+                    audioSource.Play();
+                    soundPlayed = true;
+                }
             }
         }
     }
@@ -132,7 +141,8 @@ public class Boolbutton : MonoBehaviour
             if (colliding == false)
             {
                 gameObject.transform.position = new Vector3(startPosX - 0.71f, startPosY, -3.24f);
-            } status = true;
+            }
+            status = true;
         }
     }
 
@@ -146,28 +156,34 @@ public class Boolbutton : MonoBehaviour
         colliding = false;
     }
 
-    private void WaterGrow () {
-        if (minMaxerint.LayerAan == false && floatScript.LayerAan == false && intLayerGo.transform.localScale.x <= 0) {
+    private void WaterGrow()
+    {
+        if (minMaxerint.LayerAan == false && floatScript.LayerAan == false && intLayerGo.transform.localScale.x <= 0)
+        {
             waterObject.transform.localScale += new Vector3(0.1f, 0.01f, 0);
         }
 
-        if(waterObject.transform.localScale.y >= 7.05f) {
+        if (waterObject.transform.localScale.y >= 7.05f)
+        {
             waterObject.transform.localScale = new Vector3(waterObject.transform.localScale.x, 7.05f, waterObject.transform.localScale.z);
         }
 
-        if(waterObject.transform.localScale.x >= 33.5f){
+        if (waterObject.transform.localScale.x >= 33.5f)
+        {
             waterObject.transform.localScale = new Vector3(33.5f, waterObject.transform.localScale.y, waterObject.transform.localScale.z);
         }
     }
 
     void FixedUpdate()
     {
-        if(spriteRenderer.color == Color.red || spriteRenderer.color == Color.white) {
-                MoveLeft();
-                MoveRight();       
+        if (spriteRenderer.color == Color.red || spriteRenderer.color == Color.white)
+        {
+            MoveLeft();
+            MoveRight();
         }
 
-        if(floatScript.LayerAan == false && minMaxerint.LayerAan == false) {
+        if (floatScript.LayerAan == false && minMaxerint.LayerAan == false)
+        {
             waterObject.GetComponent<BoxCollider2D>().enabled = true;
         }
 
