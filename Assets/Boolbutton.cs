@@ -125,11 +125,10 @@ public class Boolbutton : MonoBehaviour
             {
                 spriteRenderer.color = Color.green;
 
-                // Play the sound only once
                 if (!soundPlayed)
                 {
                     audioSource.Play();
-                    soundPlayed = true; // Set the flag to true after playing the sound
+                    soundPlayed = true;
                 }
             }
         }

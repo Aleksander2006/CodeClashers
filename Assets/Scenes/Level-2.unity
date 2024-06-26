@@ -1530,7 +1530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correct: {fileID: 8300000, guid: 9f174d5fff2bb49d5ad7f6fd4497b087, type: 3}
-  volume: 1
+  volume: 0.8
   correctsound: {fileID: 394668037}
   MoveSpeed: 5
   RigidBodyLink: {fileID: 394668035}
@@ -5566,7 +5566,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.412
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -5596,7 +5596,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.446
       inSlope: 0
       outSlope: 0
       tangentMode: 0

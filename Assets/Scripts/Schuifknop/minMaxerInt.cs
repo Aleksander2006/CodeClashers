@@ -119,7 +119,6 @@ public class minMaxerInt : MonoBehaviour
 
     public void ScaleLayer()
     {
-        // Check if the toggle switch is ON
         if (AanOpStart == true)
         {
             if (status == true && boolbutton.LayerAan == true && floatScipt.LayerAan == false)
@@ -135,11 +134,10 @@ public class minMaxerInt : MonoBehaviour
             {
                 spriteRenderer.color = Color.green;
 
-                // Play the sound only once
                 if (!soundPlayed)
                 {
                     audioSource.Play();
-                    soundPlayed = true; // Set the flag to true after playing the sound
+                    soundPlayed = true;
                 }
             }
         }

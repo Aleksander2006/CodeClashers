@@ -130,11 +130,10 @@ public class LegeSchuifknopScript : MonoBehaviour
             {
                 spriteRenderer.color = Color.green;
 
-                // Play the sound only once
                 if (!soundPlayed)
                 {
                     correctsound.PlayOneShot(correct, volume);
-                    soundPlayed = true; // Set the flag to true after playing the sound
+                    soundPlayed = true;
                 }
             }
         }
