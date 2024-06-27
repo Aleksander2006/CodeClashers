@@ -5,7 +5,7 @@ using UnityEngine;
 public class DoorLockScriptLvl2 : MonoBehaviour
 {
     void Start() {
-        if (StaticData.floatToKeep == "teleporter_2b" || StaticData.floatToKeep == "teleporter_3a" || StaticData.floatToKeep == "teleporter_4a") {
+        if (StaticData.lvl1Completed == true) {
             gameObject.SetActive(false);
         }
     }

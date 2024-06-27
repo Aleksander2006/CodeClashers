@@ -8,7 +8,7 @@ public class ShowBow2 : MonoBehaviour
     {
         gameObject.SetActive(false);
 
-        if (StaticData.floatToKeep == "teleporter_4a")
+        if (StaticData.lvl2Completed == true)
         {
             gameObject.SetActive(true);
         }
