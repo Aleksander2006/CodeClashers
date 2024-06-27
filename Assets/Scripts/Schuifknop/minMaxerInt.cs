@@ -1,14 +1,6 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Runtime.Serialization.Formatters;
-using JetBrains.Annotations;
-using Unity.VisualScripting;
-using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
-using UnityEngine.Jobs;
-using UnityEngine.TextCore.Text;
 
 public class minMaxerInt : MonoBehaviour
 {
