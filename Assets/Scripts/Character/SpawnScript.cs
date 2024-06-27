@@ -16,6 +16,7 @@ public class SpawnScript : MonoBehaviour
     [SerializeField] GameObject teleporter_3a;
     [SerializeField] GameObject teleporter_3b;
     [SerializeField] GameObject teleporter_4a;
+    
 
     //Level 3 moet nog hieronder, maar we hebben die nog niet...//
 
@@ -50,6 +51,7 @@ public class SpawnScript : MonoBehaviour
 
         if(spawnLocation == "teleporter_2b") {
             gameObject.transform.position = teleporter_1b.transform.position + new Vector3(-0.93f, -2.7f, -3.59f);
+            StaticData.lvl1Completed = true;
         } 
 
         if(spawnLocation == "teleporter_3a") {
@@ -58,6 +60,7 @@ public class SpawnScript : MonoBehaviour
 
         if(spawnLocation == "teleporter_4a") {
             gameObject.transform.position = teleporter_1c.transform.position + new Vector3(-0.93f, -2.7f, -3.59f);
+            StaticData.lvl2Completed = true;
         } 
     }
 
