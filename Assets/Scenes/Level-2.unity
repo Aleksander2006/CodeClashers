@@ -2594,7 +2594,7 @@ MonoBehaviour:
   movementScript: {fileID: 1900691934}
   mainCamera: {fileID: 0}
   Crossfade: {fileID: 1087602195}
-  sceneBuildIndex: 4
+  sceneBuildIndex: 5
 --- !u!4 &987589154
 Transform:
   m_ObjectHideFlags: 0
@@ -4806,7 +4806,7 @@ MonoBehaviour:
   movementScript: {fileID: 1900691934}
   mainCamera: {fileID: 0}
   Crossfade: {fileID: 1087602195}
-  sceneBuildIndex: 1
+  sceneBuildIndex: 2
 --- !u!4 &1860601668
 Transform:
   m_ObjectHideFlags: 0

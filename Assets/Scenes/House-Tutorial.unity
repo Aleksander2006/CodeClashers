@@ -2970,7 +2970,7 @@ MonoBehaviour:
   movementScript: {fileID: 1004054250}
   mainCamera: {fileID: 0}
   Crossfade: {fileID: 1312230199}
-  sceneBuildIndex: 1
+  sceneBuildIndex: 2
 --- !u!61 &1618288681
 BoxCollider2D:
   m_ObjectHideFlags: 0
