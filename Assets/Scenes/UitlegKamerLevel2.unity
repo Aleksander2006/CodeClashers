@@ -1827,7 +1827,7 @@ MonoBehaviour:
   movementScript: {fileID: 1840222095}
   mainCamera: {fileID: 0}
   Crossfade: {fileID: 954203787}
-  sceneBuildIndex: 1
+  sceneBuildIndex: 2
 --- !u!4 &1354162677
 Transform:
   m_ObjectHideFlags: 0

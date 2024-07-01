@@ -27,6 +27,6 @@ public class StartMenu : MonoBehaviour
 
     public IEnumerator FadeDelay() {
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene(0, LoadSceneMode.Single);
+        SceneManager.LoadScene(1, LoadSceneMode.Single);
     }
 }
