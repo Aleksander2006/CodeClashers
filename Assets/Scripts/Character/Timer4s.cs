@@ -52,7 +52,7 @@ public class Timer4s : MonoBehaviour
 
     public IEnumerator FadeDelay() {
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene(3, LoadSceneMode.Single);
+        SceneManager.LoadScene(4, LoadSceneMode.Single);
     }
 
     void Update()
